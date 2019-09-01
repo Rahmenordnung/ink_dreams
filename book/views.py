@@ -56,17 +56,17 @@ def add_book_to_cart(request, slug):
             order_item.quantity += 1
             order_item.save()
             messages.info(request, "This item quantity was updated.")
-            return redirect("book:book_detail", slug=slug)
+            return redirect("book:order_final_view")
         else:
             order.items.add(order_item)
             messages.info(request, "This item was added to your cart.")
-            return redirect("book:book_detail", slug=slug)
+            return redirect("book:order_final_view")
     else:
         ordered_date = timezone.now()
         order = Order.objects.create(user=request.user, ordered_date=ordered_date) 
         order.items.add(order_item)
         messages.info(request, "This item was added to your cart.")
-    return redirect("book:book_detail", slug=slug)
+    return redirect("book:order_final_view")
 
 @login_required    
 def remove_book_from_cart(request, slug):
@@ -113,7 +113,7 @@ def remove_one_book_from_cart(request, slug):
             order_item.quantity -= 1
             order_item.save()
             messages.info(request, "One book have been added to your trolley")
-            return redirect("book:order_final_view", slug=slug)
+            return redirect("book:order_final_view")
         else:
             messages.info(request, "This item was not in your cart")
             return redirect("book:book_detail", slug=slug)
