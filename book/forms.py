@@ -10,16 +10,11 @@ PAYMENT_CHOICES = (
 
 
 class CheckoutForm(forms.Form):
-    full_name = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'Mr Johny Bravo',
-        'id': 'name'
-    }))
-  
     street_address = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': '1234 Main St',
         'id': 'address'
     }))
-    apartment_address = forms.CharField(required=False, widget=forms.TextInput(attrs={
+    house_address = forms.CharField(required=False, widget=forms.TextInput(attrs={
         'placeholder': 'Apartment or suite',
         'id': 'address-2'
     }))
@@ -32,7 +27,7 @@ class CheckoutForm(forms.Form):
         'class': 'form-control',
         'id': 'zip'
     }))
-    # same_shipping_address = forms.BooleanField(required=False)
-    # save_info = forms.BooleanField(required=False)
+    same_shipping_address = forms.BooleanField(required=False)
+    save_info = forms.BooleanField(required=False)
     payment_option = forms.ChoiceField(
         widget=forms.RadioSelect, choices=PAYMENT_CHOICES)

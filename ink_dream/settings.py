@@ -1,5 +1,6 @@
 
 import os
+import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,6 +34,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
+    
     'django_countries',
     
     'book',
@@ -134,6 +136,10 @@ AUTHENTICATION_BACKENDS = (
 )
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
+
+#Stripe keys
+STRIPE_PUBLISHABLE = os.getenv("STRIPE_PUBLISHABLE")
+STRIPE_SECRET = os.getenv("STRIPE_SECRET")
 
 # CRISPY FORMS
 

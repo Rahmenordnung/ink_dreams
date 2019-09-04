@@ -7,7 +7,8 @@ from .views import (
     add_book_to_cart,
     remove_book_from_cart,
     remove_one_book_from_cart,
-    OrderFinalView
+    OrderFinalView,
+    PaymentView
 )
 
 app_name = 'book'
@@ -19,5 +20,6 @@ urlpatterns = [
     path('book_detail/<slug>/', BookDetailView.as_view(), name='book_detail'),
     path('add_book_to_cart/<slug>/', add_book_to_cart, name='add_book_to_cart'),
     path('remove_book_from_cart/<slug>/', remove_book_from_cart, name='remove_book_from_cart'),
-    path('remove_one_book_from_cart/<slug>/', remove_one_book_from_cart, name='remove_one_book_from_cart')
+    path('remove_one_book_from_cart/<slug>/', remove_one_book_from_cart, name='remove_one_book_from_cart'),
+    path('payment/<payment_option>/', PaymentView.as_view(), name='payment'),
 ]
