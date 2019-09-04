@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, View
-from .models import Book, OrderItem, Order, SaveCustomerAddress, Payment
+from .models import Author ,Book, OrderItem, Order, SaveCustomerAddress, Payment
 from .forms import CheckoutForm
 from django.utils import timezone
 
@@ -13,11 +13,14 @@ import stripe
 stripe.api_key = settings.STRIPE_SECRET
 
 
+
+
 def products(request):
     context = {
         'items': Book.objects.all()
     }
     return render(request, "book_detail.html", context)
+
 
 
 class CheckoutView(View):
@@ -146,7 +149,7 @@ class PaymentView(View):
 
 class HomeView(ListView):
     model = Book
-    paginate_by = 10
+    paginate_by = 1
     template_name = "home.html"
     
 class OrderFinalView(LoginRequiredMixin, View):

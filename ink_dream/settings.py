@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django_countries',
     
     'book',
+    'search',
 ]
 
 MIDDLEWARE = [

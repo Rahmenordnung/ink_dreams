@@ -32,8 +32,15 @@ STICKER_CHOICES = (
   ('D','dark')
 )
 
+class Author(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+    
 class Book(models.Model):
     title = models.CharField(max_length=100)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)    
     discount_price = models.FloatField(blank=True, null=True)
     price = models.FloatField()
     category = models.CharField(choices=GENGRE_ELECTION, max_length=2)

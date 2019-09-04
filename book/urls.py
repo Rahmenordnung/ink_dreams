@@ -22,4 +22,5 @@ urlpatterns = [
     path('remove_book_from_cart/<slug>/', remove_book_from_cart, name='remove_book_from_cart'),
     path('remove_one_book_from_cart/<slug>/', remove_one_book_from_cart, name='remove_one_book_from_cart'),
     path('payment/<payment_option>/', PaymentView.as_view(), name='payment'),
+    
 ]

@@ -220,6 +220,8 @@
                 <!--Category & Title-->
                 <a href="" class="grey-text">
                   <h5>{{ item.get_category_display }}</h5>
+                  {{ item.author }}
+                  
                 </a>
                 <h5>
                   <strong>
@@ -229,10 +231,13 @@
                   </strong>
                 </h5>
 
-                <h4 class="font-weight-bold blue-text">                <strong>€ {% if item.discount_price %}
+                <h4 class="font-weight-bold blue-text">                
+                
+                <strong>€ {% if item.discount_price %}
                 {{ item.discount_price }}
                 {% else %}
                 {{ item.price }}
+                
                 {% endif %}</strong>
                 </h4>
 

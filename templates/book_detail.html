@@ -26,6 +26,7 @@
             <div class="mb-3">
               <a href="">
                 <span class="badge purple mr-1">{{ object.get_category_display }}</span>
+                
               </a>
             </div>
 
@@ -38,11 +39,13 @@
               {% else %}
               <span>{{ object.price }} €</span>
               {% endif %}
+              
             </p>
 
             <p class="lead font-weight-bold">Description</p>
 
             <p>{{ object.description }}</p>
+            <span>{{ object.author }} </span>
 
             {% comment %} <form class="d-flex justify-content-left">
               <!-- Default input -->
