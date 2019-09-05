@@ -4,7 +4,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
 
-    <link rel="stylesheet" href="static/css/custom.css" crossorigin="anonymous">
+    {% comment %} <link rel="stylesheet" href="static/css/custom.css" crossorigin="anonymous"> {% endcomment %}
 
     <!-- Bootstrap core CSS -->
 {% include "navbar.html" %}
@@ -63,7 +63,7 @@
   <div class="form-row">
       <div class="form-group col-12">
           <div class="input-group">
-              <input class="form-control py-2 border-right-0 border" type="search" name="work_price" placeholder="Book price exact" />
+              <input class="form-control py-2 border-right-0 border" type="search" name="book_price" placeholder="Book price exact" />
               <span class="input-group-append">
                   <div class="input-group-text bg-transparent">
                       <i class="fa fa-search"></i>
@@ -75,7 +75,7 @@
   <div class="form-row">
       <div class="form-group col-12">
           <div class="input-group">
-              <input class="form-control py-2 border-right-0 border" type="search" name="maestros_or_title" placeholder="Maestro or work" />
+              <input class="form-control py-2 border-right-0 border" type="search" name="author_or_title" placeholder="Maestro or work" />
               <span class="input-group-append">
                   <div class="input-group-text bg-transparent">
                       <i class="fa fa-search"></i>
@@ -165,14 +165,63 @@
 
 <hr />
 
-<div class="row">
-  <ul>
-    {% for work in queryset %}
-      {{ work.title }}, {{ work.price }} {{ work.maestro.completename }}
-    {% endfor %}
-    
-  </ul>
-</div>
+<div class="row wow fadeIn">
+
+          {% for item in queryset %}
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4">
+
+            <!--Card-->
+            <div class="card">
+
+              <!--Card image-->
+              <div class="view overlay">
+                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top"
+                  alt="">
+                <a href="{{ item.get_absolute_url }}">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <!--Card image-->
+
+              <!--Card content-->
+              <div class="card-body text-center">
+                <!--Category & Title-->
+                <a href="" class="grey-text">
+                  <h5>{{ item.get_category_display }}</h5>
+                  {{ item.author }}
+                  
+                </a>
+                <h5>
+                  <strong>
+                    <a href="{{ item.get_absolute_url }}" class="dark-grey-text">{{ item.title }}
+                      <span class="badge badge-pill {{ item.get_sticker_display }}-color">NEW</span>
+                    </a>
+                  </strong>
+                </h5>
+
+                <h4 class="font-weight-bold blue-text">                
+                
+                <strong>€ {% if item.discount_price %}
+                {{ item.discount_price }}
+                {% else %}
+                {{ item.price }}
+                
+                {% endif %}</strong>
+                </h4>
+
+              </div>
+              <!--Card content-->
+
+            </div>
+            <!--Card-->
+
+          </div>
+        {% endfor %}  
+          <!--Grid column-->
+
+        </div>
 
 
 </main><!-- /.container -->

@@ -5,7 +5,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, View
-from .models import Author ,Book, OrderItem, Order, SaveCustomerAddress, Payment
+from .models import Book, OrderItem, Order, SaveCustomerAddress, Payment 
+
+
+
 from .forms import CheckoutForm
 from django.utils import timezone
 

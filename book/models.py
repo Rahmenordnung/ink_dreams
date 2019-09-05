@@ -32,21 +32,27 @@ STICKER_CHOICES = (
   ('D','dark')
 )
 
-class Author(models.Model):
-    name = models.CharField(max_length=50)
 
-    def __str__(self):
-        return self.name
+       
     
 class Book(models.Model):
     title = models.CharField(max_length=100)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)    
+    work_author = models.CharField(max_length=100)    
     discount_price = models.FloatField(blank=True, null=True)
     price = models.FloatField()
     category = models.CharField(choices=GENGRE_ELECTION, max_length=2)
     sticker = models.CharField(choices=STICKER_CHOICES, max_length=2)
     slug= models.SlugField()
+    publish_date = models.DateTimeField()
     description = models.TextField()
+    views = models.IntegerField(default=0)
+    bestseller = models.BooleanField(default=False)
+    notbestseller = models.BooleanField(default=False)
+    longbook = models.BooleanField(default=False)
+    shortbook = models.BooleanField(default=False)
+    worldwide_appreciated = models.BooleanField(default=False)
+    underground_appreciation = models.BooleanField(default=False)
+    
 
     def __str__(self):
         return self.title
