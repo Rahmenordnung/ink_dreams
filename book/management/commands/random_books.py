@@ -28,13 +28,12 @@ def generate_author_name():
   return authors[index]
 
 def generate_category_name():
-  index = random.randint(0, 1)
+  index = random.randint(0, 14)
   return categories[index]
 
 def generate_discount_price_count():
   return random.randint(0, 100)
   
-
 def generate_price_count():
   return random.randint(0, 500)
 
@@ -48,15 +47,15 @@ class Command(BaseCommand):
   
   def add_arguments(self, parser):
     parser.add_argument(
-      'file_name', type=str, help='A list of the available books')
+      'file_name', type=str, help='A list of the available random books')
     
   def handle(self, *args, **kwargs):
     file_name = kwargs['file_name']
     with open (f'{file_name}.txt') as file:
       for row in file:
         title = row
-        author_name = generate_author_name
-        category_name = generate_category_name
+        author_name = generate_author_name()
+        category_name = generate_category_name()
         discount_price = generate_discount_price_count()
         price = generate_price_count()
         publish_date = generate_publish_date()

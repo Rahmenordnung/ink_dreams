@@ -128,7 +128,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 
-#Authentication
+#Authentication django allauth
 
 AUTHENTICATION_BACKENDS = (
  
@@ -147,10 +147,11 @@ STRIPE_SECRET = os.getenv("STRIPE_SECRET")
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# reset pasword parameters
 
+# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = os.getenv("EMAIL_ADRESS")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+EMAIL_HOST_USER = os.getenv("EMAIL_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
 EMAIL_PORT = 587
