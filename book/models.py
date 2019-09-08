@@ -31,13 +31,10 @@ STICKER_CHOICES = (
   ('L','light'),
   ('D','dark')
 )
-
-
-       
-    
 class Book(models.Model):
     title = models.CharField(max_length=100)
     work_author = models.CharField(max_length=100)    
+    cover = models.ImageField()
     discount_price = models.FloatField(blank=True, null=True)
     price = models.FloatField()
     category = models.CharField(choices=GENGRE_ELECTION, max_length=2)

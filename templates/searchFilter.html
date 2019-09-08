@@ -11,42 +11,10 @@
 
   </head>
   <body>
-    {% comment %} <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav> {% endcomment %}
-
+    
 <main role="main" class="container">
 
-<h3>Staqrköpfig</h3>
+<h3>Advanced searching Form</h3>
  <form method="GET" action="">
   <div class="form-row">
       <div class="form-group col-12">
@@ -60,10 +28,10 @@
           </div>
       </div>        
   </div>
-  <div class="form-row">
+    <div class="form-row">
       <div class="form-group col-12">
           <div class="input-group">
-              <input class="form-control py-2 border-right-0 border" type="search" name="book_price" placeholder="Book price exact" />
+              <input class="form-control py-2 border-right-0 border" type="search" name="work_price" placeholder="Book price exact" />
               <span class="input-group-append">
                   <div class="input-group-text bg-transparent">
                       <i class="fa fa-search"></i>
@@ -177,8 +145,7 @@
 
               <!--Card image-->
               <div class="view overlay">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top"
-                  alt="">
+                <img class="card-img-top h-20 " src="{{ item.cover.url }}" alt=""> 
                 <a href="{{ item.get_absolute_url }}">
                   <div class="mask rgba-white-slight"></div>
                 </a>

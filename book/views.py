@@ -5,18 +5,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, View
-from .models import Book, OrderItem, Order, SaveCustomerAddress, Payment 
-
-
-
+from .models import Book, OrderItem, Order, SaveCustomerAddress, Payment
 from .forms import CheckoutForm
 from django.utils import timezone
 
 import stripe
 stripe.api_key = settings.STRIPE_SECRET
-
-
-
 
 def products(request):
     context = {
@@ -24,16 +18,15 @@ def products(request):
     }
     return render(request, "book_detail.html", context)
 
-
-
 class CheckoutView(View):
     def get(self, *args, **kwargs):
+        #form
         form = CheckoutForm()
         context = {
             'form': form
         }
         return render(self.request, "checkout.html", context)
-
+    
     def post(self, *args, **kwargs):
         form = CheckoutForm(self.request.POST or None)
         try:
@@ -58,7 +51,6 @@ class CheckoutView(View):
                 billing_address.save()
                 order.billing_address = billing_address
                 order.save()
-
                 if payment_option == 'S':
                     return redirect('book:payment', payment_option='stripe')
                 elif payment_option == 'P':
@@ -70,7 +62,6 @@ class CheckoutView(View):
         except ObjectDoesNotExist:
             messages.error(self.request, "You do not have an active order")
             return redirect("book:order-summary")
-
 
 class PaymentView(View):
     def get(self, *args, **kwargs):
@@ -152,7 +143,7 @@ class PaymentView(View):
 
 class HomeView(ListView):
     model = Book
-    paginate_by = 1
+    paginate_by = 10
     template_name = "home.html"
     
 class OrderFinalView(LoginRequiredMixin, View):
@@ -179,7 +170,7 @@ def add_book_to_cart(request, slug):
         item=item,
         user=request.user,
         ordered=False
-    ) 
+    )    
     order_qs = Order.objects.filter(user=request.user, ordered=False)
     if order_qs.exists():
         order = order_qs[0]

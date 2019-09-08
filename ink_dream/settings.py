@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     
     'book',
     'search',
+    'contact',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +147,10 @@ STRIPE_SECRET = os.getenv("STRIPE_SECRET")
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = os.getenv("EMAIL_ADRESS")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+EMAIL_PORT = 587

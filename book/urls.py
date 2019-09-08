@@ -1,7 +1,6 @@
     
 from django.urls import path
-from .views import (
-    BookDetailView,
+from .views import (BookDetailView,
     CheckoutView,
     HomeView,
     add_book_to_cart,

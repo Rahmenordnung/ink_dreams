@@ -11,7 +11,7 @@ def is_valid_queryparam(param):
 def SearchFilters_BookView(request):
       qs = Book.objects.all()
       title_contains_query = request.GET.get('title_contains')
-      price_exact_query = request.GET.get('book_price')
+      work_price_query = request.GET.get('work_price')
       title_or_author_query = request.GET.get('author_or_title')
       view_count_min = request.GET.get('view_count_min')
       view_count_max = request.GET.get('view_count_max')
@@ -27,8 +27,8 @@ def SearchFilters_BookView(request):
       if is_valid_queryparam(title_contains_query):
             qs = qs.filter(title__icontains=title_contains_query)
             
-      elif is_valid_queryparam(price_exact_query):
-            qs = qs.filter(price__iexact=price_exact_query)      
+      elif is_valid_queryparam(work_price_query):
+            qs = qs.filter(price__iexact=work_price_query)      
       
       elif is_valid_queryparam(title_or_author_query):
             qs = qs.filter(Q(title__icontains=title_or_author_query)

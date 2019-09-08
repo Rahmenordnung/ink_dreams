@@ -180,6 +180,8 @@
           </ul>
           <!-- Links -->
 
+           <a class='btn btn-primary float-right' href='search/SearchFilters_BookView/'><i class="far fa-hand-point-right" aria-hidden="true"></i>advanced searching</a>
+
           <form class="form-inline">
             <div class="md-form my-0">
               <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -207,8 +209,9 @@
 
               <!--Card image-->
               <div class="view overlay">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top"
-                  alt="">
+                <a href="">
+                  <img class="card-img-top h-20 " src="{{ item.cover.url }}" alt=""> 
+                </a>
                 <a href="{{ item.get_absolute_url }}">
                   <div class="mask rgba-white-slight"></div>
                 </a>
