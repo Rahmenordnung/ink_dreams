@@ -31,3 +31,8 @@
     .page-footer {
         background-color: #929FBA;
     }
+    /* IMage cards display */
+    
+    .view overlay {
+        max-height: 20px;
+    }

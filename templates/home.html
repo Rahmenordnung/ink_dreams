@@ -229,26 +229,23 @@
                 <h5>
                   <strong>
                     <a href="{{ item.get_absolute_url }}" class="dark-grey-text">{{ item.title }}
-                      <span class="badge badge-pill {{ item.get_sticker_display }}-color">{{ item.slug }}</span>
                     </a>
                   </strong>
                 </h5>
 
                 <h4 class="font-weight-bold blue-text">                
                 
+                
+                </h4>
+              <div class="card-footer text-muted text-center mt-4">
                 <strong> 
                 {% if item.discount_price %}
-              <span class="mr-1">
-                <h6 class="font-weight-bold blue-text"><del>{{ item.price }} €</del></h6>
-              </span>
-              <span>{{ item.discount_price }} €</span>
+              <h6 class="font-weight-bold blue-text"><del>{{ item.price }} €</del>
+              <span><u>{{ item.discount_price }} €</u></span></h6>
               {% else %}
               <span>{{ item.price }} €</span>
               {% endif %}
                 </strong>
-                </h4>
-              <div class="card-footer text-muted text-center mt-4">
-                2 days ago
               </div>  
 
               </div>

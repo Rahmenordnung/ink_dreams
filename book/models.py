@@ -39,7 +39,7 @@ class Book(models.Model):
     discount_price = models.FloatField(blank=True, null=True)
     price = models.FloatField()
     category = models.CharField(choices=GENGRE_ELECTION, max_length=2)
-    sticker = models.CharField(choices=STICKER_CHOICES, max_length=2, blank=True)
+    sticker = models.CharField(choices=STICKER_CHOICES, max_length=2, blank=True, null=True)
     slug= models.SlugField()
     publish_date = models.DateTimeField()
     description = models.TextField()
@@ -111,7 +111,6 @@ class Order(models.Model):
         for order_item in self.items.all():
             total += order_item.get_final_price()
         return total
-    
 class SaveCustomerAddress(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
@@ -122,7 +121,6 @@ class SaveCustomerAddress(models.Model):
 
     def __str__(self):
         return self.user.username
-    
 class Payment(models.Model):
     stripe_charge_id = models.CharField(max_length=50)
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
