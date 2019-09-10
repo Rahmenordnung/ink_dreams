@@ -27,9 +27,9 @@ Contact us via contact page
  
     --[Existing_functionality](#Existing_functionality)
    
-    --[Packages](#Packages)
-    
     --[Coding languages](#Coding_languages)
+    
+    --[Packages](#Packages)
 
     --[Libraries](#Libraries)
     
@@ -138,27 +138,29 @@ Here one can increse, diminish the product quantity, remove fully the book from 
 
 -- [Font-awesome](https://fontawesome.com/) Font Awesome is a web font containing all the icons from the Twitter Bootstrap framework, and now many more. With it one can add usefull icons that improves the UX.
 
-
 #### <a name="Packages"></a> Packages ##
 
--- [Stripe](https://dashboard.stripe.com/)Stripe is an online payment service, to enable secure payments using credit cards on the website. Stripe also uses a self-learning fraud prevention system.
+This packages are included in the __requrements.txt__ files , thethat is needed in order to deploy the _django page_ to live platforms such as __Heroku__.
 
+-- [Stripe] (https://dashboard.stripe.com/)Stripe is an online payment service, to enable secure payments using credit cards on the website. Stripe also uses a self-learning fraud prevention system.
 
+-- [Django Allauth] (https://django-allauth.readthedocs.io/en/latest/installation.html/)                                         Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
+
+-- [Django country] (https://pypi.org/project/django-countries/) An object used to represent a country, instantiated with a two character country code, three character code, or numeric code. It can be compared to other objects as if it was a string containing the country code and when evaluated as text, returns the country code. Contains a URL to the flag.
+
+-- [Django cryspy forms] (https://django-crispy-forms.readthedocs.io/en/latest/install.html)  Django-crispy-forms is a django application that lets you easily build, customize and reuse forms using your favorite CSS framework, without writing template code and without having to take care of annoying details.
+
+-- [Django cryspy forms] (https://django-crispy-forms.readthedocs.io/en/latest/install.html)  Django-crispy-forms is a django application that lets you easily build, customize and reuse forms using your favorite CSS framework, without writing template code and without having to take care of annoying details.  
+
+-- [Pillow] (https://pillow.readthedocs.io/en/3.0.x/installation.html/)  Pillow is a free library for the Python programming language that adds support for opening, manipulating, and saving many different image file formats.
 
 -------Travis
 Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub.
 -------EmailJS
 We use EmailJS to link up the modal contact form to an actual e-mail address---
+------ pyrg???------ for heroku
 
 ----------------------------------------
-
-#### <a name="Google_API"></a> Google API  ## 
-
---[Google APIs(Google maps)](https://developers.google.com/maps/documentation/) is a set of application programming interfaces developed by Google which allow communication with Google Services and their integration to other services
-
-Finally I have used the Google Maps API and added to it the clients adresses so that the user can relate and see where each project has been delivered.
-
-These is a representative map, but not a dynamic one connected to the crossfilter, because that is beyond the lessons provided in the course and my skills, yet
 
 ## <a name="Features left to implement"></a>Features_left_to_implement ##
 
@@ -262,7 +264,10 @@ It's highly recommended to work in a virtual environment, but not absolutely req
 #### <a name="Developer_environment"></a> Developer environment  #### 
 
 As for the external use of the program, the user should download first the Toys shop data base.csv file.
-and upload then the above mentionated libraries, after that ,load the bootstap file and the dc.css as well as jquery so that the program should deploy as expected.                                                                                   
+and upload then the above mentionated libraries, after that ,load the bootstap file and the dc.css as well as jquery so that the program should deploy as expected. 
+
+
+------------HEroku----------------
 
 ---                                                                                                                                      
 
