@@ -6,15 +6,13 @@ This project is built for Code Institute as a part of Full Stack Software Develo
 
 A small resumee of the features would be:
 
-* Sign up, Log-in as a user, View books, chapters, fragments, and essays from a specific book, Add a book to shopping cart, Adjust the quantity of items in shopping cart, delete the item from the shopping cart, Pay for the desired products in shopping cart checkout, as a registered user see in the profile site, what products have been already bought.
+* Sign up, log-in as a user,don´t worry about your password you can reset it easely, view the books list, view the details of a book, add a book to shopping cart, Adjust the quantity of items in shopping cart, delete the item from the shopping cart, Pay for the desired products in shopping cart checkout, --------as a registered user see in the profile site, what products have been already bought.----
  
 
-Reset password with a registered username
-Search products (by 12 parts categories)
-Pay for products in shopping cart checkout
+Search products (by 15 parts categories)
 Vote to like / dislike products
 Contact us via contact page
-View websits satistics charts
+
 
 #### Sumary :
 
@@ -54,10 +52,9 @@ View websits satistics charts
 
 #### <a name="Name"></a>Name :
 
-The name is purely discribing what the user can expect from the site, a __Book shop__ , but in the same manner by being such a common name for a bussines, in some way makes the customer wonder if that is just what is going to happen in this __Book shop__, or there is something more. Well then, the only thing left is for him just to come and visit the site.
-
+Today in our days the books are not any more only wrote in paper but also digitally. Everything is changing, and it always has been like that. A tempestuous change through the ways of understanding a how the content of a message is transmited to us. Before we use to carve in stones, and now it feels like we don´t need anymore to write with our pens and hands, now we can just talk and that will be wrote. In anyway things will change, the old fashion way of doing things still will permeate our lives for a while. Until the books will disaprear they will contain ink, and this ink brings us dreams and make us dream further and that is why I chose as title for my work __Ink dreams__. 
  
-A link of the working project can be found [here](https://rahmenordnung.github.io/toy_storie_shop/)
+ A link of the working project can be found [here](https://rahmenordnung.github.io/toy_storie_shop/)
 
 ---
 ## <a name="UX"></a>UX :
@@ -66,9 +63,15 @@ A link of the working project can be found [here](https://rahmenordnung.github.i
 
 "Reading means dreaming by someone else's hand."  – Fernando Pessoa
 
-But how many hands have been shovelling trough this dream, and what they dream about this time spend reading? This is the milestoneproyect theme. __A page where the the lector not only is able to read one book and dream alone but, also to be able to look at what other people, writers, and not only have thought about when reading the literary work that they have been treating with.__
-
 "When you write, you show a world at your size" - Jesús Fernández Santos.
+
+Reading means thinking with the alien brain instead of doing it with one's own. " Arthur Schopenhauer" 
+
+.....
+
+-The milestone proyect theme would be to have a look at the page and check as a user, an author, etc through a vast pallet of books, discovered them and let yourself onboard in new dreams and thoughts, by purchasing them.
+-The custumer would be able also to contact and send us his thoughts and queries through a contact form.
+-Any person can use the page and look around and serach easely with the help of pagination and search function through our book selection. If he doesn´t want to buy the product he can just chek the simple description and investigate perhaps about it. 
 
 ---
 ### <a name="Wireframes"></a>Wireframes :
@@ -86,29 +89,34 @@ In the constuction of the project I have used the libraries donated by the Code 
 
 #### <a name="Existing_functionality"></a> Existing functionality ##
 
--- __Navbar__: Allows all users to easily navigate to the different sections of the website and interpretate the theme which relates them, regardless of which page they are currently on, simply by clicking the name of the area they wish to visit in the navbar. Also contain an logo that redirect to the home page (in this case, the same page).
+-- __Navbar__: Allows all users to easily navigate to the different sections of the website and interpretate the theme which relates them, regardless of which page they are currently on, simply by clicking the name of the area they wish to visit in the navbar(some of the areas will be limitted by a _@register required_ decorator). Also contain an logo that redirect to the home page.
 
--- __Shopping_list__: Display a list of the products that have been added to the shopping trolley, that will be in the future purchased.
+-- __Full screen book list in card display__: Each book ispresented with image category author and price(and discount price if existing) in square formed cart. Each cart links to the detailed view of the book.
 
--- __Product_cart__: Presents a miniature view of the literary work with ----image, title, price, among other attributes---
+-- __Search bar/advanced search__: There is a _search bar_ in the home page that search by book title and an _advanced search_ page that leads the customer to a special page where one can specify more paramaeters by which one can search a book, ex production day, author, etc.
 
--- __Full screen background with button in hover effect__: The image contextualize the business in an the right sector. And the __hover efect__ brings the attention to the the __button__ that leads the user to the charts page.
-
---__Intro.js__ Thanks to javascript it makes a tour with messages and arrows and opacity. It highlights some key elements in the page that the User should pay attention to in order to understand correctly its purpose.
-
--- __Charts in bootrap cards in differnt sizes__: This charts represent the data in easy to understand manner and makes easy to find connections between different variables from the dataset. Each chart is contained in a bootstrap card that improves the visibility and ads some extra info. The site contains the following types of graphs: bar charts, row charts, pie charts, and scatter plots.
-
--- __Sections separators__ They are simple headers that group the charts below them to a comun theme.
-
--- __Useful information__: Allows the user to understand better the charts, and to discover them in a better way, with more detail and attention. this is contained in __bootrap cards__
-
--- __Toggle hide button__: Once one graph is fully viewed one can hide it or make it appear back so that it will visualize only the needed information.
-
--- __Search selectors__: There are three selectors that ease the customers display a lot. One can look after the __City__ where the products were delievered, the __Customer name__ and the __order date__ of the delievery. In that way the user can have differents perspectives in which the the data can be analized
-
--- __Google map__: Allwos the user to locate precisely all the custommers adresses listed in the database. On hover it appears the city name and by clicking the marker, the Customer firma name and the adress available in the records. (Uses Google Maps and Google Places). See js/maps.js. *Mistakes by the adress could appear due to the geographical localizators or incomplete data in the dataset
+-- __Footer__: At the bootom of the page, this footer connect the user with the social media links, and presents the copyright. It also has a link to the contact form.
 
 -- __Footer__: Informs the user that the site is hosted by Github Pages, and provides us a link to where they can view the source code on Github, and also a link to the dataset in a elegant dark green color.
+
+-- __Contact Form__: A simple contact form with a query category selector name and subject. relized with django forms, that helps people getting in touch and improving the UX.
+
+-- __Detail view of a book__ After clicking in any book on the book list page, you will be able to see the book cover in a big picture and on the other side the book description, the category tag, and the sticker tag which tries to resume in one word the story like a hashtag in socialmedia, the price/& discount price. There are two bottons add to cart and eliminate from cart that only can work if the user is registered and signed in. There also exists a section in the bottom site with additional information that can be useful.
+
+-- __Registration and Sign in/out__: Is a security measure that ensure that all user will be registered, recorded and authorized to work with some functionallity of the page. In my case I used Django Allauth. 
+
+-- __Reset password of a user__: Is realized with a Smtp code that sends a email to the customer that contains information and a link for the password reset, in case of a lost.
+
+-- __Shopping_list__: Display a list of the products that have been added to the shopping trolley, that will be in the future purchased.
+Here one can increse, diminish the product quantity, remove fully the book from the list, see the total, and by clicking in proceed to checkout will be redirected to provide information in order to purchase the products on the list. Or one can continue purchasing and so go back to the books list.
+
+--__Checkout form (1)__: in the first page one will be able to introduce the personal adress details as well as the country where one comes from(done with django countries package). On the side it contains the total and a small resume of the pructs to be purchased. After clicking continue to purchase, it will lead you to the last site.
+
+--__Checkout form (2)__: Here one will be able to process to payment with stripe, see the total of the products to be brought. After introducing the credit card number just click the submit payment.
+
+--__Votes__--------------------------------------------------------------to do votes 
+
+--__Profile__------------------------------------------to do profile with sale list
 
 #### <a name="Coding_languages"></a>Current Features ##
 
