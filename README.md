@@ -26,6 +26,8 @@ Contact us via contact page
   * [Current Features](#Current_Features)
  
     --[Existing_functionality](#Existing_functionality)
+   
+    --[Packages](#Packages)
     
     --[Coding languages](#Coding_languages)
 
@@ -114,29 +116,34 @@ Here one can increse, diminish the product quantity, remove fully the book from 
 
 --__Checkout form (2)__: Here one will be able to process to payment with stripe, see the total of the products to be brought. After introducing the credit card number just click the submit payment.
 
---__Votes__--------------------------------------------------------------to do votes 
+--__Votes__--------------------------------------------------------------to do votes ???
 
---__Profile__------------------------------------------to do profile with sale list
+--__Profile__------------------------------------------to do profile with sale list  ???
 
 #### <a name="Coding_languages"></a>Current Features ##
 
--- [HTML5](https://www.w3schools.com/html/html_intro.asp) --Hypertext Markup Language is the standard markup language for documents designed to be displayed in a web browser.
-
--- [CSS3](http://www.css3.info/) is a style sheet language used for describing the presentation of a document written in a markup language like HTML.[
-
-------------- [Javascript](https://www.javascript.com/) is a high-level, interpreted programming language that conforms to the ECMAScript specification.-----
-
--- [jquery.js](https://jquery.com/) is a library of Java scripts that simplifies lots of its functions, the main differance with javascriptis that it performs many common scripting functions in fewer lines of codes
-
--- [Python](https://www.python.org/)  Python is a general purpose programming language. Usefull for developing both desktop and web applications is designed with features to facilitate data analysis and visualization
-
 -- [Django](https://www.djangoproject.com/) Django is an open source web framework written in Python that follows a model-view-presenter schema. 
 
--- [Bootstap](https://getbootstrap.com/) is a framework to help you design websites faster and easier.
+-- [Python](https://www.python.org/)  Python is a general purpose programming language. Usefull for developing both desktop and web applications is designed with features to facilitate data analysis and visualization. Mostly Django is realized in python language, so the logic is mainly the same in the views pages, for instance
+
+-- [HTML5](https://www.w3schools.com/html/html_intro.asp) --Hypertext Markup Language is the standard markup language for documents designed to be displayed in a web browser. I have useed it to create the templates, mostly
+
+-- [CSS3](http://www.css3.info/) is a style sheet language used for describing the presentation of a document written in a markup language like HTML.Used to style the html templates
+
+------------- [Javascript](https://www.javascript.com/) is a high-level, interpreted programming language that conforms to the ECMAScript specification. Used mostly with [Stripe](https://dashboard.stripe.com/) to deal withe payment- 
+ 
+-- [MDBootstap](https://mdbootstrap.com/) is a framework created by Mozilla used to help you design websites faster and easier.
+
+-- [jquery.js](https://jquery.com/) is a library of Java scripts that simplifies lots of its functions, the main differance with javascriptis that it performs many common scripting functions in fewer lines of codes. I have used the jquery present for the [MDB](https://mdbootstrap.com/) templates
+
+-- [Font-awesome](https://fontawesome.com/) Font Awesome is a web font containing all the icons from the Twitter Bootstrap framework, and now many more. With it one can add usefull icons that improves the UX.
+
+
+#### <a name="Packages"></a> Packages ##
 
 -- [Stripe](https://dashboard.stripe.com/)Stripe is an online payment service, to enable secure payments using credit cards on the website. Stripe also uses a self-learning fraud prevention system.
 
--- [Font-awesome](https://fontawesome.com/) Font Awesome is a web font containing all the icons from the Twitter Bootstrap framework, and now many more.
+
 
 -------Travis
 Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub.
