@@ -3,6 +3,8 @@ from django.db import models
 from django.shortcuts import reverse
 from django_countries.fields import CountryField
 
+# Book model all the properties
+
 GENGRE_ELECTION  = (
   ('FT','Fairy Tale'),
   ('BA','Biography/Autobiography'),
@@ -65,6 +67,7 @@ class Book(models.Model):
         return reverse("book:remove_book_from_cart", kwargs={'slug': self.slug})    
       
 
+# Model for the Order Sumary
 
 class OrderItem(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
@@ -90,7 +93,7 @@ class OrderItem(models.Model):
             return self.get_total_discount_item_price()
         return self.get_total_item_price()
 
-
+#Book oreder Check out form before saving
 class Order(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
@@ -111,6 +114,9 @@ class Order(models.Model):
         for order_item in self.items.all():
             total += order_item.get_final_price()
         return total
+    
+#Book check out form         
+    
 class SaveCustomerAddress(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
@@ -121,6 +127,8 @@ class SaveCustomerAddress(models.Model):
 
     def __str__(self):
         return self.user.username
+    
+#Stripe payment form    
 class Payment(models.Model):
     stripe_charge_id = models.CharField(max_length=50)
     user = models.ForeignKey(settings.AUTH_USER_MODEL,

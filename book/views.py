@@ -9,14 +9,22 @@ from .models import Book, OrderItem, Order, SaveCustomerAddress, Payment
 from .forms import CheckoutForm
 from django.utils import timezone
 
+#Stripe Apy import
+
 import stripe
 stripe.api_key = settings.STRIPE_SECRET
+
+# Book list method for loading all products
 
 def products(request):
     context = {
         'items': Book.objects.all()
     }
     return render(request, "book_detail.html", context)
+
+ # Check out product(book)
+
+#  Get method :parsing the book as objects from the Book model through a context and rendering it in a check out Form, and if doesn´t exist giving an error
 
 class CheckoutView(View):
     def get(self, *args, **kwargs):
@@ -31,6 +39,8 @@ class CheckoutView(View):
         except ObjectDoesNotExist:
             messages.info(self.request, "You do not have an active order")
             return redirect("book:checkout")
+        
+# Post method: Get the objects from the get method above and for each field save the data and if the data is correct continue to payment view, if not give an error           
     
     def post(self, *args, **kwargs):
         form = CheckoutForm(self.request.POST or None)
@@ -63,10 +73,12 @@ class CheckoutView(View):
                 else:
                     messages.warning(
                         self.request, "Invalid payment option selected")
-                    return redirect('book:checkout')
+                return redirect('book:checkout')
         except ObjectDoesNotExist:
             messages.warning(self.request, "You do not have an active order")
             return redirect("book:order-summary")
+        
+#Get the data , parse it into a context and obtain the stripe keys        
 
 class PaymentView(View):
     def get(self, *args, **kwargs):
@@ -81,6 +93,8 @@ class PaymentView(View):
             return redirect("book:checkout")
                 
         return render(self.request, "payment.html", context)
+    
+# In this method the data saved is handeled with the help of Stripe script and key in order to process the virtual payment   
 
     def post(self, *args, **kwargs):
         order = Order.objects.get(user=self.request.user, ordered=False)

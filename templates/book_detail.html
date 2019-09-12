@@ -2,38 +2,25 @@
 {% load static %}
 
 {% block content %}
-
   <main class="mt-5 pt-4">
     <div class="container dark-grey-text mt-5">
-
-      <!--Grid row-->
       <div class="row wow fadeIn">
-
-        <!--Grid column-->
+      <!--Book image column-->
         <div class="col-md-6 mb-4">
-
           <img class="card-img-top h-20 " src="{{ object.cover.url }}" alt="">   
-
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-md-6 mb-4">
-
-          <!--Content-->
-          <div class="p-4">
-
-            <div class="mb-3">
+      <div class="col-md-6 mb-4">
+        <div class="p-4">
+        <!--Book data and categories-->
+          <div class="mb-3">
             <h4 class="lead font-weight-bold text-center">{{ object.title }}</h4>
             <hr>
-              <a href="">
-                <span class="badge purple mr-1">{{ object.get_category_display }}</span>
-                <span class="badge badge-pill {{ object.get_sticker_display }}-color">{{ object.slug }}</span>
-
-                
-              </a>
-            </div>
-
+            <a href="">
+              <span class="badge purple mr-1">{{ object.get_category_display }}</span>
+              <span class="badge badge-pill {{ object.get_sticker_display }}-color">{{ object.slug }}</span>
+            </a>
+          </div>
+          <!--Book price and discount prices-->
             <p class="lead">
               {% if object.discount_price %}
               <span class="mr-1">
@@ -43,96 +30,44 @@
               {% else %}
               <span>{{ object.price }} €</span>
               {% endif %}
-              
             </p>
-
-            <p class="lead font-weight-bold">Description</p>
-
-            <p>{{ object.description }}</p>
-            
-
-            {% comment %} <form class="d-flex justify-content-left">
-              <!-- Default input -->
-              <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
-              <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
-                <i class="fas fa-shopping-cart ml-1"></i>
-              </button>
-
-            </form> {% endcomment %}
-
-            <hr>
+          <!--Book description-->  
+          <p class="lead font-weight-bold">Description</p>
+          <p>{{ object.description }}</p>
+        <hr>
+        <!--Book author-->
           <div class="col-md-6 mb-4 text-center">
             <span class="mb-3 ">{{ object.work_author }} </span>
-          </div>  
-
-            <a href="{{ object.get_add_book_to_cart_url }}" class="btn btn-primary btn-md my-0 p">Add to cart
-              <i class="fas fa-shopping-cart ml-1"></i>
-            </a>
-            
-            <a href="{{ object.get_remove_book_from_cart }}" class="btn btn-danger btn-md my-0 p">Eliminate from cart
-              
-            </a>
-
           </div>
-          <!--Content-->
-
+          <!--buttons add/remove-->  
+          <a href="{{ object.get_add_book_to_cart_url }}" class="btn btn-primary btn-md my-0 p">Add to cart
+            <i class="fas fa-shopping-cart ml-1"></i>
+          </a>
+          <a href="{{ object.get_remove_book_from_cart }}" class="btn btn-danger btn-md my-0 p">Eliminate from cart</a>
         </div>
-        <!--Grid column-->
-
       </div>
-      <!--Grid row-->
-
-      <hr>
-
-      <!--Grid row-->
+    </div>
+    <hr>
+    <!--Additional information-->
       <div class="row d-flex justify-content-center wow fadeIn">
-
-        <!--Grid column-->
         <div class="col-md-6 text-center">
-
           <h4 class="my-4 h4">Additional information</h4>
-
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit
             voluptates,
             quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
-
         </div>
-        <!--Grid column-->
-
       </div>
-      <!--Grid row-->
-
-      <!--Grid row-->
       <div class="row wow fadeIn">
-
-        <!--Grid column-->
         <div class="col-lg-4 col-md-12 mb-4">
-
           <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="">
-
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4">
-
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
-
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4">
-
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
-
-        </div>
-        <!--Grid column-->
-
+      <div class="col-lg-4 col-md-6 mb-4">
+        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
       </div>
-      <!--Grid row-->
-
+        <div class="col-lg-4 col-md-6 mb-4">
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
+        </div>
+      </div>
     </div>
   </main>
-
 {% endblock content %}

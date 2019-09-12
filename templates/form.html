@@ -2,59 +2,40 @@
 {% load crispy_forms_tags %}
   {% block content %}
     <title>Starter Template · Bootstrap</title>
-
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
-
-    {% comment %} <link rel="stylesheet" href="static/css/custom.css" crossorigin="anonymous"> {% endcomment %}
-
-    <!-- Bootstrap core CSS -->
 {% include "navbar.html" %}
-
-  </head>
   <body>
-    
-<main role="main" class="container">
-
-<section class="mb-4">
-
-    <!--Section heading-->
-    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
-    <!--Section description-->
-    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
-        a matter of hours to help you.</p>
-
-<div class="row">
-  <div class="col-md-8 mb-md-0 mb-5">
-  {% crispy form form.helper %}
- </div>
-
-<!--aside information-->
-<div class="col-md-4 text-center">
- <!--Grid column-->
-        <div class="col-md-5 text-center">
-            <ul class="list-unstyled mb-0">
-                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+    <main role="main" class="container">
+      <section class="mb-4">
+      <!--Section heading-->
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+        <!--Section description-->
+        <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+            a matter of hours to help you.</p>
+        <!--main form-->
+        <div class="row">
+          <div class="col-md-8 mb-md-0 mb-5">
+          {% crispy form form.helper %}
+          </div>
+        <!--aside information-->
+          <div class="col-md-4 text-center">
+              <div class="col-md-5 text-center">
+                <ul class="list-unstyled mb-0">
+                  <li><i class="fas fa-map-marker-alt fa-2x"></i>
                     <p>San Francisco, CA 94126, USA</p>
-                </li>
-
-                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                  </li>
+                  <li><i class="fas fa-phone mt-4 fa-2x"></i>
                     <p>+ 01 234 567 89</p>
-                </li>
-
-                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                    <p>contact@mdbootstrap.com</p>
-                </li>
-            </ul>
-        </div>
-      </div>
-    </div>
-  </section>      
-        <!--Grid column-->
-
-
-</main>
-</body>
-</html>
-
+                  </li>
+                  <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>customerservice@ink_dream.com</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </section>      
+    </main>
+  </body>
 {% endblock %}
  

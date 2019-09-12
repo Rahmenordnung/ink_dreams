@@ -1,202 +1,172 @@
 {% extends "base.html" %}
   {% block content %}
-    <title>Starter Template · Bootstrap</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
-
-    {% comment %} <link rel="stylesheet" href="static/css/custom.css" crossorigin="anonymous"> {% endcomment %}
-
+    <title>Advanced search page</title>
+      <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
     <!-- Bootstrap core CSS -->
 {% include "navbar.html" %}
-
-  </head>
-  <body>
-    
-<main role="main" class="container">
-
-<h3>Advanced searching Form</h3>
- <form method="GET" action="">
-  <div class="form-row">
-      <div class="form-group col-12">
-          <div class="input-group">
-              <input class="form-control py-2 border-right-0 border" type="search" name="title_contains" placeholder="Title contains..." />
-              <span class="input-group-append">
-                  <div class="input-group-text bg-transparent">
-                      <i class="fa fa-search"></i>
-                  </div>
-              </span>
-          </div>
-      </div>        
-  </div>
-  <div class="form-row">
-    <div class="form-group col-12">
-        <div class="input-group">
-            <input class="form-control py-2 border-right-0 border" type="search" name="work_price" placeholder="Book price exact" />
-            <span class="input-group-append">
-                <div class="input-group-text bg-transparent">
-                    <i class="fa fa-search"></i>
+  <main role="main" class="container">
+    <h3>Advanced searching Form</h3>
+    <!-- Search form -->
+      <form method="GET" action="">
+        <div class="form-row">
+        <!-- search by title contain -->
+            <div class="form-group col-12">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="title_contains" placeholder="Title contains..." />
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </span>
                 </div>
-            </span>
+            </div>        
         </div>
-    </div>        
-  </div>
-  <div class="form-row">
-      <div class="form-group col-12">
-          <div class="input-group">
-              <input class="form-control py-2 border-right-0 border" type="search" name="author_or_title" placeholder="Maestro or work" />
-              <span class="input-group-append">
-                  <div class="input-group-text bg-transparent">
-                      <i class="fa fa-search"></i>
-                  </div>
-              </span>
+        <div class="form-row">
+        <!-- search by book price -->
+          <div class="form-group col-12">
+              <div class="input-group">
+                  <input class="form-control py-2 border-right-0 border" type="search" name="work_price" placeholder="Book price exact" />
+                  <span class="input-group-append">
+                      <div class="input-group-text bg-transparent">
+                          <i class="fa fa-search"></i>
+                      </div>
+                  </span>
+              </div>
+          </div>        
+        </div>
+        <div class="form-row">
+        <!-- search by Author or book exact match -->
+            <div class="form-group col-12">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="author_or_title" placeholder="Author or book" />
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </span>
+                </div>
+            </div>        
+        </div>
+        <!-- search by Count number -->
+        <div class="form-row">
+          <div class="form-group col-md-2 col-lg-2">
+            <label for="viewCountMin">Minimum View Count</label>
+            <input type="number" min=0 class="form-control" id="viewCountMin" placeholder="0" name="view_count_min">
           </div>
-      </div>        
-  </div>
-
-<div class="form-row">
-  <div class="form-group col-md-2 col-lg-2">
-    <label for="viewCountMin">Minimum View Count</label>
-    <input type="number" min=0 class="form-control" id="viewCountMin" placeholder="0" name="view_count_min">
-  </div>
-  <div class="form-group col-md-2 col-lg-2">
-    <label for="viewCountMax">Maximum View Count</label>
-    <input type="number" min=0 class="form-control" id="viewCountMax" placeholder="10000?" name="view_count_max">
-  </div>
-  <div class="form-group col-md-2 col-lg-2">
-    <label for="publishDateMin">Publish date minimum</label>
-    <input type="date" class="form-control" id="publishDateMin" name="date_min">
-  </div>
-  <div class="form-group col-md-2 col-lg-2">
-    <label for="publishDateMax">Publish date maximum</label>
-    <input type="date" class="form-control" id="publishDateMax" name="date_max">
-  </div>
-  <div class="form-group col-md-4">
-    <label for="category">Worlks category selector</label>
-    <select id="category" class="form-control" name="category">
-      <option selected>Choose...</option>
-      {% comment %} {% for cat in categories %}
-      <option value="{{ cat }}">{{ cat }}</option>
-      {% endfor %} {% endcomment %}
-    </select>
-  </div>
-</div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="bestseller" name="bestseller">
-      <label class="form-check-label" for="bestseller">
-        bestseller          
-      </label>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="notbestseller" name="notbestseller">
-      <label class="form-check-label" for="notbestseller">
-        Not a Bestseller
-      </label>
-    </div>
-  </div>
-    <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="longbook" name="longbook">
-      <label class="form-check-label" for="longbook">
-        Lonk book
-      </label>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="isshortbook" name="isshortbook">
-      <label class="form-check-label" for="isshortbook">
-        Shortbook
-      </label>
-    </div>
-  </div>
-    <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="worldwide_appreciated" name="worldwide_appreciated">
-      <label class="form-check-label" for="worldwide_appreciated">
-        Worldwide known
-      </label>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="underground_appreciation" name="underground_appreciation">
-      <label class="form-check-label" for="underground_appreciation">
-        Underground known
-      </label>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Search book</button>
-</form>
-
-<hr />
-
-<div class="row wow fadeIn">
-
-          {% for item in queryset %}
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4">
-
-            <!--Card-->
-            <div class="card">
-
-              <!--Card image-->
-              <div class="view overlay">
-                <img class="card-img-top h-20 " src="{{ item.cover.url }}" alt=""> 
-                <a href="{{ item.get_absolute_url }}">
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              <!--Card image-->
-
-              <!--Card content-->
-              <div class="card-body text-center">
-                <!--Category & Title-->
-                <a href="" class="grey-text">
-                  <h5>{{ item.get_category_display }}</h5>
-                  {{ item.author }}
-                  
-                </a>
-                <h5>
-                  <strong>
-                    <a href="{{ item.get_absolute_url }}" class="dark-grey-text">{{ item.title }}
-                      <span class="badge badge-pill {{ item.get_sticker_display }}-color">NEW</span>
-                    </a>
-                  </strong>
-                </h5>
-
-                <h4 class="font-weight-bold blue-text">                
-                
-                <strong>€ {% if item.discount_price %}
-                {{ item.discount_price }}
-                {% else %}
-                {{ item.price }}
-                
-                {% endif %}</strong>
-                </h4>
-
-              </div>
-              <!--Card content-->
-
+          <div class="form-group col-md-2 col-lg-2">
+            <label for="viewCountMax">Maximum View Count</label>
+            <input type="number" min=0 class="form-control" id="viewCountMax" placeholder="10000?" name="view_count_max">
+          </div>
+          <!-- search by publication date -->
+          <div class="form-group col-md-2 col-lg-2">
+            <label for="publishDateMin">Publish date minimum</label>
+            <input type="date" class="form-control" id="publishDateMin" name="date_min">
+          </div>
+          <div class="form-group col-md-2 col-lg-2">
+            <label for="publishDateMax">Publish date maximum</label>
+            <input type="date" class="form-control" id="publishDateMax" name="date_max">
+          </div>
+          <!-- search by Category -->
+          <div class="form-group col-md-4">
+            <label for="category">Worlks category selector</label>
+            <select id="category" class="form-control" name="category">
+              <option selected>Choose...</option>
+            </select>
             </div>
-            <!--Card-->
-
           </div>
-        {% endfor %}  
-          <!--Grid column-->
-
-          
-
+          <!-- search by sales clasification -->
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="bestseller" name="bestseller">
+                <label class="form-check-label" for="bestseller">
+                  bestseller          
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="notbestseller" name="notbestseller">
+                <label class="form-check-label" for="notbestseller">
+                  Not a Bestseller
+                </label>
+              </div>
+            </div>
+            <!-- search by number of pages of the book -->
+              <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="longbook" name="longbook">
+                <label class="form-check-label" for="longbook">
+                  Lonk book
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="isshortbook" name="isshortbook">
+                <label class="form-check-label" for="isshortbook">
+                  Shortbook
+                </label>
+              </div>
+            </div>
+            <!-- search by appreciation -->
+              <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="worldwide_appreciated" name="worldwide_appreciated">
+                <label class="form-check-label" for="worldwide_appreciated">
+                  Worldwide known
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="underground_appreciation" name="underground_appreciation">
+                <label class="form-check-label" for="underground_appreciation">
+                  Underground known
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Search book</button>
+          </form>
+        <hr />
+      <div class="row wow fadeIn">
+      <!-- search results -->
+      {% for item in queryset %}
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <div class="view overlay">
+            <!--Image book-->
+              <img class="card-img-top h-20 " src="{{ item.cover.url }}" alt=""> 
+              <a href="{{ item.get_absolute_url }}">
+              <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+            <div class="card-body text-center">
+              <!--Category & Title-->
+              <a href="" class="grey-text">
+                <h5>{{ item.get_category_display }}</h5>
+                {{ item.author }}
+              </a>
+              <h5>
+              <!--labels for the book-->
+                <strong>
+                  <a href="{{ item.get_absolute_url }}" class="dark-grey-text">{{ item.title }}
+                    <span class="badge badge-pill {{ item.get_sticker_display }}-color">NEW</span>
+                  </a>
+                </strong>
+              </h5>
+              <h4 class="font-weight-bold blue-text">                
+                <strong>
+                  {% if item.discount_price %} 
+                  {{ item.discount_price }}€ 
+                  {% else %}
+                  {{ item.price }}€ 
+                  {% endif %}
+                </strong>
+              </h4>
+            </div>
+          </div>
         </div>
-
-
-</main><!-- /.container -->
-{% comment %} <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  {% endcomment %}
-</html>
-
+      {% endfor %}  
+    </div>
+  </main>
 {% endblock %}

@@ -5,6 +5,8 @@ from book.models import Book
 
 # Create your views here.
 
+# helper method for search function
+
 def is_valid_queryparam(param):
     return param != '' and param is not None
 

@@ -6,7 +6,7 @@ from django import forms
 class ContactForm(forms.Form):
   name = forms.CharField()
   email = forms.EmailField(label='E-Mail')
-  category = forms.ChoiceField(choices=[('question', 'Question'), ('other', 'Other')])
+  category = forms.ChoiceField(choices=[('question', 'Question'), ('other', 'Other'), ('feedback', 'Feedback'), ('information', 'Information'), ('returns & complains', 'Returns & Complains'), ('cashback', 'Cashback') ])
   subject = forms.CharField(required=False)
   body = forms.CharField(widget=forms.Textarea)
   
@@ -22,5 +22,4 @@ class ContactForm(forms.Form):
       'category',
       'body',
       Submit('submit', 'Submit', css_class='btn-succes')
-      
     )
