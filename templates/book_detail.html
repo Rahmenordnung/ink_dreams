@@ -17,9 +17,10 @@
             <hr>
             <a href="">
               <span class="badge purple mr-1">{{ object.get_category_display }}</span>
+              
               <span class="badge badge-pill {{ object.get_sticker_display }}-color">{{ object.slug }}</span>
             </a>
-          </div>
+            
           <!--Book price and discount prices-->
             <p class="lead">
               {% if object.discount_price %}
@@ -38,6 +39,8 @@
         <!--Book author-->
           <div class="col-md-6 mb-4 text-center">
             <span class="mb-3 ">{{ object.work_author }} </span>
+            <span class="badge purple mr-1">{{ object.publish_date }}</span>
+            
           </div>
           <!--buttons add/remove-->  
           <a href="{{ object.get_add_book_to_cart_url }}" class="btn btn-primary btn-md my-0 p">Add to cart

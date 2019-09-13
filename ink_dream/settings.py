@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'book',
     'search',
     'contact',
+    'profiles',
 ]
 
 MIDDLEWARE = [
