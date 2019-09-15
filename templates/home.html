@@ -148,7 +148,7 @@
           <ul class="navbar-nav mr-auto">
              {% for category in object_list.0.get_choices %}
          <li class="nav-item">
-           <a class="nav-link" href="{{ category }}">Category
+           <a class="nav-link" href="{{ category.0 }}">{{ category.1 }}
                 <span class="sr-only">(current)</span>
               </a> 
            {% comment %} <a class="nav-link nav-filter" href="{% url 'filter_by_tags' category=category %}">{{ category }}</a> {% endcomment %}

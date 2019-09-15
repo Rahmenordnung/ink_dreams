@@ -1,0 +1,1 @@
+web: gunicorn ink_dream.wsgi

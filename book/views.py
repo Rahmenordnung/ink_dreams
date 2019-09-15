@@ -8,6 +8,7 @@ from django.views.generic import ListView, DetailView, View
 from .models import Book, OrderItem, Order, SaveCustomerAddress, Payment
 from .forms import CheckoutForm
 from django.utils import timezone
+from django.db.models import Q
 
 #Stripe Apy import
 
@@ -115,10 +116,20 @@ def remove_one_book_from_cart(request, slug):
 # Book list method for loading all products(books) for the search filters in the search app 
  
 def products(request):
+    print(request)
     context = {
-        'items': Book.objects.all()
+        # 'items': Book.objects.all()
+        'items': Book.objects.filter(Q(category__in='category')).order_by('title')
     }
     return render(request, "book_detail.html", context)
+
+
+
+  #     """Filter products by category 'dresses'"""
+#     item_list = Item.objects.filter(Q(category__icontains='dresses')).order_by('title')
+  
+   
+#     return render(request, 'shoppingcart/home.html', context)
 
  # Check out product(book)
 
@@ -275,8 +286,9 @@ class HomeView(ListView):
     paginate_by = 10
     template_name = "home.html"
     
-# Book list method for loading all products    
-    
+    def get_queryset(self):
+        return Book.objects.all()
+        
 class OrderFinalView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
         try:
@@ -293,10 +305,5 @@ class OrderFinalView(LoginRequiredMixin, View):
 
 
 
-# def filter_by_dresses(request):
-#     """Filter products by category 'dresses'"""
-#     item_list = Item.objects.filter(Q(category__icontains='dresses')).order_by('title')
-  
-   
-#     return render(request, 'shoppingcart/home.html', context)
+# 
 
