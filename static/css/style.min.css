@@ -1,7 +1,7 @@
 .view,
 body,
 html {
-    height: 45vh;
+    height: 100%
 }
 
 .carousel {

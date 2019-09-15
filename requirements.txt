@@ -1,13 +1,15 @@
 certifi==2019.6.16
 chardet==3.0.4
 defusedxml==0.6.0
+dj-database-url==0.5.0
 Django==2.2.4
 django-allauth==0.39.1
 django-countries==5.4
 django-crispy-forms==1.7.2
 idna==2.8
 oauthlib==3.1.0
-Pillow==6.0.0
+Pillow==6.1.0
+psycopg2==2.8.3
 python3-openid==3.1.0
 pytz==2019.2
 requests==2.22.0

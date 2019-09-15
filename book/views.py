@@ -124,7 +124,7 @@ def products(request):
 
 #  Get method :parsing the book as objects from the Book model through a context and rendering it in a check out Form, and if doesn´t exist giving an error
 
-class CheckoutView(View):
+class CheckoutView(LoginRequiredMixin,View):
     def get(self, *args, **kwargs):
         #form
         try:
@@ -200,6 +200,7 @@ class PaymentView(View):
         amount = int(order.get_total() * 100)
 
         try:
+            
             charge = stripe.Charge.create(
                 amount=amount,  # eurocents
                 currency="eur",
@@ -289,4 +290,13 @@ class OrderFinalView(LoginRequiredMixin, View):
             return redirect("/")
     
 # Book list method for loading all products
+
+
+
+# def filter_by_dresses(request):
+#     """Filter products by category 'dresses'"""
+#     item_list = Item.objects.filter(Q(category__icontains='dresses')).order_by('title')
+  
+   
+#     return render(request, 'shoppingcart/home.html', context)
 

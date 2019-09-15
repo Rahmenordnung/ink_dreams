@@ -2,7 +2,6 @@ from django.db.models import Q
 from django.shortcuts import render
 from book.models import Book
 
-
 # Create your views here.
 
 # helper method for search function
@@ -13,7 +12,7 @@ def is_valid_queryparam(param):
 def SearchFilters_BookView(request):
       qs = Book.objects.all()
       title_contains_query = request.GET.get('title_contains')
-      work_price_query = request.GET.get('work_price')
+      title_or_work_price_query = request.GET.get('title_or_work_price_query')
       title_or_author_query = request.GET.get('author_or_title')
       view_count_min = request.GET.get('view_count_min')
       view_count_max = request.GET.get('view_count_max')
@@ -29,12 +28,16 @@ def SearchFilters_BookView(request):
       if is_valid_queryparam(title_contains_query):
             qs = qs.filter(title__icontains=title_contains_query)
             
-      elif is_valid_queryparam(work_price_query):
-            qs = qs.filter(price__iexact=work_price_query)      
+      # elif is_valid_queryparam(work_price_query):
+      #       qs = qs.filter(price__iexact=work_price_query)
+      elif is_valid_queryparam(title_or_work_price_query):
+            qs = qs.filter(Q(title__icontains=title_or_work_price_query)
+                        | Q(price__iexact=title_or_work_price_query)
+                        ).distinct()            
       
       elif is_valid_queryparam(title_or_author_query):
             qs = qs.filter(Q(title__icontains=title_or_author_query)
-                        | Q(author__name__icontains=title_or_author_query)
+                        | Q(work_author__icontains=title_or_author_query)
                         ).distinct()
       if is_valid_queryparam(view_count_min):
             qs = qs.filter(views__gte=view_count_min)

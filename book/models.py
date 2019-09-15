@@ -56,6 +56,12 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_choices(self):
+        category_choices = []
+        for category in GENGRE_ELECTION:
+            category_choices.append(category[1])
+        return category_choices
       
     def get_absolute_url(self):
         return reverse("book:book_detail", kwargs={'slug': self.slug})

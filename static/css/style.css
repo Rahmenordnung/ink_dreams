@@ -1,38 +1,75 @@
-    /* Required height of parents of the Half Page Carousel for proper displaying carousel itself */
-    
-    html,
-    body,
-    .view {
-        height: 100%;
-    }
-    /* Half Page Carousel itself*/
-    
+/* Image cards display */
+
+.view overlay {
+    max-height: 20px;
+}
+
+.view {
+    background-image: url('https://images2.minutemediacdn.com/image/upload/c_crop,h_1890,w_3363,x_0,y_193/f_auto,q_auto,w_1100/v1565628997/shape/mentalfloss/gettyimages-944631208.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#second_view {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLUTHjl0ytJaHy-rByoVDtvpYypfFbTVUsfSXMZhUEOAtXRDuD');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.third_view {
+    background-image: url('https://epsagon.com/wp-content/uploads/2018/08/eduardo-olszewski-472707-unsplash-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+html,
+body,
+.view {
+    height: 100%;
+}
+
+
+/* Half Page Carousel itself*/
+
+.carousel {
+    height: 50%;
+}
+
+.carousel .carousel-inner {
+    height: 100%;
+}
+
+.carousel .carousel-inner .carousel-item,
+.carousel .carousel-inner .active {
+    height: 100%;
+}
+
+
+/* Adjustment for mobile devices*/
+
+@media (max-width: 776px) {
     .carousel {
-        height: 50%;
-    }
-    
-    .carousel .carousel-inner {
         height: 100%;
     }
-    
-    .carousel .carousel-inner .carousel-item,
-    .carousel .carousel-inner .active {
-        height: 100%;
+    .card-img-top {
+        height: 30vh;
     }
-    /* Adjustment for mobile devices*/
-    
-    @media (max-width: 776px) {
-        .carousel {
-            height: 100%;
-        }
-    }
-    /* Footer color for sake of consistency with Navbar */
-    
-    .page-footer {
-        background-color: #929FBA;
-    }
-    /* IMage cards display */
-    
-    .view overlay {
-        max-height: 20px;
-    }
+}
+
+
+/* Footer color for sake of consistency with Navbar */
+
+.page-footer {
+    background-color: #003366;
+}
+
+
+/* Card dimension */
+
+.card-img-top {
+    height: 40vh;
+}
+
+main {
+    min-height: 142%;
+}

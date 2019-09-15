@@ -1,22 +1,17 @@
 {% load trolley_template_tags %}
-
 <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
     <div class="container">
-
       <!-- Brand -->
       <a class="navbar-brand waves-effect" href="/">
-        <strong class="blue-text">DJe-commerce</strong>
+        <strong class="blue-text">Ink Dream</strong>
       </a>
-
       <!-- Collapse -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <!-- Links -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
@@ -32,10 +27,8 @@
           <li class="nav-item">      
       <a class="nav-link waves-effect" href='/contact/ContactFormView/' target="_blank"><i class=" fas fa-file-signature" aria-hidden="true"></i> Contact us </a>
           </li>
-    
         </ul>
-
-               <!-- Right -->
+          <!-- Right -->
         <ul class="navbar-nav nav-flex-icons">
           {% if request.user.is_authenticated %}
           <li class="nav-item">
