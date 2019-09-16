@@ -27,9 +27,6 @@ def SearchFilters_BookView(request):
       
       if is_valid_queryparam(title_contains_query):
             qs = qs.filter(title__icontains=title_contains_query)
-            
-      # elif is_valid_queryparam(work_price_query):
-      #       qs = qs.filter(price__iexact=work_price_query)
       elif is_valid_queryparam(title_or_work_price_query):
             qs = qs.filter(Q(title__icontains=title_or_work_price_query)
                         | Q(price__iexact=title_or_work_price_query)

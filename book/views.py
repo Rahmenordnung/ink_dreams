@@ -15,11 +15,37 @@ from django.db.models import Q
 import stripe
 stripe.api_key = settings.STRIPE_SECRET
 
+
 # Book list class view that loading all products(books)
+
+class HomeView(ListView):
+    model = Book
+    paginate_by = 10
+    template_name = "home.html"
+    
+    def get_queryset(self):
+        return Book.objects.all()
+    
+def category_filter_selector(request, cat):
+    items = Book.objects.filter(Q(category__in=cat)).order_by('title')
+    context = {
+        'items': items
+    }
+    return render (request, 'home.html', context )
+
+# Book list class view that loading all details of the products(books)
 
 class BookDetailView(DetailView): 
     model = Book
     template_name = "book_detail.html"
+    
+def products(request):
+    print(request)
+    context = {
+        'items': Book.objects.all()
+    
+    }
+    return render(request, "book_detail.html", context)    
     
 # Add to cart method, checks if the object exists in the context or it creates it extracting it from the model, it filters it, and it saves the quantity added (one by one), or gives an error     
     
@@ -110,30 +136,6 @@ def remove_one_book_from_cart(request, slug):
     else:
         messages.info(request, "You do not have an active order")
         return redirect("book:book_detail", slug=slug)           
-                
-
-
-# Book list method for loading all products(books) for the search filters in the search app 
- 
-def products(request):
-    print(request)
-    context = {
-        # 'items': Book.objects.all()
-        'items': Book.objects.filter(Q(category__in='category')).order_by('title')
-    }
-    return render(request, "book_detail.html", context)
-
-
-
-  #     """Filter products by category 'dresses'"""
-#     item_list = Item.objects.filter(Q(category__icontains='dresses')).order_by('title')
-  
-   
-#     return render(request, 'shoppingcart/home.html', context)
-
- # Check out product(book)
-
-#  Get method :parsing the book as objects from the Book model through a context and rendering it in a check out Form, and if doesn´t exist giving an error
 
 class CheckoutView(LoginRequiredMixin,View):
     def get(self, *args, **kwargs):
@@ -281,13 +283,7 @@ class PaymentView(View):
 
 # Book list method for loading all products
 
-class HomeView(ListView):
-    model = Book
-    paginate_by = 10
-    template_name = "home.html"
-    
-    def get_queryset(self):
-        return Book.objects.all()
+
         
 class OrderFinalView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):

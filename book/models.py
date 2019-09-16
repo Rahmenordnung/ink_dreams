@@ -7,7 +7,7 @@ from django_countries.fields import CountryField
 
 GENGRE_ELECTION  = (
   ('FT','Fairy Tale'),
-  ('BA','Biography/Autobiography'),
+  ('BA','Biography-Autobiography'),
   ('CL','Classic'),
   ('RO','Romance'),
   ('AA','Action and Adventure'),
@@ -15,7 +15,7 @@ GENGRE_ELECTION  = (
   ('CN','Comic and Graphic Novel'),
   ('HI','Historical Fiction'),
   ('MY','Mythology'),
-  ('ST','Suspense/Thriller'),
+  ('ST','Suspense-Thriller'),
   ('SF','Science Fiction'),
   ('F','Fantasy'),
   ('P','Poetry'),
@@ -25,13 +25,12 @@ GENGRE_ELECTION  = (
 
 STICKER_CHOICES = (
   ('P','primary'),
-  ('S','secondary'),
+  ('Se','secondary'),
   ('S','success'),
   ('D','danger'),
-  ('W','warning'),
   ('I','info'),
-  ('L','light'),
-  ('D','dark')
+  ('W','warning'),
+  ('DE','default')
 )
     
 class Book(models.Model):
@@ -60,7 +59,7 @@ class Book(models.Model):
     def get_choices(self):
         category_choices = []
         for category in GENGRE_ELECTION:
-            category_choices.append(category)
+            category_choices.append(category[1])
         print('----------')
         print(category_choices)
         print('----------')

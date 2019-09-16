@@ -144,29 +144,18 @@
         <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="basicExampleNav">
 
-        <form method="get">
-          <ul class="navbar-nav mr-auto">
+         <form method="get">
+           <ul class="navbar-nav mr-auto">
              {% for category in object_list.0.get_choices %}
          <li class="nav-item">
-           <a class="nav-link" href="{{ category.0 }}">{{ category.1 }}
+           <a class="nav-link" href='{% url 'book:category_filter' cat=category %}'>{{ category }}
                 <span class="sr-only">(current)</span>
               </a> 
-           {% comment %} <a class="nav-link nav-filter" href="{% url 'filter_by_tags' category=category %}">{{ category }}</a> {% endcomment %}
-         </li>
-       
+         </li> 
+            
+            {% endfor %}  
 
-            {% comment %} <li class="nav-item">
-              <a class="nav-link" href="{{ category }}">Shirts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ category }}">Sport wears</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ category }}">Outwears</a>
-            </li> {% endcomment %}
-            {% endfor %}
-
-          </ul>
+          </ul> 
           <!-- Links -->
 
            <a class='btn btn-primary float-right' href='search/SearchFilters_BookView/'><i class="far fa-hand-point-right" aria-hidden="true"></i>advanced searching</a>
@@ -229,16 +218,19 @@
                 
                 
                 </h4>
-              <div class="card-footer text-muted text-center mt-4">
+              <h3><div class="card-footer text-muted text-center mt-4">
                 <strong> 
                 {% if item.discount_price %}
-              <h6 class="font-weight-bold blue-text"><del>{{ item.price }} €</del>
-              <span><u>{{ item.discount_price }} €</u></span></h6>
+              <h6 class=" badge badge-light font-weight-bold blue-text">
+              <span class="badge badge-danger">
+              <del>{{ item.price }} €</del>
+              </span>
+              <span class="badge badge-success"><u>{{ item.discount_price }} €</u></span></h6>
               {% else %}
-              <span>{{ item.price }} €</span>
+              <span class="badge badge-success">{{ item.price }} €</span>
               {% endif %}
                 </strong>
-              </div>  
+              </div></h3>  
 
               </div>
               <!--Card content-->

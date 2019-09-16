@@ -7,13 +7,16 @@ from .views import (BookDetailView,
     remove_book_from_cart,
     remove_one_book_from_cart,
     OrderFinalView,
-    PaymentView
+    PaymentView,
+    category_filter_selector
+    
 )
 
 app_name = 'book'
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
+    path('category_filter/<cat>/', category_filter_selector, name='category_filter'),
     path('checkout/', CheckoutView.as_view(), name='checkout'),
     path('order_final_view/', OrderFinalView.as_view(), name='order_final_view'),
     path('book_detail/<slug>/', BookDetailView.as_view(), name='book_detail'),
@@ -21,5 +24,4 @@ urlpatterns = [
     path('remove_book_from_cart/<slug>/', remove_book_from_cart, name='remove_book_from_cart'),
     path('remove_one_book_from_cart/<slug>/', remove_one_book_from_cart, name='remove_one_book_from_cart'),
     path('payment/<payment_option>/', PaymentView.as_view(), name='payment'),
-    
 ]
