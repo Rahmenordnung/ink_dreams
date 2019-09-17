@@ -244,7 +244,9 @@ __Footer__ It contains anchors, social media, dataset, main page that takes the 
 
 This project is deployed on heroku: https://django-ecommerce-milestone.herokuapp.com/
 
-#### <a name="Deployment_local"></a>Local Deployment
+---
+
+### <a name="Deployment_local"></a>Local Deployment
 
 In order to run this project __locally__ on your own system, you need following:
 
@@ -269,7 +271,7 @@ It's highly recommended to work in a virtual environment, but not absolutely req
 
 ---
 
-#### <a name="Live_Deployment"></a>Live Deploymentt  ####
+### <a name="Live_Deployment"></a>Live Deploymentt  ####
 
 Heroku is a cloud application platform, it is basically a Platform-as-a-Service (PaaS). They support several programming languages, including Python. It is very easy to deploy Django applications on Heroku. They also offer a free plan, which is quite limited, but it is great to get started and to host demos of Django applications. 
 
