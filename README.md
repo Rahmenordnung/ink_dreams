@@ -44,7 +44,7 @@ Contact us via contact page
   * [Ux Testing](#Ux_Testing)
 * [Dataset](#Dataset)
 * [Media](#Media)
-* [Deployment](#Deployment (locally)
+* [Deployment](#Deployment_local)
   * [Live Deployment](#Live_Deployment)
 * [The DOM](#The_DOM)
 * [Challenges](#Challenges)
@@ -265,9 +265,9 @@ It's highly recommended to work in a virtual environment, but not absolutely req
 
 
 
-#### <a name="Developer_environment"></a> Developer environment  #### Live Deployment
+#### <a name="Live_environment"></a> Developer environment  #### Live Deployment
 
-#### <a name="Live Deployment"></a> Live Deploymentt  ####
+#### <a name="Live_Deployment"></a>Live Deploymentt  ####
 
 As for the external use of the program, the user should download first the Toys shop data base.csv file.
 and upload then the above mentionated libraries, after that ,load the bootstap file and the dc.css as well as jquery so that the program should deploy as expected. 
