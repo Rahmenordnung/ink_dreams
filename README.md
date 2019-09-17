@@ -209,10 +209,7 @@ The full page is responsive in small, medium, and big devices. The charts are fu
 
 The __Stripe__ payment function has been verified with a test card and all transactions show up on the Stripe dashboard.
 
-![Alt text](static/images/test images/Dashboard – Unnamed account – Stripe [Test] - Google Chrome 9_17_2019 1_06_14 PM.png?raw=true "Title")
-
 [Stripe test](https://github.com/Rahmenordnung/ink_dreams/tree/master/static/images/test_images)
-![alt text](https://github.com/Rahmenordnung/ink_dreams/tree/master/static/images/test_images)
 
 #### <a name="Code_Testing"></a> Code Testing  ####
 The HTML was validated using the HTML Validator.
