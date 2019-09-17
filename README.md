@@ -45,7 +45,8 @@ Contact us via contact page
 * [Dataset](#Dataset)
 * [Media](#Media)
 * [Deployment](#Deployment)
-  * [Local Deployment](#Local_Deployment)
+  * [Deployment_local](#Deployment_local)
+  * [Live Deployment](#Live_Deployment)
 * [The DOM](#The_DOM)
 * [Challenges](#Challenges)
 * [Bugs](#Bugs)
@@ -54,7 +55,7 @@ Contact us via contact page
 
 #### <a name="Name"></a>Name :
 
-Today in our days the books are not any more only wrote in paper but also digitally. Everything is changing, and it always has been like that. A tempestuous change through the ways of understanding a how the content of a message is transmited to us. Before we use to carve in stones, and now it feels like we don´t need anymore to write with our pens and hands, now we can just talk and that will be wrote. In anyway things will change, the old fashion way of doing things still will permeate our lives for a while. Until the books will disaprear they will contain ink, and this ink brings us dreams and make us dream further and that is why I chose as title for my work __Ink dreams__. 
+Today in our days the books are not any more only wrote in paper but also digitally. Everything is changing, and it never have been so manz changes in our lives. A tempestuous change through the ways of understanding a how the content of a message is transmited to us. Before we use to carve in stones, and now it feels like we don´t need anymore to write with our pens and hands, now we can just talk and that will be wrote. In anyway things will change the old fashion way of doing things still will permeate our lives for a while. Until the books will disapear they will contain ink, and this ink brings us dreams and make us dream further and that is why I chose as title for my work __Ink dreams__. 
  
  A link of the working project can be found [here](https://rahmenordnung.github.io/toy_storie_shop/)
 
@@ -71,7 +72,8 @@ Reading means thinking with the alien brain instead of doing it with one's own. 
 
 .....
 
--The milestone proyect theme would be to have a look at the page and check as a user, an author, etc through a vast pallet of books, discovered them and let yourself onboard in new dreams and thoughts, by purchasing them.
+-The user, book lover or not can open the page and look for a product, searching filtering through them, finding what he wants, add it to a preliminatry chechout page, modify the amount, maybe delete the a item from the list, and purchase the product.
+The user can easely go back from any page of the site back to the home page
 -The custumer would be able also to contact and send us his thoughts and queries through a contact form.
 -Any person can use the page and look around and serach easely with the help of pagination and search function through our book selection. If he doesn´t want to buy the product he can just chek the simple description and investigate perhaps about it. 
 
@@ -93,11 +95,9 @@ In the constuction of the project I have used the libraries donated by the Code 
 
 -- __Navbar__: Allows all users to easily navigate to the different sections of the website and interpretate the theme which relates them, regardless of which page they are currently on, simply by clicking the name of the area they wish to visit in the navbar(some of the areas will be limitted by a _@register required_ decorator). Also contain an logo that redirect to the home page.
 
--- __Full screen book list in card display__: Each book ispresented with image category author and price(and discount price if existing) in square formed cart. Each cart links to the detailed view of the book.
+-- __Full screen book list in card display__: Each book is presented with hooverable image category author and price(and discount price if existing) in square formed cart. Each cart links to the detailed view of the book.
 
--- __Search bar/advanced search__: There is a _search bar_ in the home page that search by book title and an _advanced search_ page that leads the customer to a special page where one can specify more paramaeters by which one can search a book, ex production day, author, etc.
-
--- __Footer__: At the bootom of the page, this footer connect the user with the social media links, and presents the copyright. It also has a link to the contact form.
+-- __Search bar/advanced search__: There is a _search bar_ in the home page that search by book title and an _advanced search_ page that leads the customer to a special page where one can specify more parameters by which one can search a book, ex production day, author, price etc.
 
 -- __Footer__: Informs the user that the site is hosted by Github Pages, and provides us a link to where they can view the source code on Github, and also a link to the dataset in a elegant dark green color.
 
@@ -116,9 +116,14 @@ Here one can increse, diminish the product quantity, remove fully the book from 
 
 --__Checkout form (2)__: Here one will be able to process to payment with stripe, see the total of the products to be brought. After introducing the credit card number just click the submit payment.
 
+--__Messages__: After each action that involves a interaction with the database and the server there are messages implemented that improve the UX, and make easier the understanding of the processes carried out in the background.
+
+--__Profile__ The user profile page is a simple list specific for each user that has a an account in our site. Is ment to display a resumee with detail of each transaction carried out by the user.
+
+------------------------__Category filter selector__ it displays all the categories/genres by which the books are separated. Each book has a genre assigned, and therefor a user can identify better a group of books related by the genre. The category display works filtered by genre by clicking on each of them.
+
 --__Votes__--------------------------------------------------------------to do votes ???
 
---__Profile__------------------------------------------to do profile with sale list  ???
 
 #### <a name="Coding_languages"></a>Current Features ##
 
@@ -130,13 +135,13 @@ Here one can increse, diminish the product quantity, remove fully the book from 
 
 -- [CSS3](http://www.css3.info/) is a style sheet language used for describing the presentation of a document written in a markup language like HTML.Used to style the html templates
 
-------------- [Javascript](https://www.javascript.com/) is a high-level, interpreted programming language that conforms to the ECMAScript specification. Used mostly with [Stripe](https://dashboard.stripe.com/) to deal withe payment- 
+-- [Javascript](https://www.javascript.com/) is a high-level, interpreted programming language that conforms to the ECMAScript specification. Used mostly with [Stripe](https://dashboard.stripe.com/) to deal withe payment- 
  
--- [MDBootstap](https://mdbootstrap.com/) is a framework created by Mozilla used to help you design websites faster and easier.
-
 -- [jquery.js](https://jquery.com/) is a library of Java scripts that simplifies lots of its functions, the main differance with javascriptis that it performs many common scripting functions in fewer lines of codes. I have used the jquery present for the [MDB](https://mdbootstrap.com/) templates
 
 -- [Font-awesome](https://fontawesome.com/) Font Awesome is a web font containing all the icons from the Twitter Bootstrap framework, and now many more. With it one can add usefull icons that improves the UX.
+
+-- [MDBootstap](https://mdbootstrap.com/) is a framework created by Mozilla used to help you design websites faster and easier.
 
 #### <a name="Packages"></a> Packages ##
 
@@ -164,13 +169,13 @@ We use EmailJS to link up the modal contact form to an actual e-mail address---
 
 ## <a name="Features left to implement"></a>Features_left_to_implement ##
 
-* First of all I like a lot the graphical distributions in general. So one of the thing that I would like to do is to implement more types of Charts, but for that I have to learn more abot javascript.
+* I think this last milestone represents the reallity of the web pages in our days, because it accomplish, even in basic way the most functionality of a real page on the web. I would like to make the page as complete as possible making all the functionallity work like they would work for a real customer.
 
-* I would like also to connect maybe more datasets and work with them
+* I would like to implement a the translator package in order be able to present the page in multiple languages, without needing to recur to google translator. I think the translator package would be improving the page for user who don´t speek english or look for books in other langage that english
 
-* Also is my intention to maybe work with geographical data in which I am interested.
+* In the future atting some votes to the page would make the interaction with the customer stronger. Also a comments page won´t be bad.
 
-* Also it would be nice also to make maybe graphics more complicated with more variables connected.
+* I would also like to present a ranking with the best books in the main page.
 
 ---
 ## <a name="Dataset"></a>Dataset
@@ -202,6 +207,12 @@ etc
 
 The full page is responsive in small, medium, and big devices. The charts are fully responsive thanks to the __.useViewBoxResizing(true)__ property added in all the charts. Also I create this responsivness with help of the bootrap cards and classes used in their grid system. The selector bar, navbar and footer I edited myself and created some media queries with css help as I learned in previous modules.
 
+The __Stripe__ payment function has been verified with a test card and all transactions show up on the Stripe dashboard.
+
+![Alt text](static/images/test images/Dashboard – Unnamed account – Stripe [Test] - Google Chrome 9_17_2019 1_06_14 PM.png?raw=true "Title")
+
+![alt text](https://github.com/Rahmenordnung/project-M/blob/master/assets/images/extract_page.png)
+
 #### <a name="Code_Testing"></a> Code Testing  ####
 The HTML was validated using the HTML Validator.
 
@@ -231,11 +242,11 @@ __Reset button__ When clicked it resets the charts filtering selection.
 
 __Footer__ It contains anchors, social media, dataset, main page that takes the User to the desired links.
 
-## <a name="Deployment"></a> Deployment  #### 
+## <a name="Deployment"></a>Deployment #### 
 
 This project is deployed on heroku: https://django-ecommerce-milestone.herokuapp.com/
 
-#### <a name="Local_Deployment"></a>Local Deployment
+#### <a name="Deployment_local"></a>Local Deployment
 
 In order to run this project __locally__ on your own system, you need following:
 
@@ -245,8 +256,7 @@ It's highly recommended to work in a virtual environment, but not absolutely req
 * PIP to install all requirements wit `pip install -r requirements.txt`
 * GIT(hub) for cloning and version control and to download the repo in zip format
 
-##### Next one should follow this steps in order to make this project work:
----
+##### Next one should follow this steps in order to make this project work(locally):
 
 * Clone the repo with command git clone or donwloand the zip file
 * Unpack the zip file and go to the file location and cd <path to folder>
@@ -259,15 +269,47 @@ It's highly recommended to work in a virtual environment, but not absolutely req
 * Make first steps saving(implementing) the data with: __python manage.py makemigrations__ and __python manage.py migrate__
 * To use Django Admin Panel, you must generate a superuser:__python manage.py createsuperuser__
 
+---
 
+#### <a name="Live_Deployment"></a>Live Deploymentt  ####
 
-#### <a name="Developer_environment"></a> Developer environment  #### 
+Heroku is a cloud application platform, it is basically a Platform-as-a-Service (PaaS). They support several programming languages, including Python. It is very easy to deploy Django applications on Heroku. They also offer a free plan, which is quite limited, but it is great to get started and to host demos of Django applications. 
 
-As for the external use of the program, the user should download first the Toys shop data base.csv file.
-and upload then the above mentionated libraries, after that ,load the bootstap file and the dc.css as well as jquery so that the program should deploy as expected. 
+##### The following section describes the process to deploy this project to Heroku. #####
 
+Add a Procfile in the project root or create a file named Procfile in the project root with the following content:
+```
+web: gunicorn ink_dream.wsgi
+```
+Add __requirements.txt__ file with all the requirements in the project root;
+Ensure all required technologies are installed locally, as per the __requirements.txt__ file.
+If you are using a __virtualenv and pip__ you can simply run:
+```
+pip freeze > requirements.txt
+```
+##### Heroku usefull packages (used solely for Heroku)
 
-------------HEroku----------------
+*Add __Gunicorn__ to requirements.txt;
+Green Unicorn, commonly shortened to "Gunicorn", is a Web Server Gateway Interface (WSGI) server implementation that is commonly used to run Python web applications.
+
+*Configure __whitenoise__ to serve static files. ---------------------With a couple of lines of config WhiteNoise allows your web app to serve its own static files, making it a self-contained unit that can be deployed anywhere without relying on nginx, Amazon S3 or any other external service. (Especially useful on Heroku, OpenShift and other PaaS providers.)-----where????
+
+*__dj-database-url__: This simple Django utility allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application.
+
+After you install the CLI, run the heroku login command. You'll be prompted to enter any key to go to your web browser to complete login.
+*Using the CLI, login to Heroku, using __'heroku login'__ command. Input Heroku login details.
+*Create new Heroku app, using __'heroku apps:create appname'__ command.
+*In Heroku, select resources. Type Postgres and select __Heroku Postgres__ > Hobby - Free. You will use this data base as the live database instead of the default __dqlite3__ provided by any coding program when starting the project in django.
+Creating a new DB will lose all database information stored within the IDE. You will be reqired to re-update this information when the project is hosted via Heroku.
+*Select Settings, Reveal Config Vars. Copy Postgres DB url and paste into env.py.
+Also add all the keys, public or secret or any values present(for Smtp, ex) in the locally hosted env.py in the heroku settings, that will worl as the new livw environment
+*Execute __python manage.py makemigrations__ and __python3 manage.py migrate__, to create a new DB.
+*Execute __python3 manage.py createsuperuser__ and populate as required, to create a new superuser.
+*Update allowed hosts within settings.py with your Heroku host name. Example, ALLOWED_HOSTS = [http://127.0.0.1:8000/, 'mythware.herokuapp.com'].------------------
+*Push project to Heroku, using __'push -u heroku master'__ command.
+In Heroku, select settings, select Domain URL, NOT Git URL to view your hosted application.
+
+*Deployed via Heroku: ink-dream.
 
 ---                                                                                                                                      
 
