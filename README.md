@@ -235,7 +235,7 @@ __Reset button__ When clicked it resets the charts filtering selection.
 
 __Footer__ It contains anchors, social media, dataset, main page that takes the User to the desired links.
 
-## <a name="Deployment"></a> Deployment  #### 
+## <a name="Deployment_local"></a> Deployment_local  #### 
 
 This project is deployed on heroku: https://django-ecommerce-milestone.herokuapp.com/
 
