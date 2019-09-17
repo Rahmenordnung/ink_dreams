@@ -43,8 +43,9 @@ Contact us via contact page
   * [Code Testing](#Code_Testing)
   * [Ux Testing](#Ux_Testing)
 * [Dataset](#Dataset)
-* [Media](#Media)
-* [Deployment](#Deployment_local)
+* [Media](#Media)Deployment
+* [Deployment](#Deployment)
+  * [Deployment_local](#Deployment_local)
   * [Live Deployment](#Live_Deployment)
 * [The DOM](#The_DOM)
 * [Challenges](#Challenges)
@@ -235,7 +236,7 @@ __Reset button__ When clicked it resets the charts filtering selection.
 
 __Footer__ It contains anchors, social media, dataset, main page that takes the User to the desired links.
 
-## <a name="Deployment_local"></a> Deployment_local  #### 
+## <a name="Deployment"></a>Deployment #### 
 
 This project is deployed on heroku: https://django-ecommerce-milestone.herokuapp.com/
 
