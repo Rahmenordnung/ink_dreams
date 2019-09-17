@@ -207,6 +207,10 @@ etc
 
 The full page is responsive in small, medium, and big devices. The charts are fully responsive thanks to the __.useViewBoxResizing(true)__ property added in all the charts. Also I create this responsivness with help of the bootrap cards and classes used in their grid system. The selector bar, navbar and footer I edited myself and created some media queries with css help as I learned in previous modules.
 
+The __Stripe__ payment function has been verified with a test card and all transactions show up on the Stripe dashboard.
+
+![alt text](static/images/test images/Dashboard – Unnamed account – Stripe [Test] - Google Chrome 9_17_2019 1_06_14 PM.png)
+
 #### <a name="Code_Testing"></a> Code Testing  ####
 The HTML was validated using the HTML Validator.
 
@@ -251,7 +255,6 @@ It's highly recommended to work in a virtual environment, but not absolutely req
 * GIT(hub) for cloning and version control and to download the repo in zip format
 
 ##### Next one should follow this steps in order to make this project work(locally):
----
 
 * Clone the repo with command git clone or donwloand the zip file
 * Unpack the zip file and go to the file location and cd <path to folder>
@@ -264,36 +267,47 @@ It's highly recommended to work in a virtual environment, but not absolutely req
 * Make first steps saving(implementing) the data with: __python manage.py makemigrations__ and __python manage.py migrate__
 * To use Django Admin Panel, you must generate a superuser:__python manage.py createsuperuser__
 
-
-
-#### <a name="Live_environment"></a> Developer environment  #### Live Deployment
+---
 
 #### <a name="Live_Deployment"></a>Live Deploymentt  ####
 
-As for the external use of the program, the user should download first the Toys shop data base.csv file.
-and upload then the above mentionated libraries, after that ,load the bootstap file and the dc.css as well as jquery so that the program should deploy as expected. 
+Heroku is a cloud application platform, it is basically a Platform-as-a-Service (PaaS). They support several programming languages, including Python. It is very easy to deploy Django applications on Heroku. They also offer a free plan, which is quite limited, but it is great to get started and to host demos of Django applications. 
 
+##### The following section describes the process to deploy this project to Heroku. #####
 
-The following section describes the process to deploy this project to Heroku.
-
+Add a Procfile in the project root or create a file named Procfile in the project root with the following content:
+```
+web: gunicorn ink_dream.wsgi
+```
+Add __requirements.txt__ file with all the requirements in the project root;
 Ensure all required technologies are installed locally, as per the __requirements.txt__ file.
+If you are using a __virtualenv and pip__ you can simply run:
+```
+pip freeze > requirements.txt
+```
+##### Heroku usefull packages (used solely for Heroku)
+
+*Add __Gunicorn__ to requirements.txt;
+Green Unicorn, commonly shortened to "Gunicorn", is a Web Server Gateway Interface (WSGI) server implementation that is commonly used to run Python web applications.
+
+*Configure __whitenoise__ to serve static files. ---------------------With a couple of lines of config WhiteNoise allows your web app to serve its own static files, making it a self-contained unit that can be deployed anywhere without relying on nginx, Amazon S3 or any other external service. (Especially useful on Heroku, OpenShift and other PaaS providers.)-----where????
+
+*__dj-database-url__: This simple Django utility allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application.
+
 After you install the CLI, run the heroku login command. You'll be prompted to enter any key to go to your web browser to complete login.
-Using the CLI, login to Heroku, using __'heroku login'__ command. Input Heroku login details.
-Create new Heroku app, using __'heroku apps:create appname'__ command.
-In Heroku, select resources. Type Postgres and select __Heroku Postgres__ > Hobby - Free. You will use this data base as the live database instead of the default __dqlite3__ provided by any coding program when starting the project in django.
+*Using the CLI, login to Heroku, using __'heroku login'__ command. Input Heroku login details.
+*Create new Heroku app, using __'heroku apps:create appname'__ command.
+*In Heroku, select resources. Type Postgres and select __Heroku Postgres__ > Hobby - Free. You will use this data base as the live database instead of the default __dqlite3__ provided by any coding program when starting the project in django.
 Creating a new DB will lose all database information stored within the IDE. You will be reqired to re-update this information when the project is hosted via Heroku.
-Select Settings, Reveal Config Vars. Copy Postgres DB url and paste into env.py.
-Execute python manage.py makemigrations and python3 manage.py migrate, to create a new DB.
-Execute python3 manage.py createsuperuser and populate as required, to create a new superuser.
-Update allowed hosts within settings.py with your Heroku host name. Example, ALLOWED_HOSTS = [http://127.0.0.1:8000/, 'mythware.herokuapp.com'].
-Push project to Heroku, using 'push -u heroku master' command.
+*Select Settings, Reveal Config Vars. Copy Postgres DB url and paste into env.py.
+Also add all the keys, public or secret or any values present(for Smtp, ex) in the locally hosted env.py in the heroku settings, that will worl as the new livw environment
+*Execute __python manage.py makemigrations__ and __python3 manage.py migrate__, to create a new DB.
+*Execute __python3 manage.py createsuperuser__ and populate as required, to create a new superuser.
+*Update allowed hosts within settings.py with your Heroku host name. Example, ALLOWED_HOSTS = [http://127.0.0.1:8000/, 'mythware.herokuapp.com'].------------------
+*Push project to Heroku, using __'push -u heroku master'__ command.
 In Heroku, select settings, select Domain URL, NOT Git URL to view your hosted application.
 
-
-######Packages used solely for Heroku
-
-
-Deployed via Heroku: ink-dream.
+*Deployed via Heroku: ink-dream.
 
 ---                                                                                                                                      
 
