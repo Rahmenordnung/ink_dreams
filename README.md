@@ -43,7 +43,7 @@ Contact us via contact page
   * [Code Testing](#Code_Testing)
   * [Ux Testing](#Ux_Testing)
 * [Dataset](#Dataset)
-* [Media](#Media)Deployment
+* [Media](#Media)
 * [Deployment](#Deployment)
   * [Deployment_local](#Deployment_local)
   * [Live Deployment](#Live_Deployment)
@@ -240,7 +240,7 @@ __Footer__ It contains anchors, social media, dataset, main page that takes the 
 
 This project is deployed on heroku: https://django-ecommerce-milestone.herokuapp.com/
 
-#### <a name="Local_Deployment"></a>Local Deployment
+#### <a name="Deployment_local"></a>Local Deployment
 
 In order to run this project __locally__ on your own system, you need following:
 
