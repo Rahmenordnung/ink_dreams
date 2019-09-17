@@ -44,8 +44,8 @@ Contact us via contact page
   * [Ux Testing](#Ux_Testing)
 * [Dataset](#Dataset)
 * [Media](#Media)
-* [Deployment](#Deployment)
-  * [Local Deployment](#Local_Deployment)
+* [Deployment](#Deployment (locally)
+  * [Live Deployment](#Live_Deployment)
 * [The DOM](#The_DOM)
 * [Challenges](#Challenges)
 * [Bugs](#Bugs)
@@ -249,7 +249,7 @@ It's highly recommended to work in a virtual environment, but not absolutely req
 * PIP to install all requirements wit `pip install -r requirements.txt`
 * GIT(hub) for cloning and version control and to download the repo in zip format
 
-##### Next one should follow this steps in order to make this project work:
+##### Next one should follow this steps in order to make this project work(locally):
 ---
 
 * Clone the repo with command git clone or donwloand the zip file
@@ -265,13 +265,34 @@ It's highly recommended to work in a virtual environment, but not absolutely req
 
 
 
-#### <a name="Developer_environment"></a> Developer environment  #### 
+#### <a name="Developer_environment"></a> Developer environment  #### Live Deployment
+
+#### <a name="Live Deployment"></a> Live Deploymentt  ####
 
 As for the external use of the program, the user should download first the Toys shop data base.csv file.
 and upload then the above mentionated libraries, after that ,load the bootstap file and the dc.css as well as jquery so that the program should deploy as expected. 
 
 
-------------HEroku----------------
+The following section describes the process to deploy this project to Heroku.
+
+Ensure all required technologies are installed locally, as per the __requirements.txt__ file.
+After you install the CLI, run the heroku login command. You'll be prompted to enter any key to go to your web browser to complete login.
+Using the CLI, login to Heroku, using __'heroku login'__ command. Input Heroku login details.
+Create new Heroku app, using __'heroku apps:create appname'__ command.
+In Heroku, select resources. Type Postgres and select __Heroku Postgres__ > Hobby - Free. You will use this data base as the live database instead of the default __dqlite3__ provided by any coding program when starting the project in django.
+Creating a new DB will lose all database information stored within the IDE. You will be reqired to re-update this information when the project is hosted via Heroku.
+Select Settings, Reveal Config Vars. Copy Postgres DB url and paste into env.py.
+Execute python manage.py makemigrations and python3 manage.py migrate, to create a new DB.
+Execute python3 manage.py createsuperuser and populate as required, to create a new superuser.
+Update allowed hosts within settings.py with your Heroku host name. Example, ALLOWED_HOSTS = [http://127.0.0.1:8000/, 'mythware.herokuapp.com'].
+Push project to Heroku, using 'push -u heroku master' command.
+In Heroku, select settings, select Domain URL, NOT Git URL to view your hosted application.
+
+
+######Packages used solely for Heroku
+
+
+Deployed via Heroku: ink-dream.
 
 ---                                                                                                                                      
 
