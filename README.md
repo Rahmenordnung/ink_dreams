@@ -317,22 +317,25 @@ In Heroku, select settings, select Domain URL, NOT Git URL to view your hosted a
 * Deployed via Heroku: ink-dream.
 
 ---                                                                                                                                      
-
 ## <a name="Challenges"></a> Challenges  ## 
 
-For me was something really exciting to work with data and create amazing graphics. Hard to find a good dataset, to learn at the beggining was the crossfilter, the reduce function, even to adjust the graphs to the cards had some issues for me as I am still a rookie. But the most challenging, and that is why I add it to the project was the map.js, whict took me long time , and still not is not brought to a sublime status, though a functional one. Displaying data in the data-grid was also a hard task for me.
+I founded them __"Django and its included batteries"__, Meaning that is better organized and therefor is easier the extend the code to different functionallity, is easier to go big, without big effort.__"I almost lose those bateries"__, For a rookie like me, it sometimes hard to control differnt apps one with another. That is the main reason I decided to keep all the book related views in one app instead of dividing them in 2 or 3 apps. For me was a chalLenge to see clearely the relation between each of them and that is why I consideratd is better to keep them in the same code page
 
 ## <a name="Bugs"></a> Bugs  ## 
-I had some problems with the graphs display and the bootrap classes. 
-Second problem was the size of the background image and it was because of the use of useless classes.
+I had some problems with search and category filter. 
+Second problem was that the Heroku deployment wasn´t successful several times but at the end I managed to solve it.
 ## <a name="Acknowledgements"></a> Acknowledgements  ## 
+The project was instpired from a page that I am always using, and even though I haven´t recreated all the functionality the structure I tried to make it similar as the one from * [Open library](https://openlibrary.org/)
+
 For this project I have used the video offered by Code Institute, as well as other sources such as: 
 
 * [Django documentation](https://docs.djangoproject.com/en/2.2/)
 * [Oreily](https://www.oreilly.com/library/view/beginning-django-e-commerce/9781430225355/ch08.html)
-* [Stackoverflow](https://stackoverflow.com/questions/38006125/how-to-implement-search-function-in-django)
-* [Stackoverflow](https://stackoverflow.com/questions/38006125/how-to-implement-search-function-in-django)
+* [Stackoverflow](https://stackoverflow.com/questions/38006125/how-to-implement-search-function-in-django), also used for pagination and many , many other functionality
+* [simpleisbetterthancomplex](https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html)(https://www.youtube.com/watch?v=JBhpo0o1Ajg&t=416s)
+* [Just Django](https://www.youtube.com/watch?v=vccUP3jdpBg)
+* [Freak Network](https://www.youtube.com/watch?v=MPyHEMD7V6Q&list=PLj-jdGgxSLAkO-5EweQDdkyoF9wpI6vbj)
+* [Max Goodridge](https://www.youtube.com/watch?v=nwpLCa79DUw)
 
-
-Many thanks also to the Tutors, my mentor Guido Cecilio Bernal, and to the Code Institute Slack channel was invaluable!
+Many thanks also to __the Tutors, my _mentor Guido Cecilio Bernal_, and to the Code Institute Slack channel was invaluable__!
 
