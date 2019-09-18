@@ -15,104 +15,54 @@
       <!--First slide-->
       <div class="carousel-item active">
         <div class="view">
-          
-        
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
-
-            <!-- Content -->
             <div class="text-center white-text mx-5 wow fadeIn">
-              <h1 class="mb-4">
-                <strong>Learn Bootstrap 4 with MDB</strong>
+              <h2 class="mb-4">
+                <strong>"Some books are tested, others devoured, very few are chewed and digested."</strong>
               </h1>
-
               <p>
-                <strong>Best & free guide of responsive web design</strong>
-              </p>
-
-              <p class="mb-4 d-none d-md-block">
-                <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and
-                  written versions
-                  available. Create your own, stunning website.</strong>
+                <strong>Sir Francis Bacon </strong>
               </p>
             </div>
-            <!-- Content -->
-
           </div>
           <!-- Mask & flexbox options-->
-
         </div>
       </div>
-      <!--/First slide-->
-
-      <!--Second slide-->
+          <!--Second slide-->
       <div class="carousel-item">
         <div class="view" id="second_view">
-
-          <!-- Mask & flexbox options-->
+            <!-- Mask & flexbox options-->
           <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
-
-            <!-- Content -->
             <div class="text-center white-text mx-5 wow fadeIn">
-              <h1 class="mb-4">
-                <strong>Learn Bootstrap 4 with MDB</strong>
+              <h2 class="mb-4">
+                <strong>"He who reads a lot and walks a lot, sees a lot and knows a lot ”</strong>
               </h1>
-
               <p>
-                <strong>Best & free guide of responsive web design</strong>
+                <strong>Miguel de Cervantes</strong>
               </p>
-
-              <p class="mb-4 d-none d-md-block">
-                <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and
-                  written versions
-                  available. Create your own, stunning website.</strong>
-              </p>
-
             </div>
-            <!-- Content -->
-
           </div>
-          <!-- Mask & flexbox options-->
-
         </div>
       </div>
-      <!--/Second slide-->
-
       <!--Third slide-->
       <div class="carousel-item">
         <div class="view third_view">
-
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
-
-            <!-- Content -->
             <div class="text-center white-text mx-5 wow fadeIn">
-              <h1 class="mb-4">
-                <strong>Learn Bootstrap 4 with MDB</strong>
+              <h2 class="mb-4">
+                <strong>"Reading is like an art. It took me eighty years and I can not say I'm here yet."</strong>
               </h1>
-
               <p>
-                <strong>Best & free guide of responsive web design</strong>
-              </p>
-
-              <p class="mb-4 d-none d-md-block">
-                <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and
-                  written versions
-                  available. Create your own, stunning website.</strong>
+                <strong>Johann Wolfgang von Goethe</strong>
               </p>
             </div>
-            <!-- Content -->
-
           </div>
-          <!-- Mask & flexbox options-->
-
         </div>
       </div>
-      <!--/Third slide-->
-
     </div>
     <!--/.Slides-->
-
     <!--Controls-->
     <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -122,40 +72,30 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-    <!--/.Controls-->
-
   </div>
-
   <main>
     <div class="container">
-
       <!--Navbar-->
       <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5">
-
-        <!-- Navbar brand -->
         <span class="navbar-brand">Categories:</span>
-
-        <!-- Collapse button -->
+      <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
           aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="basicExampleNav">
-
-         <form method="get">
+        <form method="get">
            <ul class="navbar-nav mr-auto">
-             {% for category in object_list.0.get_choices %}
+            {% for category in object_list.0.get_choices %}
          <li class="nav-item">
-           <a class="nav-link" href='{% url 'book:category_filter' cat=category %}'>{{ category }}
-                <span class="sr-only">(current)</span>
-              </a> 
+          <a class="nav-link" href='{% url 'book:category_filter' cat=category %}'>{{ category }}
+              <span class="sr-only">(current)</span>
+          </a>
+          {% endfor %}  
          </li> 
-            
-            {% endfor %}  
-
-          </ul> 
+            </ul>
+             
           <!-- Links -->
 
            <a class='btn btn-primary float-right' href='search/SearchFilters_BookView/'><i class="far fa-hand-point-right" aria-hidden="true"></i>advanced searching</a>
@@ -166,46 +106,32 @@
             </div>
           </form>
         </div>
-        <!-- Collapsible content -->
-
       </nav>
       <!--/.Navbar-->
 
-      <!--Section: Products v.3-->
+      <!--Section: Products (books)-->
       <section class="text-center mb-4">
-
-
-        <!--Grid row-->
         <div class="row wow fadeIn">
-
           {% for item in object_list %}
-
-            <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4">
-
-            <!--Card-->
             <div class="card">
-              <!--Card image-->
               <div class="view overlay zoom">
-                <a href="">
+              <!--book image-->
+                <a href="{{ item.cover.url }}">
                   <img class="card-img-top" src="{{ item.cover.url }}" alt="">
                 </a>
                 <a href="{{ item.get_absolute_url }}">
                   <div class="mask rgba-white-slight"></div>
                   <div class="mask flex-center">
-                    <p class="white-text">Zoom effect</p>
+                    <p class="white-text">to be opened</p>
                   </div>
                 </a>
               </div>
-              <!--Card image-->
-
-              <!--Card content-->
               <div class="card-body text-center">
                 <!--Category & Title-->
                 <a href="" class="grey-text">
                   <h5>{{ item.get_category_display }}</h5>
                   {{ item.work_author }}
-                  
                 </a>
                 <h5>
                   <strong>
@@ -213,48 +139,31 @@
                     </a>
                   </strong>
                 </h5>
-
-                <h4 class="font-weight-bold blue-text">                
-                
-                
-                </h4>
+                <h4 class="font-weight-bold blue-text"></h4>
               <h3><div class="card-footer text-muted text-center mt-4">
                 <strong> 
                 {% if item.discount_price %}
               <h6 class=" badge badge-light font-weight-bold blue-text">
               <span class="badge badge-danger">
-              <del>{{ item.price }} €</del>
+                <del>{{ item.price }} €</del>
               </span>
               <span class="badge badge-success"><u>{{ item.discount_price }} €</u></span></h6>
-              {% else %}
+                {% else %}
               <span class="badge badge-success">{{ item.price }} €</span>
-              {% endif %}
+                {% endif %}
                 </strong>
               </div></h3>  
-
               </div>
-              <!--Card content-->
-
             </div>
-            <!--Card-->
-
-          </div>
-        {% endfor %}  
-          <!--Grid column-->
-
         </div>
-        <!--Grid row-->
-
+          {% endfor %}  
+        </div>
       </section>
-      <!--Section: Products v.3-->
-
       <!--Pagination-->
-
       {% if is_paginated %}
       <nav class="d-flex justify-content-center wow fadeIn">
         <ul class="pagination pg-blue">
-
-          {% if page_obj.has_previous %}
+        {% if page_obj.has_previous %}
           <li class="page-item">
             <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
               <span aria-hidden="true">&laquo;</span>
@@ -262,14 +171,11 @@
             </a>
           </li>
           {% endif %}
-
           <li class="page-item active">
             <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          
-        
           {% if page_obj.has_next %}
           <li class="page-item">
             <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
@@ -281,9 +187,6 @@
         </ul>
       </nav>
     {% endif %}  
-   
-
     </div>
   </main>
-
 {% endblock content %}
