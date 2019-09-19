@@ -70,7 +70,18 @@
           <div class="form-group col-md-4">
             <label for="category">Worlks category selector</label>
             <select id="category" class="form-control" name="category">
-              <option selected>Choose...</option>
+              <option selected> <ul class="navbar-nav mr-auto">
+            {% for category in object_list.0.get_choices %}
+         <li class="nav-item">
+          <a class="nav-link" href='{% url 'book:category_filter' cat=category %}'>{{ category }}
+              <span class="sr-only">(current)</span>
+          </a>
+          {% endfor %}  
+         </li> 
+            </ul></option>
+
+              {% comment %} <form method="get"> {% endcomment %}
+          
             </select>
             </div>
           </div>

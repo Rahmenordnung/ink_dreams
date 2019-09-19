@@ -51,7 +51,7 @@
               </span>
               <span class="badge badge-success">{{ object.discount_price }} €</span>
               {% else %}
-              <span>{{ object.price }} €</span>
+              <span class="badge badge-success">{{ object.price }} €</span>
               {% endif %}
             </h1>
             <hr>  
@@ -77,13 +77,68 @@
       </div>
       <div class="row wow fadeIn">
         <div class="col-lg-4 col-md-12 mb-4">
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT6ycgIFx0AKQTUcBK98hHyyDNm3AApcNPSo4ANGettOoT0MSO" class="img-fluid" alt="">
+          <ul class="list-group">  
+            <label>   
+          <li class="list-group-item">{% if object.bestseller %}             
+              <input name="bestseller" id="bestseller" type="checkbox" class="filled-in" checked="checked" />
+          {% else %}
+              <input name="bestseller" id="bestseller" type="checkbox" class="filled-in"  />
+          {% endif %}
+              <span>bestseller</span></li>
+              </label> 
+          <label>
+          <li class="list-group-item">{% if object.notbestseller %}             
+              <input name="notbestseller" id="notbestseller" type="checkbox" class="filled-in" checked="checked" />
+          {% else %}
+              <input name="notbestseller" id="notbestseller" type="checkbox" class="filled-in"  />
+          {% endif %}
+              <span>notbestseller</span></li>
+              </label>
+          </ul>    
         </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
-      </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
+        
+      <div class="col-lg-4 col-md-12 mb-4">
+          <img src="http://i2.wp.com/clipartportal.com/wp-content/uploads/2018/12/thick-and-thin-clipart.jpg" class="img-fluid" alt="">
+          <ul class="list-group">  
+            <label>   
+          <li class="list-group-item">{% if object.longbook %}             
+              <input name="bestseller" id="bestseller" type="checkbox" class="filled-in" checked="checked" />
+          {% else %}
+              <input name="bestseller" id="bestseller" type="checkbox" class="filled-in"  />
+          {% endif %}
+              <span>longbook</span></li>
+              </label> 
+          <label>
+          <li class="list-group-item">{% if object.shortbook %}             
+              <input name="notbestseller" id="notbestseller" type="checkbox" class="filled-in" checked="checked" />
+          {% else %}
+              <input name="notbestseller" id="notbestseller" type="checkbox" class="filled-in"  />
+          {% endif %}
+              <span>shortbook</span></li>
+              </label>
+          </ul>    
+        </div>
+        <div class="col-lg-4 col-md-12 mb-4">
+          <img src="https://booksinbloom.org/wp-content/uploads/2019/05/BiBThankyou.png" class="img-fluid" alt="">
+          <ul class="list-group">  
+            <label>   
+          <li class="list-group-item">{% if object.worldwide_appreciated %}             
+              <input name="bestseller" id="bestseller" type="checkbox" class="filled-in" checked="checked" />
+          {% else %}
+              <input name="bestseller" id="bestseller" type="checkbox" class="filled-in"  />
+          {% endif %}
+              <span>worldwide_appreciated</span></li>
+              </label> 
+          <label>
+          <li class="list-group-item">{% if object.underground_appreciation %}             
+              <input name="notbestseller" id="notbestseller" type="checkbox" class="filled-in" checked="checked" />
+          {% else %}
+              <input name="notbestseller" id="notbestseller" type="checkbox" class="filled-in"  />
+          {% endif %}
+              <span>underground_appreciation</span></li>
+              </label>
+          </ul>    
         </div>
       </div>
     </div>

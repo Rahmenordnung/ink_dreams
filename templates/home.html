@@ -85,7 +85,7 @@
         </button>
         <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="basicExampleNav">
-        <form method="get">
+        {% comment %} <form method="get"> {% endcomment %}
            <ul class="navbar-nav mr-auto">
             {% for category in object_list.0.get_choices %}
          <li class="nav-item">
