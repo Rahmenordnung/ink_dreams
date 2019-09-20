@@ -20,6 +20,13 @@ html {
     }
 }
 
-.page-footer {
-    background-color: #929FBA
+.img-fluid {
+    height: 200px;
+    width: 350px;
+    margin-bottom: 5px;
+}
+
+.btn {
+    height: 50px;
+    width: 300px;
 }

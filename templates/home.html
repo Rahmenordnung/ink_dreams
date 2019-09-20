@@ -92,13 +92,15 @@
           <a class="nav-link" href='{% url 'book:category_filter' cat=category %}'>{{ category }}
               <span class="sr-only">(current)</span>
           </a>
-          {% endfor %}  
+          {% endfor %}
+
+          <a class='button btn btn-primary float-right' href='search/SearchFilters_BookView/'><i class="far fa-hand-point-right" aria-hidden="true"></i>advanced searching</a>  
          </li> 
             </ul>
              
           <!-- Links -->
 
-           <a class='btn btn-primary float-right' href='search/SearchFilters_BookView/'><i class="far fa-hand-point-right" aria-hidden="true"></i>advanced searching</a>
+           
 
           <form class="form-inline">
             <div class="md-form my-0">
