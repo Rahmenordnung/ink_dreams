@@ -154,15 +154,14 @@ This packages are included in the __requrements.txt__ files , thethat is needed 
 -- [Stripe](https://dashboard.stripe.com/) is an online payment service, to enable secure payments using credit cards on the website. Stripe also uses a self-learning fraud prevention system.
 
 
--- [Django Allauth] (https://django-allauth.readthedocs.io/en/latest/installation.html/)                                         Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
+-- [Django Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html/)
+Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
 
--- [Django country] (https://pypi.org/project/django-countries/) An object used to represent a country, instantiated with a two character country code, three character code, or numeric code. It can be compared to other objects as if it was a string containing the country code and when evaluated as text, returns the country code. Contains a URL to the flag.
+-- [Django country](https://pypi.org/project/django-countries/) An object used to represent a country, instantiated with a two character country code, three character code, or numeric code. It can be compared to other objects as if it was a string containing the country code and when evaluated as text, returns the country code. Contains a URL to the flag.
 
--- [Django cryspy forms] (https://django-crispy-forms.readthedocs.io/en/latest/install.html)  Django-crispy-forms is a django application that lets you easily build, customize and reuse forms using your favorite CSS framework, without writing template code and without having to take care of annoying details.
+-- [Django cryspy forms](https://django-crispy-forms.readthedocs.io/en/latest/install.html)  Django-crispy-forms is a django application that lets you easily build, customize and reuse forms using your favorite CSS framework, without writing template code and without having to take care of annoying details.
 
--- [Django cryspy forms] (https://django-crispy-forms.readthedocs.io/en/latest/install.html)  Django-crispy-forms is a django application that lets you easily build, customize and reuse forms using your favorite CSS framework, without writing template code and without having to take care of annoying details.  
-
--- [Pillow] (https://pillow.readthedocs.io/en/3.0.x/installation.html/)  Pillow is a free library for the Python programming language that adds support for opening, manipulating, and saving many different image file formats.
+-- [Pillow](https://pillow.readthedocs.io/en/3.0.x/installation.html/) Pillow is a free library for the Python programming language that adds support for opening, manipulating, and saving many different image file formats.
 
 -------Travis
 Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub.
