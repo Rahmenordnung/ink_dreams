@@ -1,3 +1,49 @@
+/* ---------General settings----------*/
+
+html,
+body,
+header,
+.carousel {
+    height: 60vh;
+}
+
+html,
+body,
+.view {
+    height: 100%;
+}
+
+
+/*------------Navbar-------------*/
+
+
+/* Navbar styling, fonts, colors for the icons */
+
+.blue-text,
+.navbar_text {
+    font-family: 'Lekton', sans-serif;
+}
+
+.blue-text {
+    font-size: 40px;
+    text-shadow: 4px 3px 0 rgb(126, 37, 161);
+}
+
+
+/*navbar icons settings */
+
+.fa-file-signature {
+    color: #eb7d34;
+}
+
+.fa-clipboard-check {
+    color: #441529;
+}
+
+
+/*----------Carousell settings---------------*/
+
+
 /* Image cards display */
 
 .view overlay {
@@ -8,24 +54,6 @@
     background-image: url('https://images2.minutemediacdn.com/image/upload/c_crop,h_1890,w_3363,x_0,y_193/f_auto,q_auto,w_1100/v1565628997/shape/mentalfloss/gettyimages-944631208.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-#second_view {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLUTHjl0ytJaHy-rByoVDtvpYypfFbTVUsfSXMZhUEOAtXRDuD');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.third_view {
-    background-image: url('https://epsagon.com/wp-content/uploads/2018/08/eduardo-olszewski-472707-unsplash-1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-html,
-body,
-.view {
-    height: 100%;
 }
 
 
@@ -45,6 +73,40 @@ body,
 }
 
 
+/* --------- Content from Card dimension settings----------- */
+
+
+/*price on card-book list */
+
+.card-img-top {
+    height: 40vh;
+}
+
+.card-footer {
+    font-size: larger;
+}
+
+
+/* Additional information images */
+
+.img-fluid {
+    height: 200px;
+    width: 350px;
+    margin-bottom: 5px;
+}
+
+
+/* buttons */
+
+.btn {
+    height: 50px;
+    width: 300px;
+}
+
+
+/*-----------Mediaqueries-----------*/
+
+
 /* Adjustment for mobile devices*/
 
 @media (max-width: 776px) {
@@ -56,6 +118,27 @@ body,
     }
 }
 
+@media (max-width: 740px) {
+    html,
+    body,
+    header,
+    .carousel {
+        height: 100vh;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+    html,
+    body,
+    header,
+    .carousel {
+        height: 100vh;
+    }
+}
+
+
+/*------Footer----------*/
+
 
 /* Footer color for sake of consistency with Navbar */
 
@@ -64,11 +147,7 @@ body,
 }
 
 
-/* Card dimension */
-
-.card-img-top {
-    height: 40vh;
-}
+/*extend display so footer stay at the bootom*/
 
 main {
     min-height: 125%;

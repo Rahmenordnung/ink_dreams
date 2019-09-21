@@ -1,100 +1,12 @@
 {% extends "base.html" %}
-
-{% block extra_head %}
-<style>
-#stripeBtnLabel {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 16px;
-  font-variant: normal;
-  padding: 0;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 500;
-  display: block;
-}
-#stripeBtn {
-  border: none;
-  border-radius: 4px;
-  outline: none;
-  text-decoration: none;
-  color: #fff;
-  background: #32325d;
-  white-space: nowrap;
-  display: inline-block;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 14px;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-  border-radius: 4px;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.025em;
-  text-decoration: none;
-  -webkit-transition: all 150ms ease;
-  transition: all 150ms ease;
-  float: left;
-  margin-left: 12px;
-  margin-top: 28px;
-}
-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 7px 14px rgba(50, 50, 93, .10), 0 3px 6px rgba(0, 0, 0, .08);
-  background-color: #43458b;
-}
-#stripe-form {
-  padding: 30px;
-  height: 120px;
-}
-#card-errors {
-  height: 20px;
-  padding: 4px 0;
-  color: #fa755a;
-}
-.stripe-form-row {
-  width: 70%;
-  float: left;
-}
-/**
- * The CSS shown here will not be introduced in the Quickstart guide, but shows
- * how you can use CSS to style your Element's container.
- */
-.StripeElement {
-  box-sizing: border-box;
-  height: 40px;
-  padding: 10px 12px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  background-color: white;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
-}
-.StripeElement--focus {
-  box-shadow: 0 1px 3px 0 #cfd7df;
-}
-.StripeElement--invalid {
-  border-color: #fa755a;
-}
-.StripeElement--webkit-autofill {
-  background-color: #fefde5 !important;
-}
-</style>
-{% endblock extra_head %}
-
 {% block content %}
-
   <main >
     <div class="container wow fadeIn">
-
       <h2 class="my-5 h2 text-center">Payment</h2>
-
       <div class="row">
-
         <div class="col-md-12 mb-4">
           <div class="card">
-
             <script src="https://js.stripe.com/v3/"></script>
-
             <form action="." method="post" id="stripe-form">
                 {% csrf_token %}
                 <div class="stripe-form-row">
@@ -108,26 +20,19 @@ button:hover {
                     <input class="__PrivateStripeElement-input" aria-hidden="true" aria-label=" " autocomplete="false" maxlength="1" style="border: none !important; display: block !important; position: absolute !important; height: 1px !important; top: 0px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background: transparent !important; pointer-events: none !important; font-size: 16px !important;">
                     </div>
                     </div>
-
                     <!-- Used to display form errors. -->
                     <div id="card-errors" role="alert"></div>
                 </div>
-
-                <button id="stripeBtn">Submit Payment</button>
+              <button id="stripeBtn">Submit Payment</button>
             </form>
-
           </div>
         </div>
-
-                <!--Grid column total aside-->
+            <!--Grid column total aside-->
         {% include "total_order_page.html" %}
-
       </div>
-
     </div>
   </main>
-
-
+<!--stripe scripts-->
 <script nonce="">  // Create a Stripe client.
   var stripe = Stripe('{{stripe_publishable_key}}');
   // Create an instance of Elements.

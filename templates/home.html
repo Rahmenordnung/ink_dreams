@@ -93,15 +93,12 @@
               <span class="sr-only">(current)</span>
           </a>
           {% endfor %}
-
+        
           <a class='button btn btn-primary float-right' href='search/SearchFilters_BookView/'><i class="far fa-hand-point-right" aria-hidden="true"></i>advanced searching</a>  
          </li> 
             </ul>
              
           <!-- Links -->
-
-           
-
           <form class="form-inline">
             <div class="md-form my-0">
               <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -141,11 +138,12 @@
                     </a>
                   </strong>
                 </h5>
-                <h4 class="font-weight-bold blue-text"></h4>
-              <h3><div class="card-footer text-muted text-center mt-4">
+                
+              <h3>
+              <div class="card-footer">
                 <strong> 
                 {% if item.discount_price %}
-              <h6 class=" badge badge-light font-weight-bold blue-text">
+              <h6 class=" badge badge-light ">
               <span class="badge badge-danger">
                 <del>{{ item.price }} €</del>
               </span>
