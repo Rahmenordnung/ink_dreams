@@ -73,7 +73,15 @@ The user can easely go back from any page of the site back to the home page
 ---
 ### <a name="Wireframes"></a>Wireframes :
 
-You can find a pdf link for the wirefranes here: [Mockups](https://github.com/Rahmenordnung/toy_storie_shop/tree/master/assets/images/mockups)
+You can find the link for the project wirefranes here: [Mockups](https://github.com/Rahmenordnung/toy_storie_shop/tree/master/assets/images/mockups)
+
+For the django project I have made also two sketches: 
+--One is of the structural relations tree of my __models.py__ file, in order to clarify the conextions between elements in the database.
+[Models relations tree](https://github.com/Rahmenordnung/toy_storie_shop/tree/master/assets/images/mockups)
+
+--The second is about the normal workflow of a Django project, that, of course I had to learn in order to apply in the best way I could.
+[Django normal workflow](https://github.com/Rahmenordnung/toy_storie_shop/tree/master/assets/images/mockups)
+
 
 ---
 ##  <a name="Features"></a>Features
