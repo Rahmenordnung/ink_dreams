@@ -151,8 +151,8 @@ s designed to be displayed in a web browser. I have useed it to create the templ
 
 This packages are included in the __requrements.txt__ files , thethat is needed in order to deploy the _django page_ to live platforms such as __Heroku__.
 
--- [Stripe] (https://dashboard.stripe.com) Stripe is an online payment service, to enable secure payments using credit cards on the website. Stripe also uses a self-learning fraud prevention system.
-[a link](https://github.com/user/repo/blob/branch/other_file.md)
+-- [Stripe] (https://dashboard.stripe.com/) Stripe is an online payment service, to enable secure payments using credit cards on the website. Stripe also uses a self-learning fraud prevention system.
+[a link](https://dashboard.stripe.com/)
 
 -- [Django Allauth] (https://django-allauth.readthedocs.io/en/latest/installation.html/)                                         Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
 
