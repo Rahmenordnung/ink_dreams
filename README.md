@@ -5,9 +5,9 @@
 
 #### <a name="Description"></a>Description :
 
-This project is built for Code Institute as a part of Full Stack Software Development Diploma course. Project was build using semantic HTML5, CSS3, JavaScript along with Python framework Django 2.2. For it I have been using Visual Studio Code that as a Source Code Editor for the local development. Heroku as a web plataform for the website deployment.
+This project is built for Code Institute as a part of Full Stack Software Development Diploma course. Project was build using semantic HTML5, CSS3, JavaScript along with Python framework Django 2.2. For it I have been using _Visual Studio Code_ as a Source Code Editor for the _local development_. _Heroku_ as a web plataform for the _live website deployment_.
 
-The code is meant to recreate an online book shop, such as Dubray or Easons. It is built upon boostrap templates, using all, or most of the techniques required for this last Milestone project. It takes the data saved and also saves the data in databases with the help of models and retrives it redirecting it via Urls, to the views and forms that at the same time display the data in html templates. That is the normal flow of a Django project.
+The code is meant to recreate an online book shop, such as Dubray or Easons. It is built upon mdboostrap (very similar to bootrap) templates, using all, or most of the techniques required for this last Milestone project. It takes the data saved and also saves the data in databases with the help of models and retrives it redirecting it via Urls, to the views and forms that at the same time display the data in html templates. That is the normal flow of a Django project.
 
 #### Sumary :
 
@@ -49,7 +49,7 @@ The code is meant to recreate an online book shop, such as Dubray or Easons. It 
 
 #### <a name="Name"></a>Name :
 
-Today in our days the books are not any more only wrote in paper but also digitally. Everything is changing, and it never have been so manz changes in our lives. A tempestuous change through the ways of understanding a how the content of a message is transmited to us. Before we use to carve in stones, and now it feels like we don´t need anymore to write with our pens and hands, now we can just talk and that will be wrote. In anyway things will change the old fashion way of doing things still will permeate our lives for a while. Until the books will disapear they will contain ink, and this ink brings us dreams and make us dream further and that is why I chose as title for my work __Ink dreams__. 
+Today in our days the books are not any more only wrote in paper but also digitally. Everything is changing, and it never have been so many changes in our lives. A tempestuous change through the ways of understanding a how the content of a message is transmited to us. Before we use to carve in stones, and now it feels like we don´t need anymore to write with our pens and hands, now we can just talk and that will be wrote. In anyway things will change the old fashion way of doing things still will permeate our lives for a while. Until the books will disapear they will contain ink, and this ink brings us dreams and make us dream further and that is why I chose as title for my work __Ink dreams__. 
  
  A link of the working project can be found [here](https://rahmenordnung.github.io/toy_storie_shop/)
 
@@ -60,20 +60,17 @@ Today in our days the books are not any more only wrote in paper but also digita
 
 "Reading means dreaming by someone else's hand."  – Fernando Pessoa
 
-"When you write, you show a world at your size" - Jesús Fernández Santos.
-
-Reading means thinking with the alien brain instead of doing it with one's own. " Arthur Schopenhauer" 
-
-.....
-
 -- The user, book lover or not can open the page and look for a product, searching, filtering through them, finding what he wants, add it to a preliminatry chechout page, modify the amount, maybe delete the a item from the list, and purchase the product.
 The user can easely go back from any page of the site back to the home page
 
+"When you write, you show a world at your size" - Jesús Fernández Santos.
+
 -- The custumer would be able also to contact and send us his thoughts and queries through a contact form.
+
+Reading means thinking with the alien brain instead of doing it with one's own. " Arthur Schopenhauer"
 
 --Any person can use the page and look around and serach easely with the help of pagination and search function through our book selection. If he doesn´t want to buy the product he can just check the simple description and investigate perhaps about it. He also can with perhaps more information through the social media links present in the footer.
 
----
 ### <a name="Wireframes"></a>Wireframes :
 
 You can find the link for the project wirefranes here: [Mockups](https://github.com/Rahmenordnung/ink_dreams/tree/master/static/images/mockups/project_mockup)
@@ -84,7 +81,6 @@ For the django project I have made also two sketches:
 
 --The second is about the normal workflow of a Django project, that, of course I had to learn in order to apply in the best way I could.
 [Django normal workflow](https://github.com/Rahmenordnung/ink_dreams/blob/master/static/images/mockups/django_flow_sketch/django_flow.jpg)
-
 
 ---
 ##  <a name="Features"></a>Features
@@ -98,11 +94,8 @@ A small resumee of the features would be:
 
 -----Search products (by 15 parts categories)------------------
 -----------Vote to like / dislike products-----------
------------Contact us via contact page-----------
 
-
-#### <a name="Current_Features"></a>Current Features ##
-
+### <a name="Current_Features"></a>Current Features ###
 
 #### <a name="Existing_functionality"></a> Existing functionality ##
 
@@ -127,7 +120,7 @@ Here one can increse, diminish the product quantity, remove fully the book from 
 
 --__Checkout form (1)__: in the first page one will be able to introduce the personal adress details as well as the country where one comes from(done with django countries package). On the side it contains the total and a small resume of the products to be purchased. After clicking continue to checkout, it will lead you to the last site.
 
---__Checkout form (2)__: Here one will be able to process to payment with stripe, see the total of the products to be brought. After introducing the credit card number just click the submit payment and the desired product will be ordered and the purchase registered in the Stripe records.
+--__Checkout form (2)__: Here one will be able to process to __payment with stripe__, see the total of the products to be brought. After introducing the credit card number just click the submit payment and the desired product will be ordered and the purchase registered in the Stripe records.
 
 --__Messages__: After each action that involves a interaction with the database and the server there are messages implemented that improve the UX, and make easier the understanding of the processes carried out in the background.
 
@@ -144,9 +137,7 @@ Here one can increse, diminish the product quantity, remove fully the book from 
 
 -- [Python](https://www.python.org/)  Python is a general purpose programming language. Usefull for developing both desktop and web applications is designed with features to facilitate data analysis and visualization. Mostly Django is realized in python language, so the logic is mainly the same in the views pages, for instance
 
--- [HTML5](https://www.w3schools.com/html/html_intro.asp) --Hypertext Markup Language is the standard markup language for docu
-
-s designed to be displayed in a web browser. I have useed it to create the templates, mostly
+-- [HTML5](https://www.w3schools.com/html/html_intro.asp) --Hypertext Markup Language is the standard markup language for documents designed to be displayed in a web browser. I have useed it to create the templates, mostly
 
 -- [CSS3](http://www.css3.info/) is a style sheet language used for describing the presentation of a document written in a markup language like HTML.Used to style the html templates
 
@@ -156,7 +147,7 @@ s designed to be displayed in a web browser. I have useed it to create the templ
 
 -- [Font-awesome](https://fontawesome.com/) Font Awesome is a web font containing all the icons from the Twitter Bootstrap framework, and now many more. With it one can add usefull icons that improves the UX.
 
--- [MDBootstap](https://mdbootstrap.com/) is a framework created by Mozilla used to help you design websites faster and easier.
+-- [MDBootstap](https://mdbootstrap.com/) is not a coding language but provides such a big help to the code beeing a framework created by Mozilla used to help you design websites faster and easier.
 
 #### <a name="Dependencies"></a> Dependencies ##
 
@@ -242,19 +233,10 @@ The normal functionality of the page has been tested through this tests:
 
 __Full Background start image__: When hovered over it shows a dinamic effect contains a button.
 
-__Go and play button__: When hovered changes color and adds margin around. When clicked hides the hole _start image_ and the _background page_ and displays the charts page that beginns with _intro.js tour_
-
-__intro.js tour__ it will be displayed when firsly showing the charts page or each time we refresh it and it will guide the User, explain and show him the first steps that the User can do in order understand better the page and its purpose.
 
 __Select bar__ When clicking have to display to indicated data from the dataset, and if clicked to filter throgh the selection and limit the other elements.
 
-__Toggle button__ When clicked once it hides the respective card where the charts are contained, twice it shows it back again. This can be helpfull in order to ease the graphs display and their analysis.
-
-__The charts__ are interactive and responsive and if clicked they will show the section clicked and if clicked back again that will go to the normal view again. And they will be responsive to mobile devices.
-
-__Back to top button__ It will take the user when clicked to the top of the page. So that the user experience is improved in that one can move easily on top or down (with scrolling or navbarlinks) of the page.
-
-__Reset button__ When clicked it resets the charts filtering selection.
+__Reset button__ When clicked it resets the search filtering selection.
 
 __Footer__ It contains anchors, social media, dataset, main page that takes the User to the desired links.
 
@@ -275,11 +257,11 @@ In order to run this project __locally__ on your own system, you need following:
 
 It's highly recommended to work in a virtual environment, but not absolutely required.
 
-* Python 3.1.0 (the version that I used) to run the application
+* Python 3.7.4 (the version that I used) to run the application
 * PIP to install all requirements wit `pip install -r requirements.txt`
 * GIT(hub) for cloning and version control and to download the repo in zip format
 
-##### Next one should follow this steps in order to make this project work(locally):
+##### Next one should follow this steps in order to make this __project work(locally)__:
 
 * Clone the repo with command git clone or donwloand the zip file
 * Unpack the zip file and go to the file location and cd <path to folder>
@@ -294,11 +276,11 @@ It's highly recommended to work in a virtual environment, but not absolutely req
 
 ---
 
-### <a name="Live_Deployment"></a>Live Deploymentt  ####
+### <a name="Live_Deployment"></a>Live Deployment  ###
 
 Heroku is a cloud application platform, it is basically a Platform-as-a-Service (PaaS). They support several programming languages, including Python. It is very easy to deploy Django applications on Heroku. They also offer a free plan, which is quite limited, but it is great to get started and to host demos of Django applications. 
 
-##### The following section describes the process to deploy this project to Heroku. #####
+##### The following section describes the process to deploy this __project to Heroku__. #####
 
 Add a Procfile in the project root or create a file named Procfile in the project root with the following content:
 ```
@@ -343,7 +325,7 @@ I founded them __"Django and its included batteries"__, Meaning that is better o
 I had some problems with search and category filter. 
 Second problem was that the Heroku deployment wasn´t successful several times but at the end I managed to solve it.
 ## <a name="Acknowledgements"></a> Acknowledgements  ## 
-The project was instpired from a page that I am always using, and even though I haven´t recreated all the functionality the structure I tried to make it similar as the one from * [Open library](https://openlibrary.org/)
+The project was inspired from a page that I am always using, and even though I haven´t recreated all the functionality the structure I tried to make it similar as the one from * [Open library](https://openlibrary.org/)
 
 For this project I have used the video offered by Code Institute, as well as other sources such as: 
 
