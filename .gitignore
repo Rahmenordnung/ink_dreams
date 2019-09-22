@@ -125,3 +125,9 @@ dmypy.json
 
 #env.py
 env.py
+
+#.venv files creates with the virtual environment
+.venv
+
+#.vscode files creates with the virtual environment
+.vscode
