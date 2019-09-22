@@ -59,9 +59,6 @@ class Book(models.Model):
         category_choices = []
         for category in GENGRE_ELECTION:
             category_choices.append(category[1])
-        print('----------')
-        print(category_choices)
-        print('----------')
         return category_choices
       
     def get_absolute_url(self):

@@ -49,42 +49,38 @@
         </div>
         <!-- search by Count number -->
         <div class="form-row">
-          <div class="form-group col-md-2 col-lg-2">
-            <label for="viewCountMin">Minimum View Count</label>
-            <input type="number" min=0 class="form-control" id="viewCountMin" placeholder="0" name="view_count_min">
-          </div>
-          <div class="form-group col-md-2 col-lg-2">
-            <label for="viewCountMax">Maximum View Count</label>
-            <input type="number" min=0 class="form-control" id="viewCountMax" placeholder="10000?" name="view_count_max">
-          </div>
           <!-- search by publication date -->
-          <div class="form-group col-md-2 col-lg-2">
-            <label for="publishDateMin">Publish date minimum</label>
+          <div class="form-group col-md-4">
+            <label for="publishDateMin">Publish date minimum      <i class="fas fa-clock"></i></label>
             <input type="date" class="form-control" id="publishDateMin" name="date_min">
           </div>
-          <div class="form-group col-md-2 col-lg-2">
-            <label for="publishDateMax">Publish date maximum</label>
+          <div class="form-group col-md-4">
+            <label for="publishDateMax">Publish date maximum     <i class="fas fa-clock"></i></label>
             <input type="date" class="form-control" id="publishDateMax" name="date_max">
           </div>
           <!-- search by Category -->
           <div class="form-group col-md-4">
-            <label for="category">Worlks category selector</label>
+            <label for="category">Worlks category selector     <i class="far fa-keyboard"></i></label>
             <select id="category" class="form-control" name="category">
-              <option selected> <ul class="navbar-nav mr-auto">
-            {% for category in object_list.0.get_choices %}
-         <li class="nav-item">
-          <a class="nav-link" href='{% url 'book:category_filter' cat=category %}'>{{ category }}
-              <span class="sr-only">(current)</span>
-          </a>
-          {% endfor %}  
-         </li> 
-            </ul></option>
+              <option selected> 
+                <ul class="navbar-nav mr-auto">
+                  {% for category in categories %}    
+                    <li class="nav-item">
+                      <option value="{{ category.0 }}">{{ category.1 }}</option>
+                      <span class="sr-only">(current)</span>
+                  {% endfor %}  
+                    </li> 
+                </ul> 
+              </option>
+              
 
               {% comment %} <form method="get"> {% endcomment %}
           
             </select>
             </div>
           </div>
+
+          
           <hr>
           <!-- search by sales clasification -->
           <div class="container">

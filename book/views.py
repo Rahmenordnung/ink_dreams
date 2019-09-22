@@ -5,10 +5,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, View
-from .models import Book, OrderItem, Order, SaveCustomerAddress, Payment
+from .models import Book, OrderItem, Order, SaveCustomerAddress, Payment, GENGRE_ELECTION
 from .forms import CheckoutForm
 from django.utils import timezone
 from django.db.models import Q
+
+from search.views import filter
 
 #Stripe Apy import
 
@@ -24,8 +26,14 @@ class HomeView(ListView):
     template_name = "home.html"
     
     def get_queryset(self):
-        return Book.objects.all()
-    
+        return filter(self.request)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = GENGRE_ELECTION
+        return context
+
+
 def category_filter_selector(request, cat):
     items = Book.objects.filter(Q(category__in=cat)).order_by('title')
     context = {
@@ -281,10 +289,7 @@ class PaymentView(View):
                 self.request, "A serious error occurred. We have been notifed.")
             return redirect("/")
 
-# Book list method for loading all products
 
-
-        
 class OrderFinalView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
         try:
@@ -296,10 +301,3 @@ class OrderFinalView(LoginRequiredMixin, View):
         except ObjectDoesNotExist:
             messages.error(self.request, "You do not have an active order")
             return redirect("/")
-    
-# Book list method for loading all products
-
-
-
-# 
-

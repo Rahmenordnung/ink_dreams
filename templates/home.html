@@ -85,20 +85,34 @@
         </button>
         <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="basicExampleNav">
-        {% comment %} <form method="get"> {% endcomment %}
            <ul class="navbar-nav mr-auto">
-            {% for category in object_list.0.get_choices %}
+          {% comment %} {% for category in categories %}
          <li class="nav-item">
-          <a class="nav-link" href='{% url 'book:category_filter' cat=category %}'>{{ category }}
+          <a class="nav-link" href='{% url 'book:category_filter' cat=category %}'>{{ category.1 }} (current)
               <span class="sr-only">(current)</span>
           </a>
-          {% endfor %}
+          {% endfor %} {% endcomment %}
         
           <a class='button btn btn-primary float-right' href='search/SearchFilters_BookView/'><i class="far fa-hand-point-right" aria-hidden="true"></i>advanced searching</a>  
          </li> 
             </ul>
              
           <!-- Links -->
+      <form method="GET" action="">
+        <div class="form-row">
+            <div class="form-group col-12">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="name_contains" placeholder="Title contains..." />
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </span>
+                </div>
+            </div>        
+        </div>
+
+
           <form class="form-inline">
             <div class="md-form my-0">
               <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
