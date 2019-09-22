@@ -20,16 +20,3 @@ sqlparse==0.3.0
 stripe==2.35.1
 urllib3==1.25.3
 whitenoise==4.1.3
-<label for="category">Worlks category selector</label>
-          <select class="browser-default custom-select" id="category" class="form-control" name="category">
-            <option selected> Open this select menu</option>
-                <ul class="navbar-nav mr-auto">
-                  {% for category in categories %}    
-                    <li class="nav-item">
-                      <option value="{{ category.0 }}">{{ category.1 }}</option>
-                      <span class="sr-only">(current)</span>
-                  {% endfor %}  
-                    </li> 
-                </ul>
-              </option>
-          </select>
