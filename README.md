@@ -1,5 +1,8 @@
 # ink_dreams
 
+[![Build Status](https://travis-ci.org/Rahmenordnung/ink_dreams.svg?branch=master)](https://travis-ci.org/Rahmenordnung/ink_dreams)
+
+
 #### <a name="Description"></a>Description :
 
 This project is built for Code Institute as a part of Full Stack Software Development Diploma course. Project was build using semantic HTML5, CSS3, JavaScript along with Python framework Django 2.2. For it I have been using Visual Studio Code that as a Source Code Editor for the local development. Heroku as a web plataform for the website deployment.
@@ -20,7 +23,7 @@ The code is meant to recreate an online book shop, such as Dubray or Easons. It 
    
     --[Coding languages](#Coding_languages)
     
-    --[Packages](#Packages)
+    --[Dependencies](#Dependencies)
 
     --[Libraries](#Libraries)
     
@@ -155,12 +158,11 @@ s designed to be displayed in a web browser. I have useed it to create the templ
 
 -- [MDBootstap](https://mdbootstrap.com/) is a framework created by Mozilla used to help you design websites faster and easier.
 
-#### <a name="Packages"></a> Packages ##
+#### <a name="Dependencies"></a> Dependencies ##
 
-This packages are included in the __requrements.txt__ files , thethat is needed in order to deploy the _django page_ to live platforms such as __Heroku__.
+This packages are included in the __requrements.txt__ files , that is needed in order to deploy the _django page_ to live platforms such as __Heroku__.
 
 -- [Stripe](https://dashboard.stripe.com/) is an online payment service, to enable secure payments using credit cards on the website. Stripe also uses a self-learning fraud prevention system.
-
 
 -- [Django Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html/)
 Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
@@ -170,6 +172,17 @@ Integrated set of Django applications addressing authentication, registration, a
 -- [Django cryspy forms](https://django-crispy-forms.readthedocs.io/en/latest/install.html)  Django-crispy-forms is a django application that lets you easily build, customize and reuse forms using your favorite CSS framework, without writing template code and without having to take care of annoying details.
 
 -- [Pillow](https://pillow.readthedocs.io/en/3.0.x/installation.html/) Pillow is a free library for the Python programming language that adds support for opening, manipulating, and saving many different image file formats.
+
+-- [Psycopg](https://pypi.org/project/psycopg2/) Package to connect to Postgress databases. Is the most popular PostgreSQL database adapter for the Python programming language. Its main features are the complete implementation of the Python DB API 2.0 specification and the thread safety (several threads can share the same connection).
+
+--[urllib3](https://urllib3.readthedocs.io/en/latest/) brings many critical features that are missing from the Python standard libraries, such as File uploads with multipart encoding, Proxy support for HTTP and SOCKS, 100% test coverage, and many others
+
+## <a name="Dataset"></a>Dataset
+
+Django is a flexible framework for quickly creating Python applications. _By default_,locally Django applications are configured to store data into a lightweight [SQLite](https://www.sqlite.org/index.html) database file.
+
+When we _deploy to Heroku_ one must chose a new data base because that it will be used in the live environment, and not the old one SQLite that is used by default and locally. The easiest way and the cheapes is to use [Postgresql](https://www.postgresql.org/)
+
 
 -------Travis
 Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub.
@@ -190,9 +203,6 @@ We use EmailJS to link up the modal contact form to an actual e-mail address---
 * I would also like to present a ranking with the best books in the main page. and filter through them.
 
 ---
-## <a name="Dataset"></a>Dataset
-
-The data set has been exported from Kaggle. A link of the exact dataset used can be found here .>>[Kaggle](https://www.kaggle.com/kyanyoga/sample-sales-data)
 
 ## <a name="Media"></a> Media  ##
 All the images used in the project are taken from Google images page and there are free of copyright.
@@ -294,7 +304,7 @@ Add a Procfile in the project root or create a file named Procfile in the projec
 ```
 web: gunicorn ink_dream.wsgi
 ```
-Add __requirements.txt__ file with all the requirements in the project root;
+Add __requirements.txt__ file with all the __Dependencies__ in the project root:
 Ensure all required technologies are installed locally, as per the __requirements.txt__ file.
 If you are using a __virtualenv and pip__ you can simply run:
 ```
@@ -307,7 +317,7 @@ Green Unicorn, commonly shortened to "Gunicorn", is a Web Server Gateway Interfa
 
 * Configure __whitenoise__ to serve static files. ---------------------With a couple of lines of config WhiteNoise allows your web app to serve its own static files, making it a self-contained unit that can be deployed anywhere without relying on nginx, Amazon S3 or any other external service. (Especially useful on Heroku, OpenShift and other PaaS providers.)-----where????
 
-* __dj-database-url__: This simple Django utility allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application.
+* __dj-database-url__: This simple Django utility allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application. So it connects to the database Url.
 
 Now follow this steps:
 * Using the CLI, login to Heroku, using __'heroku login'__ command. You'll be prompted to enter any key to go to your web browser to complete login. Input Heroku login details.
@@ -343,6 +353,7 @@ For this project I have used the video offered by Code Institute, as well as oth
 * [simpleisbetterthancomplex](https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html)(https://www.youtube.com/watch?v=JBhpo0o1Ajg&t=416s)
 * [Just Django](https://www.youtube.com/watch?v=vccUP3jdpBg)
 * [Freak Network](https://www.youtube.com/watch?v=MPyHEMD7V6Q&list=PLj-jdGgxSLAkO-5EweQDdkyoF9wpI6vbj)
+* [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04)
 * [Max Goodridge](https://www.youtube.com/watch?v=nwpLCa79DUw)
 
 Many thanks also to __the Tutors, my _mentor Guido Cecilio Bernal_, and to the Code Institute Slack channel was invaluable__!
