@@ -1,6 +1,8 @@
+[![Build Status](https://travis-ci.org/Rahmenordnung/ink_dreams.svg?branch=master)](https://travis-ci.org/Rahmenordnung/ink_dreams)
+
 # ink_dreams
 
-[![Build Status](https://travis-ci.org/Rahmenordnung/ink_dreams.svg?branch=master)](https://travis-ci.org/Rahmenordnung/ink_dreams)
+
 
 
 #### <a name="Description"></a>Description :
