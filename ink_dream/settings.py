@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'contact',
     'profiles',
     
-    'storages',
+    # 'storages',
     
 ]
 
