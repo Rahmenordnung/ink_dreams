@@ -17,10 +17,7 @@ SECRET_KEY = '$-t*iczx5ohb=%sjbx^9rrb(hq72m-5ng)0#4qhzfie@*+d4^1'
 DEBUG = True
 
 ALLOWED_HOSTS = ['ink-dreams.herokuapp.com']
-
-
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
