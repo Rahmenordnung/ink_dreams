@@ -1,10 +1,5 @@
-
 import os
 # import env
-# import dj_database_url
-
-# if os.path.exists('env.py'):
-#     import env
 import django_heroku
 import dj_database_url
 
@@ -16,12 +11,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = '$-t*iczx5ohb=%sjbx^9rrb(hq72m-5ng)0#4qhzfie@*+d4^1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ink-dreams.herokuapp.com']  
+ALLOWED_HOSTS = ['ink-dreams.herokuapp.com']
 
 
 # Application definition
@@ -47,8 +42,6 @@ INSTALLED_APPS = [
     'search',
     'contact',
     'profiles',
-    
-    # 'storages',
     
 ]
 
@@ -86,10 +79,7 @@ WSGI_APPLICATION = 'ink_dream.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# if "DATABASE_URL" in os.environ:
-#     DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
-# else:
-#     print("Database URL not found. Using SQLite instead")
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -97,11 +87,21 @@ WSGI_APPLICATION = 'ink_dream.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'ink-dreams2',
+#         'USER': 'ggarciab',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
 # Heoku Postgresql database
 DATABASES = {
     'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -139,21 +139,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-AWS_S3_OBJECT_PARAMETERS = {
-    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-    'CacheControl': 'max-age=94608000'
-}
-
-AWS_STORAGE_BUCKET_NAME = 'doiihi-ink-dream'
-AWS_S3_REGION_NAME = 'eu-west-1'
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-
-# STATICFILES_LOCATION = 'static'
-# STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
@@ -161,9 +146,6 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
-
-# MEDIAFILES_LOCATION = 'media'
-# DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 #Authentication django allauth
 
