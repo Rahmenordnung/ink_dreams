@@ -1,12 +1,14 @@
-# from django.test import TestCase
-# from .models import Book
+from django.test import TestCase
+from .models import Book
+from django.contrib.auth.models import User
 
 
-# class TestItemBook(TestCase):
+class TestBookModel(TestCase):
 
-#     def Book(self):
-#         Book.objects.create(title='This is a new title', valid=True)
-    
-#     def test_can_create_an_item_with_a_name_and_status(self):
-#         book = Book.objects.get(title='')
-#         self.asserEquals(book.title, 'This is a new title')
+    def test_create_Book(self):
+        book = Book(title='Test Book',
+                          description='Some book content.')
+        self.assertEqual(book.title, 'Test Book')
+        self.assertEqual(book.description, "Some book content.")
+        self.assertFalse(book.cover)
+        self.assertFalse(book.price)

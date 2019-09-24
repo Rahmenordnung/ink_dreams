@@ -3,8 +3,6 @@
 # ink_dreams
 
 
-
-
 #### <a name="Description"></a>Description :
 
 This project is built for Code Institute as a part of Full Stack Software Development Diploma course. Project was build using semantic HTML5, CSS3, JavaScript along with Python framework Django 2.2. For it I have been using _Visual Studio Code_ as a Source Code Editor for the _local development_. _Heroku_ as a web plataform for the _live website deployment_.

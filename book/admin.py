@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Book, OrderItem, Order, Payment
 
+
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['user', 'ordered']
 
