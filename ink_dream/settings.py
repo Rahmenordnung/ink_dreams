@@ -16,7 +16,7 @@ SECRET_KEY = '$-t*iczx5ohb=%sjbx^9rrb(hq72m-5ng)0#4qhzfie@*+d4^1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ink-dreams.herokuapp.com']
+ALLOWED_HOSTS = ['ink-dream.herokuapp.com']
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
