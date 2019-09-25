@@ -89,11 +89,8 @@ In the constuction of the project I have used the libraries donated by the Code 
 
 A small resumee of the features would be:
 
-* Sign up, log-in as a user,don´t worry about your password you can reset it easely, view the books list, view the details of a book, add a book to shopping cart, Adjust the quantity of items in shopping cart, delete the item from the shopping cart, Pay for the desired products in shopping cart checkout, as a registered user see in the profile site, what products have been already bought.
+* Sign up, log-in as a user,don´t worry about your password you can reset it easely, view the books list,serch for a book by categories, view the details of a book, add a book to shopping cart, Adjust the quantity of items in shopping cart, delete the item from the shopping cart, Pay for the desired products in shopping cart checkout, as a registered user see in the profile site, what products have been already bought.
  
-
------Search products (by 15 parts categories)------------------
------------Vote to like / dislike products-----------
 
 ### <a name="Current_Features"></a>Current Features ###
 
@@ -104,6 +101,8 @@ A small resumee of the features would be:
 -- __Full screen book list in card display__: Each book is presented with hoverable image category author and price(and discount price if existing) in square formed cart. Each cart links to the detailed view of the book.
 
 -- __Search bar/advanced search__: There is a _search bar_ in the home page that search by book title and an _advanced search_ page that leads the customer to a special page where one can specify more parameters by which one can search a book, ex production day, author, price etc.
+
+--__Category filter selector__ it displays all the categories/genres by which the books are separated. Each book has a genre assigned, and therefor a user can identify better a group of books related by the genre. The category display works filtered by genre by clicking on each of them
 
 -- __Footer__: Informs the user that the site is hosted by Github Pages, and provides us a link to where they can view the source code on Github, and also a link to the dataset in a elegant dark green color.
 
@@ -125,11 +124,6 @@ Here one can increse, diminish the product quantity, remove fully the book from 
 --__Messages__: After each action that involves a interaction with the database and the server there are messages implemented that improve the UX, and make easier the understanding of the processes carried out in the background.
 
 --__Profile__ The user profile page is a simple list specific for each user that has a an account in our site. Is meant to display a resumee with detail of each transaction carried out by the user.
-
-------------------------__Category filter selector__ it displays all the categories/genres by which the books are separated. Each book has a genre assigned, and therefor a user can identify better a group of books related by the genre. The category display works filtered by genre by clicking on each of them.
-
---__Votes__--------------------------------------------------------------to do votes ???
-
 
 #### <a name="Coding_languages"></a>Current Features ##
 
@@ -232,7 +226,6 @@ TheJavaScript files were tested using JSHint.com. Initially, 1 warnings were det
 The normal functionality of the page has been tested through this tests:
 
 __Full Background start image__: When hovered over it shows a dinamic effect contains a button.
-
 
 __Select bar__ When clicking have to display to indicated data from the dataset, and if clicked to filter throgh the selection and limit the other elements.
 
