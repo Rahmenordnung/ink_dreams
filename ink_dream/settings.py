@@ -158,8 +158,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = os.getenv("EMAIL_USER")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
+EMAIL_HOST_USER = ('othdur@gmail.com')
+EMAIL_HOST_PASSWORD = ('Uniform1')
 EMAIL_PORT = 587
 
 # django_heroku.settings(locals())
