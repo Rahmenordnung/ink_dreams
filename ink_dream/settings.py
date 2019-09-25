@@ -84,16 +84,6 @@ WSGI_APPLICATION = 'ink_dream.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'ink-dreams2',
-#         'USER': 'ggarciab',
-#         'PASSWORD': '',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
 
 # Heoku Postgresql database
 DATABASES = {
