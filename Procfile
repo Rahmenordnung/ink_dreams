@@ -1,1 +1,1 @@
-web: gunicorn ink_dream.wsgi
+web: gunicorn ink_dream.wsgi:application
