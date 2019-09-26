@@ -27,10 +27,6 @@ The code is meant to recreate an online book shop, such as Dubray or Easons. It 
 
     --[Libraries](#Libraries)
     
-    --[Miscelaneous](#Miscelaneous)
-    
-    --[Google API](#Google_API)
-    
 * [Features left to implement](#Features_left_to_implement)    
 * [Testing](#Testing)
   * [Responsiveness Testing](#Responsiveness_Testing)
@@ -41,7 +37,6 @@ The code is meant to recreate an online book shop, such as Dubray or Easons. It 
 * [Deployment](#Deployment)
   * [Deployment_local](#Deployment_local)
   * [Live Deployment](#Live_Deployment)
-* [The DOM](#The_DOM)
 * [Challenges](#Challenges)
 * [Bugs](#Bugs)
 * [Acknowledgements](#Acknowledgements) 
@@ -51,7 +46,7 @@ The code is meant to recreate an online book shop, such as Dubray or Easons. It 
 
 Today in our days the books are not any more only wrote in paper but also digitally. Everything is changing, and it never have been so many changes in our lives. A tempestuous change through the ways of understanding a how the content of a message is transmited to us. Before we use to carve in stones, and now it feels like we don´t need anymore to write with our pens and hands, now we can just talk and that will be wrote. In anyway things will change the old fashion way of doing things still will permeate our lives for a while. Until the books will disapear they will contain ink, and this ink brings us dreams and make us dream further and that is why I chose as title for my work __Ink dreams__. 
  
- A link of the working project can be found [here](https://rahmenordnung.github.io/toy_storie_shop/)
+ A link of the working project can be found [here](https://ink-dream.herokuapp.com/)
 
 ---
 ## <a name="UX"></a>UX :
@@ -168,7 +163,6 @@ Django is a flexible framework for quickly creating Python applications. _By def
 
 When we _deploy to Heroku_ one must chose a new data base because that it will be used in the live environment, and not the old one SQLite that is used by default and locally. The easiest way and the cheapes is to use [Postgresql](https://www.postgresql.org/)
 
-
 -------Travis
 Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub.
 -------EmailJS
@@ -190,7 +184,7 @@ We use EmailJS to link up the modal contact form to an actual e-mail address---
 ---
 
 ## <a name="Media"></a> Media  ##
-All the images used in the project are taken from Google images page and there are free of copyright.
+All the images used in the project are taken from Google images page after searching a list of the best books in Wikipedia and there are free of copyright.
 
 In this project I used just one image __[link](https://papers.co/ipad/mm13-old-car-street-vintage/)__  
 
@@ -227,7 +221,9 @@ The normal functionality of the page has been tested through this tests:
 
 __Full Background start image__: When hovered over it shows a dinamic effect contains a button.
 
-__Select bar__ When clicking have to display to indicated data from the dataset, and if clicked to filter throgh the selection and limit the other elements.
+__Search input in book list__ I extracted this input with a title filtering because ussually the book is known by the title, and therefor the user can easely give a full or partial title in order to find a specific book, after introdicing the text one can search and the results will be displayed in the same page, and if the user wisheds to undo the search there is also a a specific button nearby with a colorful hover..
+
+__Advanced seaching__ all the boolean inputs, have to lead to a specific specification in the models.py, the categories dropdown is populated with a tuple of genre for each book, as well when selected it shall lead to the books with the specificated criterium. The search conditions can be mixed. The reset button should reset the search parameters.
 
 __Reset button__ When clicked it resets the search filtering selection.
 
