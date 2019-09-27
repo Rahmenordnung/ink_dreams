@@ -95,7 +95,7 @@ A small resumee of the features would be:
 
 -- __Full screen book list in card display__: Each book is presented with hoverable image category author and price(and discount price if existing) in square formed cart. Each cart links to the detailed view of the book.
 
--- __Search bar/advanced search__: There is a _search bar_ in the home page that search by book title and an _advanced search_ page that leads the customer to a special page where one can specify more parameters by which one can search a book, ex production day, author, price etc.
+-- __Search bar/advanced search__: There is a _search subnavbar_ in the home page that allows the user just simply searcha book by title and an _advanced search_ page that leads the customer to a special page where one can specify more parameters by which one can search a book, ex production day, author, price etc.
 
 --__Category filter selector__ it displays all the categories/genres by which the books are separated. Each book has a genre assigned, and therefor a user can identify better a group of books related by the genre. The category display works filtered by genre by clicking on each of them
 
