@@ -93,6 +93,8 @@ A small resumee of the features would be:
 
 -- __Navbar__: Allows all users to easily navigate to the different sections of the website and guide themselvs by the name which relates them, regardless of which page they are currently on, simply by clicking the name of the area they wish to visit in the navbar(some of the areas will be limitted by a _@register required_ decorator). Also contain an logo that redirects to the home page.
 
+__Slider__: Displays some images and quotes of universal literature, in order to contextualize better the page.
+
 -- __Full screen book list in card display__: Each book is presented with hoverable image category author and price(and discount price if existing) in square formed cart. Each cart links to the detailed view of the book.
 
 -- __Search bar/advanced search__: There is a _search subnavbar_ in the home page that allows the user just simply searcha book by title and an _advanced search_ page that leads the customer to a special page where one can specify more parameters by which one can search a book, ex production day, author, price etc.
@@ -206,7 +208,7 @@ iPhone 5/SE,6 7,8,X
 iPad, /Pro/ Mini
 etc
 
-The full page is responsive in small, medium, and big devices. The charts are fully responsive thanks to the __.useViewBoxResizing(true)__ property added in all the charts. Also I create this responsivness with help of the bootrap cards and classes used in their grid system. The selector bar, navbar and footer I edited myself and created some media queries with css help as I learned in previous modules.
+The full page is responsive in small, medium, and big devices. All the elements from the page are responsive because of using of [MDBootstap](https://mdbootstrap.com/) elemnest, and templates, completed also with custom.css media queries. 
 
 #### <a name="Code_Testing"></a> Code Testing  ####
 The HTML was validated using the HTML Validator.
@@ -219,7 +221,19 @@ TheJavaScript files were tested using JSHint.com. Initially, 1 warnings were det
 
 The normal functionality of the page has been tested through this tests:
 
-__Full Background start image__: When hovered over it shows a dinamic effect contains a button.
+__Navbar__: It must be responsive, available from each page of the site, and  in determinated pages its acces limitated to authoriuzed useers
+
+__Book display in book list and book detail__ It´s functionality is to display the book list and the book detail of each book respectively, attached to each book class model, are diferect characteristics, such as price, image, discount price, author,, etc. This should work working sometime also as achors tags.
+
+__Slider__: Displays some images and quotes of universal literature, in order to contextualize better the page.
+
+--__Messages__: Showld be displayed when an interaction between the database and the code or viceversa is performed. Should be performed with the specificated color and text.
+
+__Shopping_list__: It is supposed to show all the added items to a imaginary shopping trolley. Here one can modify the amount that wish to be bought, and/or to delete an item from the list. After, the user has the opportunity to proceed to the check out page or to go back to the book list
+
+__Checkout form__: This page is actually splitted in two, because in the first one the user has to fill out his personal information, and the second one the bancary information. All this forms have to lead the user to a fictive purchase of the product through _Stripe API_
+
+__Contact Form__: in all the input files text can pe introduced, and the whole form can be send to a fictive adress in order to create the idea of customer service
 
 __Search input in book list__ I extracted this input with a title filtering because ussually the book is known by the title, and therefor the user can easely give a full or partial title in order to find a specific book, after introdicing the text one can search and the results will be displayed in the same page, and if the user wisheds to undo the search there is also a a specific button nearby with a colorful hover..
 
@@ -227,7 +241,13 @@ __Advanced seaching__ all the boolean inputs, have to lead to a specific specifi
 
 __Reset button__ When clicked it resets the search filtering selection.
 
+__Profile__: The profile page shoud display the list of purchased products  in table with specific  caracteristics, such as date, price, of the transactions.
+
 __Footer__ It contains anchors, social media, dataset, main page that takes the User to the desired links.
+
+-- __Registration and Sign in/out__:
+
+-- __Reset password of a user__: 
 
 ------------
 __Stripe__ payment function has been verified with a test card and all transactions show up on the Stripe dashboard.
