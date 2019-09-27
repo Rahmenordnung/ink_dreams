@@ -60,7 +60,6 @@ def filter(request):
 
     return qs
 
-
 def SearchFilters_BookView(request):
     qs = filter(request)
     context = {

@@ -160,29 +160,33 @@
               </a>
             </div>
             <div class="card-body text-center">
-              <!--Category & Title-->
-              <a href="" class="grey-text">
-                <h5>{{ item.get_category_display }}</h5>
-                {{ item.author }}
-              </a>
-              <h5>
-              <!--labels for the book-->
-                <strong>
-                  <a href="{{ item.get_absolute_url }}" class="dark-grey-text">{{ item.title }}
-                    <span class="badge badge-pill {{ item.get_sticker_display }}-color">NEW</span>
-                  </a>
+                <!--Category & Title-->
+                <a href="" class="grey-text">
+                  <h5>{{ item.get_category_display }}</h5>
+                  {{ item.work_author }}
+                </a>
+                <h5>
+                  <strong>
+                    <a href="{{ item.get_absolute_url }}" class="dark-grey-text">{{ item.title }}
+                    </a>
+                  </strong>
+                </h5>
+             <h3>
+              <div class="card-footer">
+                <strong> 
+                {% if item.discount_price %}
+              <h6 class="badge badge-light">
+              <span class="badge badge-danger">
+                <del>{{ item.price }} €</del>
+              </span>
+              <span class="badge badge-success"><u>{{ item.discount_price }} €</u></span></h6>
+                {% else %}
+              <span class="badge badge-success">{{ item.price }} €</span>
+                {% endif %}
                 </strong>
-              </h5>
-              <h4 class="font-weight-bold blue-text">                
-                <strong>
-                  {% if item.discount_price %} 
-                  {{ item.discount_price }}€ 
-                  {% else %}
-                  {{ item.price }}€ 
-                  {% endif %}
-                </strong>
-              </h4>
-            </div>
+              </div></h3>    
+              </div>
+              
           </div>
         </div>
       {% endfor %}  
