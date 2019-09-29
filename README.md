@@ -5,7 +5,7 @@
 
 #### <a name="Description"></a>Description :
 
-This project is built for Code Institute as a part of Full Stack Software Development Diploma course. Project was build using semantic HTML5, CSS3, JavaScript along with Python framework Django 2.2. For it I have been using _Visual Studio Code_ as a Source Code Editor for the _local development_. _Heroku_ as a web plataform for the _live website deployment_.
+This project is built for Code Institute as a part of Full Stack Software Development Diploma course. Project was build using semantic HTML5, CSS3, JavaScript along with Python framework __Django 2.2__. For it I have been using _Visual Studio Code_ as a Source Code Editor for the _local development_. _Heroku_ as a web plataform for the _live website deployment_.
 
 The code is meant to recreate an online book shop, such as Dubray or Easons. It is built upon mdboostrap (very similar to bootrap) templates, using all, or most of the techniques required for this last Milestone project. It takes the data saved and also saves the data in databases with the help of models and retrives it redirecting it via Urls, to the views and forms that at the same time display the data in html templates. That is the normal flow of a Django project.
 
@@ -93,9 +93,11 @@ A small resumee of the features would be:
 
 -- __Navbar__: Allows all users to easily navigate to the different sections of the website and guide themselvs by the name which relates them, regardless of which page they are currently on, simply by clicking the name of the area they wish to visit in the navbar(some of the areas will be limitted by a _@register required_ decorator). Also contain an logo that redirects to the home page.
 
--- __Full screen book list in card display__: Each book is presented with hoverable image category author and price(and discount price if existing) in square formed cart. Each cart links to the detailed view of the book.
+__Slider__: Displays some images and quotes of universal literature, in order to contextualize better the page and improve the UX.
 
--- __Search bar/advanced search__: There is a _search bar_ in the home page that search by book title and an _advanced search_ page that leads the customer to a special page where one can specify more parameters by which one can search a book, ex production day, author, price etc.
+-- __Full screen book list in card display__: Each book is presented with a hoverable cover image , book category,  author and price(and discount price if existing) in square formed cart. Each cart links to the detailed view of the book.
+
+-- __Search bar/advanced search__: There is a _search subnavbar_  with a search input in the home page that allows the user just simply search a book by title and an _advanced search_ page that leads the customer to a special page where one can specify more parameters by which one can search a book, ex production day, author, price etc.
 
 --__Category filter selector__ it displays all the categories/genres by which the books are separated. Each book has a genre assigned, and therefor a user can identify better a group of books related by the genre. The category display works filtered by genre by clicking on each of them
 
@@ -206,7 +208,7 @@ iPhone 5/SE,6 7,8,X
 iPad, /Pro/ Mini
 etc
 
-The full page is responsive in small, medium, and big devices. The charts are fully responsive thanks to the __.useViewBoxResizing(true)__ property added in all the charts. Also I create this responsivness with help of the bootrap cards and classes used in their grid system. The selector bar, navbar and footer I edited myself and created some media queries with css help as I learned in previous modules.
+The full page is responsive in small, medium, and big devices. All the elements from the page are responsive because of using of [MDBootstap](https://mdbootstrap.com/) elemnest, and templates, completed also with custom.css media queries. 
 
 #### <a name="Code_Testing"></a> Code Testing  ####
 The HTML was validated using the HTML Validator.
@@ -219,15 +221,33 @@ TheJavaScript files were tested using JSHint.com. Initially, 1 warnings were det
 
 The normal functionality of the page has been tested through this tests:
 
-__Full Background start image__: When hovered over it shows a dinamic effect contains a button.
+__Navbar__: It must be responsive, available from each page of the site, and  in determinated pages its acces limitated to authoriuzed useers
 
-__Search input in book list__ I extracted this input with a title filtering because ussually the book is known by the title, and therefor the user can easely give a full or partial title in order to find a specific book, after introdicing the text one can search and the results will be displayed in the same page, and if the user wisheds to undo the search there is also a a specific button nearby with a colorful hover..
+__Book display in book list and book detail__ It´s functionality is to display the book list and the book detail of each book respectively, attached to each book class model, are diferect characteristics, such as price, image, discount price, author, etc. Some of this elements should work also as achors tags.
 
-__Advanced seaching__ all the boolean inputs, have to lead to a specific specification in the models.py, the categories dropdown is populated with a tuple of genre for each book, as well when selected it shall lead to the books with the specificated criterium. The search conditions can be mixed. The reset button should reset the search parameters.
+__Slider__: Displays some images and quotes of universal literature, in order to contextualize better the page.
+
+--__Messages__: Showld be displayed when an interaction between the database and the code or viceversa is performed. Should be performed with the specificated color and text.
+
+__Shopping_list__: It is supposed to show all the added items to a imaginary shopping trolley. Here one can modify the amount that wish to be bought, and/or to delete an item from the list. After, the user has the opportunity to proceed to the check out page or to go back to the book list
+
+__Checkout form__: This page is actually splitted in two, because in the first one the user has to fill out his personal information, and the second one the bancary information. All this forms have to lead the user to a fictive purchase of the product through _Stripe API_
+
+__Contact Form__: in all the input files text can be introduced, and the whole form can be send to a fictive adress in order to create the idea of customer service
+
+__Search input in book list__ I extracted this input with a title filtering because usually the book is known by the title, and therefor the user can easely give a full or partial title in order to find a specific book, after introducing the text one can search and the results will be displayed in the same page, and if the user wisheds to undo the search there is also a a specific button nearby with a colorful hover..
+
+__Advanced seaching__ all the boolean inputs, have to lead to a specific property in the models.py, the categories dropdown is populated with a tuple of genres for each book, also when selected it shall lead to the books with the specificated criterium. The search conditions can be mixed. The reset button should reset the search parameters.
 
 __Reset button__ When clicked it resets the search filtering selection.
 
+__Profile__: The profile page shoud display the list of purchased products in a table with specific caracteristics, such as date, price, of the transactions.
+
 __Footer__ It contains anchors, social media, dataset, main page that takes the User to the desired links.
+
+-- __Registration and Sign in/out__:
+
+-- __Reset password of a user__: 
 
 ------------
 __Stripe__ payment function has been verified with a test card and all transactions show up on the Stripe dashboard.
@@ -236,7 +256,7 @@ __Stripe__ payment function has been verified with a test card and all transacti
 
 ## <a name="Deployment"></a>Deployment #### 
 
-This project is deployed on heroku: https://django-ecommerce-milestone.herokuapp.com/
+This project is deployed on heroku: [here](https://ink-dream.herokuapp.com/)
 
 ---
 
@@ -252,16 +272,16 @@ It's highly recommended to work in a virtual environment, but not absolutely req
 
 ##### Next one should follow this steps in order to make this __project work(locally)__:
 
-* Clone the repo with command git clone or donwloand the zip file
+* Clone the repo with command __git clone__ or donwloand the zip file
 * Unpack the zip file and go to the file location and cd <path to folder>
 * Create .env with the command in `python -m venv .env` in the terminal 
 * Select the virtual environment in the interpreter
 * Install all requirements with `pip3 -r requirements.txt`
 * Launch the project python manage.py runserver
 * The Django server has this url http://127.0.0.1:8000/
-* Create .gitignore file where you will add all the files that you don´t want to be shared in github, such as Secret keys, virtual environments, or local databases, etc. In my case I created a env.py and that must be added in the SETTINGS from the main app (book_shop) and import env under import os 
+* Create __.gitignore__ file where you will add all the files that you don´t want to be shared in github, such as Secret keys, virtual environments, or local databases, etc. In my case I created a env.py and that must be added in the SETTINGS from the main app (book_shop) and import env under import os in the settings.py of the main app.
 * Make first steps saving(implementing) the data with: `__python manage.py makemigrations__` and `__python manage.py migrate__`
-* To use Django Admin Panel, you must generate a superuser:__python manage.py createsuperuser__
+* To use Django Admin Panel, you must generate a superuser:__python manage.py createsuperuser__ after registering the __model classes__ in the __admin.py__
 
 ---
 
@@ -299,16 +319,15 @@ Creating a new DB will lose all database information stored within the IDE. You 
 Also add all the keys, public or secret or any values present(for Smtp, ex) in the locally hosted env.py in the heroku settings, that will worl as the new livw environment
 * Execute __python manage.py makemigrations__ and __python3 manage.py migrate__, to create a new DB.
 * Execute __python3 manage.py createsuperuser__ and populate as required, to create a new superuser.
-* Update allowed hosts within settings.py with your Heroku host name. Example, ALLOWED_HOSTS = [http://127.0.0.1:8000/, 'mythware.herokuapp.com'].------------------
+* Update allowed hosts within settings.py with your Heroku host name. Example, ALLOWED_HOSTS = [127.0.0.1:8000, 'ink-dream.herokuapp.com''].
 * Push project to Heroku, using __push -u heroku master__ command.
 In Heroku, select settings, select Domain URL, NOT Git URL to view your hosted application.
-
 * Deployed via Heroku: ink-dream.
 
 ---                                                                                                                                      
 ## <a name="Challenges"></a> Challenges  ## 
 
-I founded them __"Django and its included batteries"__, Meaning that is better organized and therefor is easier the extend the code to different functionallity, is easier to go big, without big effort.__"I almost lose those bateries"__, For a rookie like me, it sometimes hard to control differnt apps one with another. That is the main reason I decided to keep all the book related views in one app instead of dividing them in 2 or 3 apps. For me was a chalLenge to see clearely the relation between each of them and that is why I consideratd is better to keep them in the same code page
+I founded __"Djangos and its batteries included"__, Meaning that is better organized and therefor is easier the extend the code to different functionallity, is easier to go big,to extend the project through many apps without big effort.__"I almost lose those bateries"__, For a rookie like me, it sometimes hard to control differnt apps one with another. That is the main reason I decided to keep all the book related views in one app instead of dividing them in 2 or 3 apps. For me was a chalLenge to see clearely the relation between each of them and that is why I consideratd is better to keep them in the same code page
 
 ## <a name="Bugs"></a> Bugs  ## 
 I had some problems with search and category filter. 
