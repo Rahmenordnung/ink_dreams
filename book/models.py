@@ -7,7 +7,7 @@ from django_countries.fields import CountryField
 
 GENGRE_ELECTION  = (
   ('FT','Fairy Tale'),
-  ('BA','Biography-Autobiography'),
+  ('BA','Biography'),
   ('CL','Classic'),
   ('RO','Romance'),
   ('AA','Action and Adventure'),
