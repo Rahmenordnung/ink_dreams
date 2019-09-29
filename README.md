@@ -38,7 +38,7 @@ The code is meant to recreate an online book shop, such as Dubray or Easons. It 
 * [Media](#Media)
 * [Deployment](#Deployment)
   * [Deployment_local](#Deployment_local)
-  * [Live Deployment](#Live_Deployment) Future_improvment
+  * [Live Deployment](#Live_Deployment) 
   * [Local_development](#Local_development)
   * [Future_improvement](#Future_improvement)
 * [Challenges](#Challenges)
