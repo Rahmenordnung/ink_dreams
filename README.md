@@ -37,6 +37,7 @@ The code is meant to recreate an online book shop, such as Dubray or Easons. It 
 * [Deployment](#Deployment)
   * [Deployment_local](#Deployment_local)
   * [Live Deployment](#Live_Deployment)
+  * [Local_development](#Local_development)
 * [Challenges](#Challenges)
 * [Bugs](#Bugs)
 * [Acknowledgements](#Acknowledgements) 
@@ -328,7 +329,25 @@ Also add all the keys, public or secret or any values present(for Smtp, ex) in t
 In Heroku, select settings, select Domain URL, NOT Git URL to view your hosted application.
 * Deployed via Heroku: ink-dream.
 
----                                                                                                                                      
+--- 
+
+## <a name="Local_development"></a> Local development  ##
+
+The code in first instance will be pushed with the Heroku settings, and in order to modify, test, etc the code in __Local development__
+we need to:
+
+-- from settings.py 
+
+* Uncomment env (line 2)
+* Comment line 3 and 4 from settings.py with django_heroku and dj_database_heroku
+* Comment line 88 until line 91 with Heroku Postgres Sql data base settings
+* Uncomment line 80 until 86 that contain the Sql Lite database
+
+## <a name="Future_improvment"></a> Future improvement  ## 
+
+It may be to use an environment variable to identify when the app would be running in Heroku or in Local development
+And in order to make it work in Local development conditionals such as "if" would be added to the code in order to facilitate users experience, and avoid so much comments
+
 ## <a name="Challenges"></a> Challenges  ## 
 
 I founded __"Djangos and its batteries included"__, Meaning that is better organized and therefor is easier the extend the code to different functionallity, is easier to go big,to extend the project through many apps without big effort.__"I almost lose those bateries"__, For a rookie like me, it sometimes hard to control differnt apps one with another. That is the main reason I decided to keep all the book related views in one app instead of dividing them in 2 or 3 apps. For me was a chalLenge to see clearely the relation between each of them and that is why I consideratd is better to keep them in the same code page
