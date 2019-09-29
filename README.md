@@ -37,6 +37,7 @@ The code is meant to recreate an online book shop, such as Dubray or Easons. It 
 * [Deployment](#Deployment)
   * [Deployment_local](#Deployment_local)
   * [Live Deployment](#Live_Deployment)
+  * [Local_development](#Local_development)
 * [Challenges](#Challenges)
 * [Bugs](#Bugs)
 * [Acknowledgements](#Acknowledgements) 
@@ -101,6 +102,8 @@ __Slider__: Displays some images and quotes of universal literature, in order to
 
 --__Category filter selector__ it displays all the categories/genres by which the books are separated. Each book has a genre assigned, and therefor a user can identify better a group of books related by the genre. The category display works filtered by genre by clicking on each of them
 
+--__Pagination__ it divides the book list into discrete pages, the number of the pages is dictated by __paginate_by__ parameter settled in the desired class, in my case the __Home_view class__. This a unique parameter only for Django that makes ones live easy.
+
 -- __Footer__: Informs the user that the site is hosted by Github Pages, and provides us a link to where they can view the source code on Github, and also a link to the dataset in a elegant dark green color.
 
 -- __Contact Form__: A simple contact form with a query category selector name and subject. realized with django forms, that helps people getting in touch with the site, improving  in this way the UX.
@@ -109,7 +112,7 @@ __Slider__: Displays some images and quotes of universal literature, in order to
 
 -- __Registration and Sign in/out__: Is a security measure that ensure that all user will be registered, recorded and authorized to work with some functionallity of the page. In my case I used Django Allauth. 
 
--- __Reset password of a user__: Is realized with a Smtp code that sends a email to the customer that contains information and a link for the password reset, in case of a lost.
+-- __Reset password of a user__: Is realized with a _Google Smtp_ code(for local environment) and with _SendGrid_ (for Heroku) that sends a email to the customer that contains information and a link for the password reset, in case of a lost.
 
 -- __Shopping_list__: Display a list of the products that have been added to the shopping trolley, that will be in the future purchased.
 Here one can increse, diminish the product quantity, remove fully the book from the list, see the total, and by clicking in proceed to checkout will be redirected to provide information in order to purchase the products on the list. Or one can continue purchasing and so go back to the books list.
@@ -164,6 +167,14 @@ Integrated set of Django applications addressing authentication, registration, a
 Django is a flexible framework for quickly creating Python applications. _By default_,locally Django applications are configured to store data into a lightweight [SQLite](https://www.sqlite.org/index.html) database file.
 
 When we _deploy to Heroku_ one must chose a new data base because that it will be used in the live environment, and not the old one SQLite that is used by default and locally. The easiest way and the cheapes is to use [Postgresql](https://www.postgresql.org/)
+
+## <a name="Email_sending"></a>Email Sending
+
+When using _Local environment_,  the __Sign Up and reset password__ features will be dealt with the help of  [SMTP Protocolls](https://www.smtp2go.com/?gclid=Cj0KCQjwrMHsBRCIARIsAFgSeI2Btuxe33KkcT8Qk5iFMG8aFkiUP3Pwl56kOIZnELpeegJsrvikS2QaAjTAEALw_wcB) , used by Google. 
+
+But when using Heroku on the live app, I had to use [SendGrid](https://sendgrid.com/) because the SMTP was giving me a lot of errors.
+
+At the end the services are the same, and the implementation very, very similar.
 
 -------Travis
 Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub.
@@ -232,6 +243,8 @@ __Slider__: Displays some images and quotes of universal literature, in order to
 __Shopping_list__: It is supposed to show all the added items to a imaginary shopping trolley. Here one can modify the amount that wish to be bought, and/or to delete an item from the list. After, the user has the opportunity to proceed to the check out page or to go back to the book list
 
 __Checkout form__: This page is actually splitted in two, because in the first one the user has to fill out his personal information, and the second one the bancary information. All this forms have to lead the user to a fictive purchase of the product through _Stripe API_
+
+__Pagination__ Must display the number of the page where one finds itself, and forward or backwords arrows only if there are more items to display in the list in relation to the users situation. If we arriverd for intance the first page, the backwords button will be hidden.
 
 __Contact Form__: in all the input files text can be introduced, and the whole form can be send to a fictive adress in order to create the idea of customer service
 
@@ -324,7 +337,30 @@ Also add all the keys, public or secret or any values present(for Smtp, ex) in t
 In Heroku, select settings, select Domain URL, NOT Git URL to view your hosted application.
 * Deployed via Heroku: ink-dream.
 
----                                                                                                                                      
+--- 
+
+## <a name="Local_development"></a> Local development  ##
+
+The code in first instance will be pushed with the Heroku settings, and in order to modify, test, etc the code in __Local development__
+we need to:
+
+-- from settings.py 
+
+* Uncomment env (line 2)
+* Comment line 3 and 4 from settings.py with django_heroku and dj_database_heroku
+---Databases---
+* Comment line 88 until line 91 with Heroku Postgres Sql data base settings
+* Uncomment line 80 until 86 that contain the Sql Lite database
+---email sending system---
+* Comment the __sendgrid__ Api variables line 162 until 169
+* Uncomment line 171 until 177 that contain the Google Smtp procedure variables
+
+
+## <a name="Future_improvment"></a> Future improvement  ## 
+
+It may be to use an environment variable to identify when the app would be running in Heroku or in Local development
+And in order to make it work in Local development conditionals such as "if" would be added to the code in order to facilitate users experience, and avoid so much comments
+
 ## <a name="Challenges"></a> Challenges  ## 
 
 I founded __"Djangos and its batteries included"__, Meaning that is better organized and therefor is easier the extend the code to different functionallity, is easier to go big,to extend the project through many apps without big effort.__"I almost lose those bateries"__, For a rookie like me, it sometimes hard to control differnt apps one with another. That is the main reason I decided to keep all the book related views in one app instead of dividing them in 2 or 3 apps. For me was a chalLenge to see clearely the relation between each of them and that is why I consideratd is better to keep them in the same code page
