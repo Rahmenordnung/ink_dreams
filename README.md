@@ -101,6 +101,8 @@ __Slider__: Displays some images and quotes of universal literature, in order to
 
 --__Category filter selector__ it displays all the categories/genres by which the books are separated. Each book has a genre assigned, and therefor a user can identify better a group of books related by the genre. The category display works filtered by genre by clicking on each of them
 
+--__Pagination__ it divides the book list into discrete pages, the number of the pages is dictated by __paginate_by__ parameter settled in the desired class, in my case the __Home_view class__. This a unique parameter only for Django that makes ones live easy.
+
 -- __Footer__: Informs the user that the site is hosted by Github Pages, and provides us a link to where they can view the source code on Github, and also a link to the dataset in a elegant dark green color.
 
 -- __Contact Form__: A simple contact form with a query category selector name and subject. realized with django forms, that helps people getting in touch with the site, improving  in this way the UX.
@@ -232,6 +234,8 @@ __Slider__: Displays some images and quotes of universal literature, in order to
 __Shopping_list__: It is supposed to show all the added items to a imaginary shopping trolley. Here one can modify the amount that wish to be bought, and/or to delete an item from the list. After, the user has the opportunity to proceed to the check out page or to go back to the book list
 
 __Checkout form__: This page is actually splitted in two, because in the first one the user has to fill out his personal information, and the second one the bancary information. All this forms have to lead the user to a fictive purchase of the product through _Stripe API_
+
+__Pagination__ Must display the number of the page where one finds itself, and forward or backwords arrows only if there are more items to display in the list in relation to the users situation. If we arriverd for intance the first page, the backwords button will be hidden.
 
 __Contact Form__: in all the input files text can be introduced, and the whole form can be send to a fictive adress in order to create the idea of customer service
 
