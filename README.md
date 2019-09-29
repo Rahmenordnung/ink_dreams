@@ -24,20 +24,23 @@ The code is meant to recreate an online book shop, such as Dubray or Easons. It 
     --[Coding languages](#Coding_languages)
     
     --[Dependencies](#Dependencies)
+    
+    --[Dataset](#Dataset)
 
-    --[Libraries](#Libraries)
+    --[Email_sending](#Email_sending)
     
 * [Features left to implement](#Features_left_to_implement)    
 * [Testing](#Testing)
   * [Responsiveness Testing](#Responsiveness_Testing)
   * [Code Testing](#Code_Testing)
-  * [Ux Testing](#Ux_Testing)
+  * [Automated_testing](#Automated_testing)
 * [Dataset](#Dataset)
 * [Media](#Media)
 * [Deployment](#Deployment)
   * [Deployment_local](#Deployment_local)
-  * [Live Deployment](#Live_Deployment)
+  * [Live Deployment](#Live_Deployment) Future_improvment
   * [Local_development](#Local_development)
+  * [Future_improvement](#Future_improvement)
 * [Challenges](#Challenges)
 * [Bugs](#Bugs)
 * [Acknowledgements](#Acknowledgements) 
@@ -176,12 +179,6 @@ But when using Heroku on the live app, I had to use [SendGrid](https://sendgrid.
 
 At the end the services are the same, and the implementation very, very similar.
 
--------Travis
-Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub.
--------EmailJS
-We use EmailJS to link up the modal contact form to an actual e-mail address---
------- pyrg???------ for heroku
-
 ----------------------------------------
 
 ## <a name="Features left to implement"></a>Features_left_to_implement ##
@@ -199,7 +196,9 @@ We use EmailJS to link up the modal contact form to an actual e-mail address---
 ## <a name="Media"></a> Media  ##
 All the images used in the project are taken from Google images page after searching a list of the best books in Wikipedia and there are free of copyright.
 
-In this project I used just one image __[link](https://papers.co/ipad/mm13-old-car-street-vintage/)__  
+The images directory is `static/img`
+
+In this project I used just one image from Google search engine related to books, and I worked with them in the carrousel in the home.html 
 
 ## <a name="Testing"></a> Testing  ## 
 
@@ -222,13 +221,12 @@ etc
 The full page is responsive in small, medium, and big devices. All the elements from the page are responsive because of using of [MDBootstap](https://mdbootstrap.com/) elemnest, and templates, completed also with custom.css media queries. 
 
 #### <a name="Code_Testing"></a> Code Testing  ####
-The HTML was validated using the HTML Validator.
 
-The CSS was validated using the CSS Validator. In total, 1 issues was found. This has to do with the parsing of a property. But as it doesn´t really affect the project I considerated to ignore it.
+The easiest way to run all the tests is to use the command: __python3 manage.py test__
 
-TheJavaScript files were tested using JSHint.com. Initially, 1 warnings were detected: Duplicate key 'mapTypeId'. But that is the normal type of expression for map.js. The rest is clean.
+I have runned  11 test, all al them have been passing, Some of them for the view.py, and models, py in the book app.
 
-#### <a name="Ux_Testing"></a> Ux Testing ####
+#### <a name="Automated_testing"></a>Automated testing ####
 
 The normal functionality of the page has been tested through this tests:
 
@@ -244,9 +242,11 @@ __Shopping_list__: It is supposed to show all the added items to a imaginary sho
 
 __Checkout form__: This page is actually splitted in two, because in the first one the user has to fill out his personal information, and the second one the bancary information. All this forms have to lead the user to a fictive purchase of the product through _Stripe API_
 
+I tested The Checkout form class checkout view in the book app (all the book related views are inclosed in the same app) checking what happens if one required file is not filled in. If the page is not filled in properly the app wound go further and an an "AssertionError" fill be recieved.
+
 __Pagination__ Must display the number of the page where one finds itself, and forward or backwords arrows only if there are more items to display in the list in relation to the users situation. If we arriverd for intance the first page, the backwords button will be hidden.
 
-__Contact Form__: in all the input files text can be introduced, and the whole form can be send to a fictive adress in order to create the idea of customer service
+__Contact Form__: in all the input files text can be introduced, and the whole form can be send to a fictive adress in order to create the idea of customer service. One must fill in all the required field in order to be able to send the form
 
 __Search input in book list__ I extracted this input with a title filtering because usually the book is known by the title, and therefor the user can easely give a full or partial title in order to find a specific book, after introducing the text one can search and the results will be displayed in the same page, and if the user wisheds to undo the search there is also a a specific button nearby with a colorful hover..
 
@@ -258,18 +258,33 @@ __Profile__: The profile page shoud display the list of purchased products in a 
 
 __Footer__ It contains anchors, social media, dataset, main page that takes the User to the desired links.
 
--- __Registration and Sign in/out__:
+__Registration and Sign in/out__: The way of a user to purchase any product is to register in the data base providing some information that will be saved in the database. To improve the user experience, to control the information flow, and the products purchase, one ca sign up, sign in, sign out from the system
 
--- __Reset password of a user__: 
+__Reset password of a user__: Also in the identification sytem there is a requirement to provide a password. If this password by any reason,have been forgoten, the user can provide his email, previously linked to the account on the page, in order to receive a link which will lead him to a page where he can provide a new password.
+
+Validation was tested in the following way :
+
+A user not filling in at least one required field, if not multiple
+A user not providing both a username and a password (since both are required to register)
+A user not providing passwords that match
+A user not filling in the first password field
+A user not filling in the second password field (password confirmation)
+In each case the tests needed to pass in order to confirm that the validation is working.
+
+Here this requirements are not accomplished so the validation was triggered by wrong or missing input - they failed, as expected.
+
+All required fields filled in *
+Both username and password present
+Both passwords match
+First password filled in
+Second password filled in
+
+Since this time the inputs did meet the conditions required to make the tests pass the user will be able to reset a password ot sign up- 
 
 ------------
 __Stripe__ payment function has been verified with a test card and all transactions show up on the Stripe dashboard.
 
 [Stripe test](https://github.com/Rahmenordnung/ink_dreams/tree/master/static/images/test_images)
-
-## <a name="Deployment"></a>Deployment #### 
-
-This project is deployed on heroku: [here](https://ink-dream.herokuapp.com/)
 
 ---
 
@@ -328,7 +343,7 @@ Now follow this steps:
 * Create new Heroku app, using __'heroku apps:create appname'__ command.
 * In Heroku, select resources. Type Postgres and select __Heroku Postgres__ > Hobby - Free. You will use this data base as the live database instead of the default __dqlite3__ provided by any coding program when starting the project in django.
 Creating a new DB will lose all database information stored within the IDE. You will be reqired to re-update this information when the project is hosted via Heroku.
-*Select Settings, Reveal Config Vars. Copy Postgres DB url and paste into env.py.
+* Select Settings, Reveal Config Vars. Copy Postgres DB url and paste into env.py.
 Also add all the keys, public or secret or any values present(for Smtp, ex) in the locally hosted env.py in the heroku settings, that will worl as the new livw environment
 * Execute __python manage.py makemigrations__ and __python3 manage.py migrate__, to create a new DB.
 * Execute __python3 manage.py createsuperuser__ and populate as required, to create a new superuser.
@@ -344,17 +359,16 @@ In Heroku, select settings, select Domain URL, NOT Git URL to view your hosted a
 The code in first instance will be pushed with the Heroku settings, and in order to modify, test, etc the code in __Local development__
 we need to:
 
--- from settings.py 
+-- __from settings.py__ 
 
 * Uncomment env (line 2)
 * Comment line 3 and 4 from settings.py with django_heroku and dj_database_heroku
 ---Databases---
-* Comment line 88 until line 91 with Heroku Postgres Sql data base settings
-* Uncomment line 80 until 86 that contain the Sql Lite database
+* Comment line 88 until line 91 with Heroku __Postgres Sql data__ base settings
+* Uncomment line 80 until 86 that contain the __Sql Lite__ database
 ---email sending system---
 * Comment the __sendgrid__ Api variables line 162 until 169
-* Uncomment line 171 until 177 that contain the Google Smtp procedure variables
-
+* Uncomment line 171 until 177 that contain the __Google Smtp__ procedure variables
 
 ## <a name="Future_improvment"></a> Future improvement  ## 
 
@@ -368,6 +382,9 @@ I founded __"Djangos and its batteries included"__, Meaning that is better organ
 ## <a name="Bugs"></a> Bugs  ## 
 I had some problems with search and category filter. 
 Second problem was that the Heroku deployment wasn´t successful several times but at the end I managed to solve it.
+
+__Travis CI__ has been added as in the videos, I hope is not going to cause me trouble because I left it there whithout working properly. I was trying to make it work by any means, but at the end I couldn´t.
+
 ## <a name="Acknowledgements"></a> Acknowledgements  ## 
 The project was inspired from a page that I am always using, and even though I haven´t recreated all the functionality the structure I tried to make it similar as the one from * [Open library](https://openlibrary.org/)
 
