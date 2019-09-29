@@ -155,11 +155,11 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # reset pasword parameters
 
-# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = ('othdur@gmail.com')
-EMAIL_HOST_PASSWORD = ('Uniform1')
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
 EMAIL_PORT = 587
 
 # django_heroku.settings(locals())
