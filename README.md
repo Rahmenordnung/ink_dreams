@@ -112,7 +112,7 @@ __Slider__: Displays some images and quotes of universal literature, in order to
 
 -- __Registration and Sign in/out__: Is a security measure that ensure that all user will be registered, recorded and authorized to work with some functionallity of the page. In my case I used Django Allauth. 
 
--- __Reset password of a user__: Is realized with a Smtp code that sends a email to the customer that contains information and a link for the password reset, in case of a lost.
+-- __Reset password of a user__: Is realized with a _Google Smtp_ code(for local environment) and with _SendGrid_ (for Heroku) that sends a email to the customer that contains information and a link for the password reset, in case of a lost.
 
 -- __Shopping_list__: Display a list of the products that have been added to the shopping trolley, that will be in the future purchased.
 Here one can increse, diminish the product quantity, remove fully the book from the list, see the total, and by clicking in proceed to checkout will be redirected to provide information in order to purchase the products on the list. Or one can continue purchasing and so go back to the books list.
@@ -167,6 +167,14 @@ Integrated set of Django applications addressing authentication, registration, a
 Django is a flexible framework for quickly creating Python applications. _By default_,locally Django applications are configured to store data into a lightweight [SQLite](https://www.sqlite.org/index.html) database file.
 
 When we _deploy to Heroku_ one must chose a new data base because that it will be used in the live environment, and not the old one SQLite that is used by default and locally. The easiest way and the cheapes is to use [Postgresql](https://www.postgresql.org/)
+
+## <a name="Email_sending"></a>Email Sending
+
+When using _Local environment_,  the __Sign Up and reset password__ features will be dealt with the help of  [SMTP Protocolls](https://www.smtp2go.com/?gclid=Cj0KCQjwrMHsBRCIARIsAFgSeI2Btuxe33KkcT8Qk5iFMG8aFkiUP3Pwl56kOIZnELpeegJsrvikS2QaAjTAEALw_wcB) , used by Google. 
+
+But when using Heroku on the live app, I had to use [SendGrid](https://sendgrid.com/) because the SMTP was giving me a lot of errors.
+
+At the end the services are the same, and the implementation very, very similar.
 
 -------Travis
 Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub.
@@ -340,8 +348,13 @@ we need to:
 
 * Uncomment env (line 2)
 * Comment line 3 and 4 from settings.py with django_heroku and dj_database_heroku
+---Databases---
 * Comment line 88 until line 91 with Heroku Postgres Sql data base settings
 * Uncomment line 80 until 86 that contain the Sql Lite database
+---email sending system---
+* Comment the __sendgrid__ Api variables line 162 until 169
+* Uncomment line 171 until 177 that contain the Google Smtp procedure variables
+
 
 ## <a name="Future_improvment"></a> Future improvement  ## 
 
