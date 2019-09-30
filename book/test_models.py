@@ -13,7 +13,4 @@ class TestBookModel(TestCase):
         self.assertFalse(book.cover)
         self.assertFalse(book.price)
         
-    # def test_title_max_length(self):
-    #     book = Book.objects.get(id=1)
-    #     max_length = book._meta.get_field('title').max_length
-    #     self.assertEquals(max_length, 100)    
+    
