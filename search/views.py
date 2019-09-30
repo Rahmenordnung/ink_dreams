@@ -10,7 +10,7 @@ def is_valid_queryparam(param):
 def filter(request):
     qs = Book.objects.all()
     title_contains_query = request.GET.get('title_contains')
-    title_or_work_price_query = request.GET.get('title_or_work_price_query')
+    work_price_query = request.GET.get('work_price_query')
     title_or_author_query = request.GET.get('author_or_title')
     date_min = request.GET.get('date_min')
     date_max = request.GET.get('date_max')
@@ -24,10 +24,10 @@ def filter(request):
 
     if is_valid_queryparam(title_contains_query):
             qs = qs.filter(title__icontains=title_contains_query)
-    elif is_valid_queryparam(title_or_work_price_query):
-            qs = qs.filter(Q(title__icontains=title_or_work_price_query)
-                        | Q(price__iexact=title_or_work_price_query)
-                        ).distinct()            
+            
+    if is_valid_queryparam(work_price_query):
+            qs = qs.filter(discount_price__iexact=work_price_query)        
+               
       
     elif is_valid_queryparam(title_or_author_query):
             qs = qs.filter(Q(title__icontains=title_or_author_query)
