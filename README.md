@@ -88,7 +88,7 @@ In the constuction of the project I have used the libraries donated by the Code 
 
 A small resumee of the features would be:
 
-* Sign up, log-in as a user,don´t worry about your password you can reset it easely, view the books list,serch for a book by categories, view the details of a book, add a book to shopping cart, Adjust the quantity of items in shopping cart, delete the item from the shopping cart, Pay for the desired products in shopping cart checkout, as a registered user see in the profile site, what products have been already bought.
+* Sign up, log-in as a user,don´t worry about your password you can reset it easely, view the books list, serch for a book by categories, view the details of a book, add a book to shopping cart, Adjust the quantity of items in shopping cart, delete the item from the shopping cart, Pay for the desired products in shopping cart checkout, as a registered user see in the profile site, what products have been already bought.
  
 
 ### <a name="Current_Features"></a>Current Features ###
@@ -99,7 +99,7 @@ A small resumee of the features would be:
 
 __Slider__: Displays some images and quotes of universal literature, in order to contextualize better the page and improve the UX.
 
--- __Full screen book list in card display__: Each book is presented with a hoverable cover image , book category,  author and price(and discount price if existing) in square formed cart. Each cart links to the detailed view of the book.
+-- __Full screen book list in card display__: Each book is presented with a hoverable cover image , book category, author and price(and discount price if existing) in square formed cart. Each cart links to the detailed view of the book.
 
 -- __Search bar/advanced search__: There is a _search subnavbar_  with a search input in the home page that allows the user just simply search a book by title and an _advanced search_ page that leads the customer to a special page where one can specify more parameters by which one can search a book, ex production day, author, price etc.
 
@@ -198,7 +198,7 @@ All the images used in the project are taken from Google images page after searc
 
 The images directory is `static/img`
 
-In this project I used just one image from Google search engine related to books, and I worked with them in the carrousel in the home.html 
+In this project I used images from Google search engine related to books, and I worked with them in the carrousel in the home.html, and for the book covers, which can be uploaded in the admin panel of Django after creating a superuser. 
 
 ## <a name="Testing"></a> Testing  ## 
 
@@ -224,7 +224,7 @@ The full page is responsive in small, medium, and big devices. All the elements 
 
 The easiest way to run all the tests is to use the command: __python3 manage.py test__
 
-I have runned  11 test, all al them have been passing, Some of them for the view.py, and models, py in the book app.
+I have runned 11 test, all al them have been passing, Some of them for the view.py, and models, py in the book app.
 
 #### <a name="Automated_testing"></a>Automated testing ####
 
@@ -382,6 +382,8 @@ I founded __"Djangos and its batteries included"__, Meaning that is better organ
 ## <a name="Bugs"></a> Bugs  ## 
 I had some problems with search and category filter. 
 Second problem was that the Heroku deployment wasn´t successful several times but at the end I managed to solve it.
+
+The automated tests may need some extension, that I could not realize because of other problems in the code, that at least I managed to solve. Nevertheless the code is working properly and all the functions are accomplishing their purposes,
 
 __Travis CI__ has been added as in the videos, I hope is not going to cause me trouble because I left it there whithout working properly. I was trying to make it work by any means, but at the end I couldn´t.
 
