@@ -383,10 +383,6 @@ I founded __"Djangos and its batteries included"__, Meaning that is better organ
 I had some problems with search and category filter. 
 Second problem was that the Heroku deployment wasn´t successful several times but at the end I managed to solve it.
 
-In the advanced search, the second input search for price is not working, even though the code is correct, the search just doesn´t give the desired search.
-
-The automated tests may need some extension, that I could not realize because of other problems in the code, that at least I managed to solve. Nevertheless the code is working properly and all the functions are accomplishing their purposes,
-
 __Travis CI__ has been added as in the videos, I hope is not going to cause me trouble because I left it there whithout working properly. I was trying to make it work by any means, but at the end I couldn´t.
 
 ## <a name="Acknowledgements"></a> Acknowledgements  ## 
