@@ -198,7 +198,9 @@ All the images used in the project are taken from Google images page after searc
 
 The images directory is `static/img`
 
-In this project I used images from Google search engine related to books, and I worked with them in the carrousel in the home.html, and for the book covers, which can be uploaded in the admin panel of Django after creating a superuser. 
+and the cover images can be found here [Cover images](https://github.com/Rahmenordnung/ink_dreams/tree/master/media_root) 
+
+In this project I used images from Google search engine related to books, and I worked with them in the carrousel in the home.html, in the book detail aditional information, and for the book covers, which can be uploaded in the admin panel of Django after creating a superuser. 
 
 ## <a name="Testing"></a> Testing  ## 
 
